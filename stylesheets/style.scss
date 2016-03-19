@@ -1,0 +1,12 @@
+// Main SASS stylesheet - imports all other partials
+
+// Import partial styles
+@import "variables";
+@import "base";
+@import "layout";
+@import "mixins";
+
+
+// Import individual pages(modules/partials)
+
+// @import "partials/'page_name'"
