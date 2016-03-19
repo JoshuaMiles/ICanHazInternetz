@@ -1,0 +1,48 @@
+header {
+  width: 100%;
+  height: 400px;
+  //background-image: url('../images/header-bg.jpg');
+  background-color: darken($tomato, 12);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.8; // edit the image later
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .branding {
+    width: 650px;
+    max-width: 80%;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    //background: $lightgrey;
+    margin: 0 auto;
+
+    #brand-group {
+
+      h1 {
+        color: white;
+        font-weight: $heavy;
+        font-size: 6em;
+        line-height: .8em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $fontFamily;
+        text-shadow: ($darkergrey, 0 0 20px);
+      }
+      p {
+        display: block;
+        color: darken($tomato, 1);
+        max-width: 200px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 1.5em;
+        font-family: $fontFamily;
+      } //p
+    } //brand-group
+  } //branding
+} //header

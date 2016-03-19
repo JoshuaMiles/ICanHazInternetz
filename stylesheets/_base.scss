@@ -1,1 +1,15 @@
 // Base Styles for body, heading and p for fonts, text colour, bgcolour etc
+* {
+  box-sizing: border-box; // negates padding and margin as 'width'
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: $bold;
+}
+
+p {
+  font-weight: $thin;
+  padding-bottom: 10px;
+}

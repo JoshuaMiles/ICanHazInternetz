@@ -1,1 +1,27 @@
 // Variables
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
+// Colour Palette
+$tomato     : #FF6347;
+$lightblue  : #00BFFF;
+$darkgrey   : #333333;
+$lightgrey  : #DCDCDC;
+$darkergrey : #1E1E1E;
+$light      : #FFFFFF;
+$dark       : #000000;
+
+$bg-colour  : $lightgrey;
+
+
+// Fonts
+$fontFamily : Roboto, Helvetica, 'Helvetica Neue', sans-serif;
+
+// Weights
+$thin   : 300;
+$normal : 400;
+$bold   : 500;
+$heavy  : 700;
+
+$headColour : darken($lightblue, 10);
+
+// Media breakpoints - add in later

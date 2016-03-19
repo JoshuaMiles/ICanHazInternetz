@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+strong {
+  font-weight: 500; }
+
+p {
+  font-weight: 300;
+  padding-bottom: 10px; }
+
+header {
+  width: 100%;
+  height: 400px;
+  background-color: #ff2f0a;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  header .branding {
+    width: 650px;
+    max-width: 80%;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    margin: 0 auto; }
+    header .branding #brand-group h1 {
+      color: white;
+      font-weight: 700;
+      font-size: 6em;
+      line-height: .8em;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+      text-shadow: #1E1E1E, 0 0 20px; }
+    header .branding #brand-group p {
+      display: block;
+      color: #ff5f42;
+      max-width: 200px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 15px;
+      padding: 10px;
+      font-size: 1.5em;
+      font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif; }
+
+#nav {
+  width: 100%;
+  background: #ff3814; }
+  #nav:before, #nav:after {
+    content: " ";
+    display: table; }
+  #nav:after {
+    clear: both; }
+  #nav .navbar {
+    width: 95%;
+    line-height: 2em; }
+    #nav .navbar .brand {
+      float: left;
+      font-weight: 500;
+      color: #FFFFFF;
+      font-size: .8em;
+      font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      background: #ff7961;
+      margin-left: 40px; }
+      #nav .navbar .brand a {
+        color: #FFFFFF;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1.5em; }
+    #nav .navbar ul li {
+      float: right;
+      list-style-type: none; }
+      #nav .navbar ul li a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+        font-size: 1em;
+        display: inline-block;
+        padding: 10px; }
+        #nav .navbar ul li a:hover {
+          background: #FFFFFF;
+          color: #FF6347; }

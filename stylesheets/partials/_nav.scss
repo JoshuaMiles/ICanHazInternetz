@@ -1,0 +1,50 @@
+#nav {
+  @include clearfix;
+  width: 100%;
+  background: darken($tomato, 10);
+
+  .navbar {
+    width: 95%;
+    line-height: 2em;
+    .brand {
+      float: left;
+      font-weight: $bold;
+      color: $light;
+      font-size: .8em;
+      font-family: $fontFamily;
+      text-align: center;
+      text-transform: uppercase;
+      background: lighten($tomato, 5);
+      margin-left: 40px;
+
+      a {
+        color: $light;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1.5em;
+      } //a
+    } //brand
+
+    ul {
+      li {
+        float: right;
+        list-style-type: none;
+        a {
+          color: $light;
+          text-decoration: none;
+          font-family: $fontFamily;
+          font-size: 1em;
+          display: inline-block;
+          padding: 10px;
+
+          &:hover {
+            background: $light;
+            color: $tomato;
+          }
+        } //a
+      } //li
+    } //ul
+  } //navbar
+} //nav
