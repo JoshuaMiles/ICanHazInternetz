@@ -1,0 +1,10 @@
+footer {
+  width: 100%;
+  height: 250px;
+  background-color: $darkgrey;
+
+  #menu {
+    background: lighten($darkgrey, 5);
+    height: 70px;
+  }
+}
