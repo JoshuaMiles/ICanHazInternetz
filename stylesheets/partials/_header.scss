@@ -1,12 +1,10 @@
 header {
   width: 100%;
   height: 400px;
-  //background-image: url('../images/header-bg.jpg');
-  background-color: darken($tomato, 12);
+  background-color: $tomato;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  opacity: 0.8; // edit the image later
 
   display: flex;
   justify-content: center;
@@ -18,10 +16,19 @@ header {
     max-width: 80%;
     padding-top: 3rem;
     padding-bottom: 4rem;
-    //background: $lightgrey;
     margin: 0 auto;
 
     #brand-group {
+      padding-bottom: 15px;
+
+      .logo {
+        background: url('../images/routr-logo.png') no-repeat;
+        background-position: center center;
+        display: flex;
+        min-width: 50%;
+        height: 155px;
+        margin: 10px 10px;
+      }
 
       h1 {
         color: white;
@@ -29,19 +36,19 @@ header {
         font-size: 6em;
         line-height: .8em;
         text-align: center;
-        text-transform: uppercase;
+        text-transform: lowercase;
         font-family: $fontFamily;
         text-shadow: ($darkergrey, 0 0 20px);
       }
       p {
         display: block;
-        color: darken($tomato, 1);
+        color: darken($tomato, 20);
         max-width: 200px;
         margin: 0 auto;
         text-align: center;
-        margin-top: 15px;
+        margin-top: 12px;
         padding: 10px;
-        font-size: 1.5em;
+        font-size: 1.2em;
         font-family: $fontFamily;
       } //p
     } //brand-group

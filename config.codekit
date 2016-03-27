@@ -22,10 +22,21 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/routr-logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6257,
+		"inputAbbreviatedPath": "\/images\/routr-logo.png",
+		"outputAbbreviatedPath": "\/images\/routr-logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,

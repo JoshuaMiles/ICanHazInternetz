@@ -1,7 +1,9 @@
 #nav {
   @include clearfix;
   width: 100%;
-  background: darken($tomato, 10);
+  background: darken($tomato, 5);
+  @include box-shadow(0, 2px, 5px, $shadow);
+  z-index: 5;
 
   .navbar {
     width: 95%;
@@ -10,11 +12,11 @@
       float: left;
       font-weight: $bold;
       color: $light;
-      font-size: .8em;
+      font-size: 1em;
       font-family: $fontFamily;
       text-align: center;
-      text-transform: uppercase;
-      background: lighten($tomato, 5);
+      text-transform: lowercase;
+      background: lighten($tomato, 0);
       margin-left: 40px;
 
       a {
@@ -40,8 +42,8 @@
           padding: 10px;
 
           &:hover {
-            background: $light;
-            color: $tomato;
+            background: $yellow;
+            color: $light;
           }
         } //a
       } //li

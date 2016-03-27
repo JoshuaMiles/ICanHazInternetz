@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,23 +14,19 @@ p {
 
 .main-content {
   width: 100%;
-  height: 400px;
-  background: #DCDCDC; }
+  height: 600px; }
 
 #main-wrapper {
   width: 90%;
-  height: 400px;
-  background: #FFFFFF;
   margin: 0 auto; }
 
 header {
   width: 100%;
   height: 400px;
-  background-color: #ff2f0a;
+  background-color: #FF6347;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,29 +37,42 @@ header {
     padding-top: 3rem;
     padding-bottom: 4rem;
     margin: 0 auto; }
-    header .branding #brand-group h1 {
-      color: white;
-      font-weight: 700;
-      font-size: 6em;
-      line-height: .8em;
-      text-align: center;
-      text-transform: uppercase;
-      font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
-      text-shadow: #1E1E1E, 0 0 20px; }
-    header .branding #brand-group p {
-      display: block;
-      color: #ff5f42;
-      max-width: 200px;
-      margin: 0 auto;
-      text-align: center;
-      margin-top: 15px;
-      padding: 10px;
-      font-size: 1.5em;
-      font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif; }
+    header .branding #brand-group {
+      padding-bottom: 15px; }
+      header .branding #brand-group .logo {
+        background: url("../images/routr-logo.png") no-repeat;
+        background-position: center center;
+        display: flex;
+        min-width: 50%;
+        height: 155px;
+        margin: 10px 10px; }
+      header .branding #brand-group h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 6em;
+        line-height: .8em;
+        text-align: center;
+        text-transform: lowercase;
+        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+        text-shadow: #1E1E1E, 0 0 20px; }
+      header .branding #brand-group p {
+        display: block;
+        color: #e02200;
+        max-width: 200px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 12px;
+        padding: 10px;
+        font-size: 1.2em;
+        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif; }
 
 #nav {
   width: 100%;
-  background: #ff3814; }
+  background: #ff4d2e;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  z-index: 5; }
   #nav:before, #nav:after {
     content: " ";
     display: table; }
@@ -75,11 +85,11 @@ header {
       float: left;
       font-weight: 500;
       color: #FFFFFF;
-      font-size: .8em;
+      font-size: 1em;
       font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
       text-align: center;
-      text-transform: uppercase;
-      background: #ff7961;
+      text-transform: lowercase;
+      background: tomato;
       margin-left: 40px; }
       #nav .navbar .brand a {
         color: #FFFFFF;
@@ -99,13 +109,13 @@ header {
         display: inline-block;
         padding: 10px; }
         #nav .navbar ul li a:hover {
-          background: #FFFFFF;
-          color: #FF6347; }
+          background: #ffc952;
+          color: #FFFFFF; }
 
 footer {
   width: 100%;
   height: 250px;
-  background-color: #333333; }
+  background-color: #1f1d2d; }
   footer #menu {
-    background: #404040;
+    background: #29273c;
     height: 70px; }

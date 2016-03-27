@@ -1,14 +1,13 @@
 // Base Layout Styles - can include media queries
 .main-content {
   width: 100%;
-  height: 400px;
-  background: $lightgrey;
+  height: 600px;
+  //background: $lightgrey;
 }
 
 #main-wrapper {
   width: 90%;
-  height: 400px; // remove later
-  background: $light;
+  //height: 400px; // remove later
   margin: 0 auto;
 
 }

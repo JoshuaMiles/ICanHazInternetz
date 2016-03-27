@@ -9,3 +9,9 @@
       clear: both;
     }
 } //clearfix - fix div collapsing when floating elements
+
+@mixin box-shadow($hozOffset, $vertOffset, $blur, $colour) {
+  box-shadow: $hozOffset $vertOffset $blur $colour;
+  -webkit-box-shadow: $hozOffset $vertOffset $blur $colour;
+  -moz-box-shadow: $hozOffset $vertOffset $blur $colour;
+} //includes prefixes for most popular browsers
