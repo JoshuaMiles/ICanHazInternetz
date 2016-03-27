@@ -1,0 +1,20 @@
+main {
+  width: 100%;
+  height: auto;
+  background: $light;
+
+  section {
+    height: auto;
+    margin: 0 auto;
+
+    article.search {
+      background: $light;
+      height: 350px;
+    } //searchbar
+
+    article.profile-reviews {
+      height: 350px;
+      background: $lightgrey;
+    } //user reviews
+  } //wrapper
+} //main

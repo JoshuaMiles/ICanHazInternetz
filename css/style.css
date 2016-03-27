@@ -12,11 +12,11 @@ p {
   font-weight: 300;
   padding-bottom: 10px; }
 
-.main-content {
+main {
   width: 100%;
   height: 600px; }
 
-#main-wrapper {
+#content-wrapper {
   width: 90%;
   margin: 0 auto; }
 
@@ -112,8 +112,23 @@ header {
           background: #ffc952;
           color: #FFFFFF; }
 
+main {
+  width: 100%;
+  height: auto;
+  background: #FFFFFF; }
+  main section {
+    height: auto;
+    margin: 0 auto; }
+    main section article.search {
+      background: #FFFFFF;
+      height: 350px; }
+    main section article.profile-reviews {
+      height: 350px;
+      background: #DEDEDE; }
+
 footer {
   width: 100%;
+  position: relative;
   height: 250px;
   background-color: #1f1d2d; }
   footer #menu {
