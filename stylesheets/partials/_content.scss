@@ -3,6 +3,12 @@ main {
   height: auto;
   background: $light;
 
+  &:before, &:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+  }
+
   section {
     height: auto;
     margin: 0 auto;

@@ -72,7 +72,7 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  z-index: 5; }
+  z-index: 1; }
   #nav:before, #nav:after {
     content: " ";
     display: table; }
@@ -116,6 +116,10 @@ main {
   width: 100%;
   height: auto;
   background: #FFFFFF; }
+  main:before, main:after {
+    z-index: -1;
+    position: absolute;
+    content: ""; }
   main section {
     height: auto;
     margin: 0 auto; }

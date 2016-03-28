@@ -3,7 +3,7 @@
   width: 100%;
   background: darken($tomato, 5);
   @include box-shadow(0, 2px, 5px, $shadow);
-  z-index: 5;
+  z-index: 1;
 
   .navbar {
     width: 95%;
