@@ -22,6 +22,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/routr-logo-sml.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4126,
+		"inputAbbreviatedPath": "\/images\/routr-logo-sml.png",
+		"outputAbbreviatedPath": "\/images\/routr-logo-sml.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/routr-logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -82,6 +93,15 @@
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
 		"useCompatibilityMode": 0
+		},
+	"\/registration.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/registration.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/server\/includes\/newUser.php": {
 		"fileType": 8192,

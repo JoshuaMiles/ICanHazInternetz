@@ -42,7 +42,6 @@ header {
       header .branding #brand-group .logo {
         background: url("../images/routr-logo.png") no-repeat;
         background-position: center center;
-        display: flex;
         min-width: 50%;
         height: 155px;
         margin: 10px 10px; }
@@ -68,11 +67,11 @@ header {
 
 #nav {
   width: 100%;
+  position: relative;
   background: #ff4d2e;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  z-index: 1; }
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
   #nav:before, #nav:after {
     content: " ";
     display: table; }
@@ -101,6 +100,8 @@ header {
     #nav .navbar ul li {
       float: right;
       list-style-type: none; }
+      #nav .navbar ul li:first-child {
+        background-color: #FFC952; }
       #nav .navbar ul li a {
         color: #FFFFFF;
         text-decoration: none;
@@ -109,32 +110,113 @@ header {
         display: inline-block;
         padding: 10px; }
         #nav .navbar ul li a:hover {
-          background: #ffc952;
+          background: #FFC952;
           color: #FFFFFF; }
 
 main {
   width: 100%;
   height: auto;
   background: #FFFFFF; }
-  main:before, main:after {
-    z-index: -1;
-    position: absolute;
-    content: ""; }
   main section {
     height: auto;
+    width: 100%;
     margin: 0 auto; }
     main section article.search {
       background: #FFFFFF;
       height: 350px; }
+      main section article.search form {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+        padding-top: 150px;
+        padding-bottom: 150px; }
+        main section article.search form input[type="search"] {
+          width: 50%;
+          height: 42px;
+          background-color: #FFFFFF;
+          border-radius: 6px;
+          -webkit-border-radius: 6px;
+          -moz-border-radius: 6px;
+          -ms-border-radius: 6px;
+          -o-border-radius: 6px;
+          vertical-align: bottom;
+          -webkit-appearance: none;
+          outline: 0;
+          font-size: 1em;
+          border: 2px solid #F5F5F5;
+          margin-right: .2em;
+          transition: border .25s linear,color; }
+          main section article.search form input[type="search"]:focus {
+            border: 2px solid #FFC952; }
+        main section article.search form button[type="submit"] {
+          min-width: 15%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 30px;
+          padding-right: 30px;
+          background-color: #47B8E0;
+          color: #FFFFFF;
+          font-size: 1em;
+          line-height: 1.4;
+          border-radius: 4px;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          border: none;
+          font-weight: 500; }
     main section article.profile-reviews {
       height: 350px;
-      background: #DEDEDE; }
+      background: #F5F5F5; }
 
 footer {
   width: 100%;
-  position: relative;
-  height: 250px;
-  background-color: #1f1d2d; }
-  footer #menu {
+  background: #34314C;
+  color: #FFFFFF;
+  font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+  font-weight: 300; }
+  footer .container {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 10px; }
+    footer .container .brand {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      padding: 40px 15px 20px 15px; }
+      footer .container .brand img {
+        padding-right: 15px; }
+      footer .container .brand .title {
+        padding-top: 10px;
+        font-size: 1.8em;
+        font-weight: 500;
+        line-height: 2em; }
+    footer .container nav.footer {
+      width: 45%;
+      margin-left: 4px;
+      margin-bottom: 2em; }
+      footer .container nav.footer ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        list-style-type: none; }
+        footer .container nav.footer ul li {
+          margin-left: 15px; }
+          footer .container nav.footer ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding-left: 15px; }
+            footer .container nav.footer ul li a:hover {
+              color: #FF6347; }
+  footer .copyright {
+    width: 100%;
+    height: 4em;
     background: #29273c;
-    height: 70px; }
+    margin: 0 auto; }
+    footer .copyright article {
+      text-align: center;
+      font-size: .9em;
+      padding-top: 1.7em;
+      opacity: 0.7; }

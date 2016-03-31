@@ -3,17 +3,17 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
 
-// Font Awesome
+// Font Awesome & Icons
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
 // Colour Palette
 $tomato     : #FF6347;
-$yellow     : #ffc952;
-$darkpurple : #34314c;
-$accent     : #47b8e0;
+$yellow     : #FFC952;
+$darkpurple : #34314C;
+$accent     : #47B8E0;
 $lightblue  : #00BFFF;
 $darkgrey   : #333333;
-$lightgrey  : #DEDEDE;
+$lightgrey  : #F5F5F5;
 $darkergrey : #1E1E1E;
 $light      : #FFFFFF;
 $dark       : #000000;
@@ -31,3 +31,9 @@ $bold   : 500;
 $heavy  : 700;
 
 // Media breakpoints - add in later
+
+
+// Form Elements
+
+//Error
+$error : #E74C3C;

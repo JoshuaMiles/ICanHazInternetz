@@ -15,3 +15,11 @@
   -webkit-box-shadow: $hozOffset $vertOffset $blur $colour;
   -moz-box-shadow: $hozOffset $vertOffset $blur $colour;
 } //includes prefixes for most popular browsers
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+} //prefixes for border radius

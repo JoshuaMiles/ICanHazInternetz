@@ -1,9 +1,9 @@
 #nav {
   @include clearfix;
   width: 100%;
+  position: relative;
   background: darken($tomato, 5);
   @include box-shadow(0, 2px, 5px, $shadow);
-  z-index: 1;
 
   .navbar {
     width: 95%;
@@ -33,6 +33,10 @@
       li {
         float: right;
         list-style-type: none;
+
+        &:first-child {
+          background-color: $yellow;
+        }
         a {
           color: $light;
           text-decoration: none;
@@ -44,7 +48,7 @@
           &:hover {
             background: $yellow;
             color: $light;
-          }
+          } //hover
         } //a
       } //li
     } //ul
