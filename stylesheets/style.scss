@@ -7,11 +7,13 @@
 @import "mixins";
 
 
-// Import individual pages(modules/partials)
-
-// @import "partials/'page_name'"
+//Import Base page
 @import "partials/header.scss";
 @import "partials/nav.scss";
-@import "partials/content.scss";
 @import "partials/footer.scss";
-//@import "partials/registration";
+@import "partials/forms.scss";
+
+
+//Import other pages
+@import "pages/index.scss";
+@import "pages/registration.scss";

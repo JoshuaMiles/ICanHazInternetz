@@ -1,0 +1,32 @@
+//Form styles
+
+form {
+  margin-bottom: 20px;
+}
+
+button {
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 5px 10px;
+  @include border-radius(2px);
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+//Validation
+input.required {
+  border-color: orange !important;
+  color: orange !important;
+}

@@ -1,0 +1,18 @@
+main {
+  .register {
+    background: $lightgrey;
+    .container {
+      max-width: 830px;
+      margin: 0 auto;
+
+      form.newUser {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        background: $light;
+        padding: 5%;
+
+      }
+    }
+  }
+}
