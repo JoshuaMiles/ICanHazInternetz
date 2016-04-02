@@ -1,13 +1,19 @@
 // Base Layout Styles - can include media queries
-main {
-  width: 100%;
-  height: 600px;
-  //background: $lightgrey;
+body {
+  position: relative;
 }
 
-#content-wrapper {
-  width: 90%;
-  //height: 400px; // remove later
-  margin: 0 auto;
+//Review cards
+/*
+@media (max-width: 600px) {
+  .review-card {
+    flex: 1 46%;
+  }
+} //600px wide and smaller
 
+@media (max-width: 920px) {
+  .review-card {
+    flex: 1 46%;
+  }
 }
+*/

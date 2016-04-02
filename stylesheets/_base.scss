@@ -3,6 +3,7 @@
   box-sizing: border-box; // negates padding and margin as 'width'
   margin: 0;
   padding: 0;
+  font-family: $fontFamily;
 }
 
 strong {
@@ -14,4 +15,57 @@ p {
   padding-bottom: 10px;
 }
 
-// add in header styles with pseudo elements
+a {
+  cursor: pointer;
+}
+
+.muted {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+article {
+  padding: 40px 0;
+  position: relative;
+}
+
+// Section styles
+.article-head {
+  font-family: $fontFamily;
+  font-weight: $normal;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr.article-title-rule {
+    border-top: 2px solid $yellow;
+    width: 100px;
+    margin: 10px auto 30px;
+}
+hr {
+    border: solid #ddd;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 10px 0 30px;
+    height: 0;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+//Form styles
+
+form {
+  margin-bottom: 20px;
+}
+
+button {
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+}

@@ -5,9 +5,7 @@
     <title>routr</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -23,9 +21,9 @@
     <div class="navbar">
       <div class="brand"><a href="index.html">routr</a></div>
       <ul>
-        <li id="active"><a href="#"><i class="fa fa-user"></i><strong> Elliott</strong></a></li>
-        <li><a href="#">register</a></li>
-        <li><a href="#">find wifi</a></li>
+        <li id="active"><a href="userProfile.html"><i class="fa fa-user"></i><strong> Elliott</strong></a></li>
+        <li><a href="register.html">register</a></li>
+        <li><a href="search.html">find wifi</a></li>
       </ul>
     </div>
   </nav> <!-- navigation -->
@@ -33,12 +31,76 @@
   <main>
     <section>
       <article class="search">
+        <div class="article-head">Search for wifi</div>
+        <hr class="article-title-rule">
         <form action="search">
           <input type="search" results="3" placeholder="Search by name, suburb or rating...">
           <button type="submit">search</button>
         </form>
       </article>
-      <article class="profile-reviews"></article>
+      <article class="profile-reviews">
+        <svg class="arc-svg" viewBox="0 0 1440 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M1440,69.0315425 L1440,0 L0,0 L0,69.0315425 C233.264983,25.0227325 473.943868,2 720,2 C966.056132,2 1206.73502,25.0227325 1440,69.0315425 Z" id="Combined-Shape"></path>
+          </g>
+        </svg>
+        <div class="article-head">Recent Places</div>
+          <hr class="article-title-rule">
+        <div class="container">
+
+        <div class="review-cards">
+
+          <a href="#" class="review-card">
+            <div class="media"><img src="../images/routr-logo-sml.png" alt="placeholder img"></div>
+            <div class="desc">
+              <div class="title">Grange Library Wifi</div>
+              <div class="muted">79 Evelyn Street • Grange</div>
+            </div>
+          </a>
+
+          <a href="#" class="review-card">
+            <div class="media"><img src="../images/routr-logo-sml.png" alt="placeholder img"></div>
+            <div class="desc">
+              <div class="title">Mt Coot-tha Botanic Gardens Library Wifi</div>
+              <div class="muted">Administration Building • Toowong</div>
+            </div>
+          </a>
+
+          <a href="#" class="review-card">
+            <div class="media"><img src="../images/routr-logo-sml.png" alt="placeholder img"></div>
+            <div class="desc">
+              <div class="title">Post Office Square</div>
+              <div class="muted">Queen &amp; Adelaide St • Brisbane City</div>
+            </div>
+          </a>
+
+          <a href="#" class="review-card">
+            <div class="media"><img src="../images/routr-logo-sml.png" alt="placeholder img"></div>
+            <div class="desc">
+              <div class="title">Post Office Square</div>
+              <div class="muted">Queen &amp; Adelaide St • Brisbane City</div>
+            </div>
+          </a>
+
+          <a href="#" class="review-card">
+            <div class="media"><img src="../images/routr-logo-sml.png" alt="placeholder img"></div>
+            <div class="desc">
+              <div class="title">Post Office Square</div>
+              <div class="muted">Queen &amp; Adelaide St • Brisbane City</div>
+            </div>
+          </a>
+
+          <a href="#" class="review-card">
+            <div class="media"><img src="../images/routr-logo-sml.png" alt="placeholder img"></div>
+            <div class="desc">
+              <div class="title">Post Office Square</div>
+              <div class="muted">Queen &amp; Adelaide St • Brisbane City</div>
+            </div>
+          </a>
+
+        </div> <!-- recent reviews -pull from db -->
+      </div>
+      </article>
     </section>
   </main> <!-- content area -->
 
@@ -59,8 +121,6 @@
     <section class="copyright">
       <article>Copyright 2016</article>
     </section>
-  </footer>
-
-
+  </footer> <!-- footer -->
   </body>
 </html>

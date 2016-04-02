@@ -3,7 +3,8 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif; }
 
 strong {
   font-weight: 500; }
@@ -12,14 +13,67 @@ p {
   font-weight: 300;
   padding-bottom: 10px; }
 
-main {
-  width: 100%;
-  height: 600px; }
+a {
+  cursor: pointer; }
 
-#content-wrapper {
-  width: 90%;
-  margin: 0 auto; }
+.muted {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5); }
 
+article {
+  padding: 40px 0;
+  position: relative; }
+
+.article-head {
+  font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  -webkit-font-smoothing: antialiased; }
+
+hr.article-title-rule {
+  border-top: 2px solid #FFC952;
+  width: 100px;
+  margin: 10px auto 30px; }
+
+hr {
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 10px 0 30px;
+  height: 0; }
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+form {
+  margin-bottom: 20px; }
+
+button {
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px; }
+
+body {
+  position: relative; }
+
+/*
+@media (max-width: 600px) {
+  .review-card {
+    flex: 1 46%;
+  }
+} //600px wide and smaller
+
+@media (max-width: 920px) {
+  .review-card {
+    flex: 1 46%;
+  }
+}
+*/
 header {
   width: 100%;
   height: 400px;
@@ -115,22 +169,21 @@ header {
 
 main {
   width: 100%;
-  height: auto;
   background: #FFFFFF; }
   main section {
-    height: auto;
     width: 100%;
+    padding: 40px 0;
     margin: 0 auto; }
+    main section:last-child {
+      padding-bottom: 0; }
     main section article.search {
       background: #FFFFFF;
-      height: 350px; }
+      padding-bottom: 100px; }
       main section article.search form {
         display: flex;
         justify-content: center;
         align-content: center;
-        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
-        padding-top: 150px;
-        padding-bottom: 150px; }
+        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif; }
         main section article.search form input[type="search"] {
           width: 50%;
           height: 42px;
@@ -167,8 +220,57 @@ main {
           border: none;
           font-weight: 500; }
     main section article.profile-reviews {
-      height: 350px;
+      width: 100%;
+      padding-top: 0;
       background: #F5F5F5; }
+      main section article.profile-reviews .arc-svg {
+        margin-top: -1px; }
+        main section article.profile-reviews .arc-svg path {
+          fill: #FFFFFF; }
+      main section article.profile-reviews .container {
+        max-width: 830px;
+        margin: 0 auto; }
+        main section article.profile-reviews .container .review-cards {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin: 0 auto; }
+          main section article.profile-reviews .container .review-cards .review-card {
+            flex: 1 0 29%;
+            padding: 2%;
+            display: block;
+            background: #FFFFFF;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -o-border-radius: 2px;
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+            transition: all ease-in-out 200ms;
+            -webkit-transition: all ease-in-out 200ms; }
+            main section article.profile-reviews .container .review-cards .review-card:hover {
+              box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+              -webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+              -moz-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3); }
+            main section article.profile-reviews .container .review-cards .review-card .media img {
+              max-width: 100%;
+              display: block;
+              margin-bottom: 5px; }
+            main section article.profile-reviews .container .review-cards .review-card .desc {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 75px;
+              margin-top: auto; }
+              main section article.profile-reviews .container .review-cards .review-card .desc .title {
+                font-weight: 500;
+                line-height: 1.3em; }
 
 footer {
   width: 100%;
@@ -212,11 +314,11 @@ footer {
               color: #FF6347; }
   footer .copyright {
     width: 100%;
-    height: 4em;
     background: #29273c;
     margin: 0 auto; }
     footer .copyright article {
+      height: 45px;
       text-align: center;
       font-size: .9em;
-      padding-top: 1.7em;
-      opacity: 0.7; }
+      padding-top: 1.8em;
+      color: rgba(255, 255, 255, 0.4); }
