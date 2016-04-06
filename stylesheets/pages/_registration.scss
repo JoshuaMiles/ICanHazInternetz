@@ -1,17 +1,47 @@
 main {
   .register {
     background: $lightgrey;
-    .container {
+    .user-container {
+      background: $light;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
       max-width: 830px;
       margin: 0 auto;
 
-      form.newUser {
+      .newUser {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-direction: column;
-        background: $light;
         padding: 5%;
+        margin: 5%;
 
+        .profile {
+          margin: 0 auto;
+          padding: 15px 0 40px 0;
+          img {
+            border-radius: 50%;
+          }
+        }
+
+        #firstName,
+        #email,
+        #password  {
+          padding: 2%;
+          border: 0; /* cancels border-radius */
+          border-bottom: 2px solid $lightgrey;
+          transition: border .25s linear,color;
+          font-size: .9em;
+
+          &:focus {
+            border-bottom: 2px solid $accent;
+          }
+        } //on focus animation
+
+        button#signup {
+          border: none;
+          padding: 15px 32px;
+          margin: 6px 3px;
+          //max-width: 150px;
+        } //sign up button
       }
     }
   }

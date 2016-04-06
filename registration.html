@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>routr</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
@@ -30,18 +31,19 @@
 
   <main>
     <section class="register">
-      <article class="container">
+      <article class="user-container">
         <div class="article-head">Sign up</div>
         <hr class="article-title-rule">
 
         <form action="submit" class="newUser">
-          <div class="profile-img"><img src="../images/routr-logo.png" width="75" height="75" alt="profile"></div>
-          <input type="text" placeholder="Name">
-          <input type="email" placeholder="@">
-          <input type="password" placeholder="Password">
-          <button type="submit">register</button>
+          <div class="profile">
+            <img src="../images/profile.jpg" width="85" height="85" alt="profile">
+          </div>
+          <input type="text" placeholder="First Name" id="firstName">
+          <input type="email" placeholder="Email address" id="email">
+          <input type="password" placeholder="Password" id="password">
+          <button type="submit" id="signup">Sign up</button>
         </form>
-
       </article>
     </section>
   </main>

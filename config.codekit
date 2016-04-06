@@ -22,6 +22,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/profile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4674,
+		"inputAbbreviatedPath": "\/images\/profile.jpg",
+		"outputAbbreviatedPath": "\/images\/profile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/routr-logo-sml.png": {
 		"fileType": 32768,
 		"ignore": 0,

@@ -5,13 +5,23 @@ form {
 }
 
 button {
+  background: #47B8E0;
   text-align: center;
   cursor: pointer;
-  border-radius: 2px;
+  padding: 10px 15px;
+  @include border-radius(2px);
+  font-size: 1em;
+  color: $light;
+
+  &:hover {
+    background: darken($accent, 10);
+    color: $light;
+  }
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="password"] {
   padding: 5px 10px;
   @include border-radius(2px);
   margin-bottom: 10px;
