@@ -17,7 +17,7 @@
           <p>find your local wifi</p>
         </div>
       </div>
-  </header> <!-- header -->
+    </header> <!-- header -->
   <nav id="nav">
     <div class="navbar">
       <div class="brand"><a href="index.html">routr</a></div>
@@ -30,20 +30,27 @@
   </nav> <!-- navigation -->
 
   <main>
-    <section class="register">
-      <article class="user-container"> <!--change to generic .form-container -->
-        <div class="article-head">Sign up</div>
+    <section class="search">
+      <article class="search-container">
+        <div class="article-head">Find wifi</div>
         <hr class="article-title-rule">
 
-        <form action="submit" class="newUser">
-          <div class="profile">
-            <img src="../images/profile.jpg" width="85" height="85" alt="profile">
+        <form action="search" class="searchForm">
+          <input type="search" name="Search for wifi locations" placeholder="Search by rating, suburb or location" id="searchBar">
+          <div class="advanced-options">
+            <input type="checkbox" name="suburb" value="matchingSuburb" id="surroundingSuburbs"> <span class="muted suburbs">Include surrounding suburbs</span>
+              <label for="suburbSelect" class="muted">Suburb:</label>
+              <select class="form-control" id="suburbSelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
           </div>
-          <input type="text" placeholder="First Name" id="firstName">
-          <input type="email" placeholder="Email address" id="email">
-          <input type="password" placeholder="Password" id="password">
-          <button type="submit" id="signup">Sign up</button>
+          <button type="submit" id="btn-search">Search</button>
         </form>
+
       </article>
     </section>
   </main>

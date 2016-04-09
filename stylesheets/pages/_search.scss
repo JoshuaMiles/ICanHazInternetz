@@ -1,0 +1,46 @@
+main {
+  .search {
+    background: $lightgrey;
+    height: 100%;
+    padding-bottom: 20px !important;
+
+    .search-container {
+      background: $light;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+      max-width: 830px;
+      margin: 0 auto;
+      margin-bottom: 2em;
+
+      .searchForm {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 5%;
+        margin: 5%;
+
+        #searchBar {
+          padding: 2%;
+          border: 0; /*cancels default border styles*/
+          border-bottom: 2px solid $lightgrey;
+          transition: border .25s linear,color;
+          font-size: 1em;
+
+          &:focus {
+            border-bottom: 2px solid $accent;
+          }
+        }
+
+        .advanced-options {
+          margin: 20px 20px;
+        }
+
+
+
+        #btn-search {
+          margin-top: 40px;
+        }
+      }
+    }
+
+  }
+}

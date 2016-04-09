@@ -226,17 +226,34 @@ input[type="password"] {
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   margin-bottom: 10px; }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: 0; }
 
-input,
+input[type="search"]:focus {
+  outline: 0; }
+
 textarea {
   -webkit-appearance: none; }
-  input:focus,
   textarea:focus {
-    outline: none; }
+    outline: 0; }
 
 input.required {
   border-color: orange !important;
   color: orange !important; }
+
+/* Custom clear search button */
+::-webkit-search-cancel-button {
+  /*Removes default stying*/
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  margin-right: -6px;
+  background: red; }
+  ::-webkit-search-cancel-button:after {
+    content: ' ';
+    display: block; }
 
 main {
   width: 100%;
@@ -376,3 +393,36 @@ main .register {
         border: none;
         padding: 15px 32px;
         margin: 6px 3px; }
+
+.results article.results-container {
+  height: 600px; }
+
+main .search {
+  background: #F5F5F5;
+  height: 100%;
+  padding-bottom: 20px !important; }
+  main .search .search-container {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 830px;
+    margin: 0 auto;
+    margin-bottom: 2em; }
+    main .search .search-container .searchForm {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 5%;
+      margin: 5%; }
+      main .search .search-container .searchForm #searchBar {
+        padding: 2%;
+        border: 0;
+        /*cancels default border styles*/
+        border-bottom: 2px solid #F5F5F5;
+        transition: border .25s linear,color;
+        font-size: 1em; }
+        main .search .search-container .searchForm #searchBar:focus {
+          border-bottom: 2px solid #47B8E0; }
+      main .search .search-container .searchForm .advanced-options {
+        margin: 20px 20px; }
+      main .search .search-container .searchForm #btn-search {
+        margin-top: 40px; }

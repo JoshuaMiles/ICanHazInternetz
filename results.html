@@ -9,15 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <div class="branding"> <!--wrapper -->
-        <div id="brand-group">
-          <div class="logo"></div>
-          <h1>routr</h1>
-          <p>find your local wifi</p>
-        </div>
-      </div>
-  </header> <!-- header -->
+<!--removed header to gain more screen real estate, and better view of search results -->
   <nav id="nav">
     <div class="navbar">
       <div class="brand"><a href="index.html">routr</a></div>
@@ -29,21 +21,14 @@
     </div>
   </nav> <!-- navigation -->
 
-  <main>
-    <section class="register">
-      <article class="user-container"> <!--change to generic .form-container -->
-        <div class="article-head">Sign up</div>
-        <hr class="article-title-rule">
+  <div class="search-bar">
+  </div>
 
-        <form action="submit" class="newUser">
-          <div class="profile">
-            <img src="../images/profile.jpg" width="85" height="85" alt="profile">
-          </div>
-          <input type="text" placeholder="First Name" id="firstName">
-          <input type="email" placeholder="Email address" id="email">
-          <input type="password" placeholder="Password" id="password">
-          <button type="submit" id="signup">Sign up</button>
-        </form>
+  <main>
+    <section class="results">
+      <article class="results-container">
+        <div class="article-head">Results</div>
+        <hr class="article-title-rule">
       </article>
     </section>
   </main>

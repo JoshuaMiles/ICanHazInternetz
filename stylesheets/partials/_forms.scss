@@ -25,13 +25,22 @@ input[type="password"] {
   padding: 5px 10px;
   @include border-radius(2px);
   margin-bottom: 10px;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
-input,
+input[type="search"] {
+  &:focus {
+    outline: 0;
+  }
+}
+
 textarea {
   -webkit-appearance: none;
   &:focus {
-    outline: none;
+    outline: 0;
   }
 }
 
@@ -39,4 +48,21 @@ textarea {
 input.required {
   border-color: orange !important;
   color: orange !important;
+}
+
+/* Custom clear search button */
+
+::-webkit-search-cancel-button {
+  /*Removes default stying*/
+  -webkit-appearance: none;
+
+  height: 10px;
+  width: 10px;
+  margin-right: -6px;
+  background: red;
+
+  &:after {
+    content: ' ';
+    display: block;
+  }
 }
