@@ -476,8 +476,53 @@ main .register {
         padding: 15px 32px;
         margin: 6px 3px; }
 
-.results article.results-container {
-  height: 600px; }
+#fixed-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: #ff4d2e;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
+  #fixed-nav #fixed-container {
+    width: 95%;
+    line-height: 2em; }
+    #fixed-nav #fixed-container .brand {
+      float: left;
+      font-weight: 500;
+      color: #FFFFFF;
+      font-size: 1em;
+      font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+      text-align: center;
+      text-transform: lowercase;
+      background: tomato;
+      margin-left: 40px; }
+      #fixed-nav #fixed-container .brand a {
+        color: #FFFFFF;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1.5em; }
+    #fixed-nav #fixed-container ul li {
+      float: right;
+      list-style-type: none; }
+      #fixed-nav #fixed-container ul li:first-child {
+        background-color: #FFC952; }
+      #fixed-nav #fixed-container ul li a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+        font-size: 1em;
+        display: inline-block;
+        padding: 10px; }
+        #fixed-nav #fixed-container ul li a:hover {
+          background: #FFC952;
+          color: #FFFFFF; }
+
+.results article.results-container .container {
+  max-width: 830px;
+  margin: 0 auto; }
 
 main .search {
   background: #F5F5F5;
