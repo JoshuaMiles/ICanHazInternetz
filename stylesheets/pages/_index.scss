@@ -49,6 +49,11 @@ main {
           @include border-radius(4px);
           border: none;
           font-weight: $normal;
+
+          &:hover {
+            background: darken($accent, 10);
+            color: $light;
+          } //hover state
         } //button
       } //form
     } //article.search

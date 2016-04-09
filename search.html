@@ -38,19 +38,22 @@
         <form action="search" class="searchForm">
           <input type="search" name="Search for wifi locations" placeholder="Search by rating, suburb or location" id="searchBar">
           <div class="advanced-options">
-            <input type="checkbox" name="suburb" value="matchingSuburb" id="surroundingSuburbs"> <span class="muted suburbs">Include surrounding suburbs</span>
-              <label for="suburbSelect" class="muted">Suburb:</label>
-              <select class="form-control" id="suburbSelect">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
+            <input type="checkbox" name="suburb" value="matchingSuburb" id="surroundSuburbs"> <span class="muted">Include surrounding suburbs</span>
+            <div class="options-container">
+              <label for="suburbSelect" class="muted suburb-lbl">Suburb:</label>
+                <select id="suburbSelect">
+                  <option value="" disabled="" selected="" hidden="">Choose a suburb...</option>
+                  <option>Grange</option>
+                  <option>Chermside</option>
+                  <option>Banyo</option>
+                  <option>Everton Park</option>
+                </select>
+                <span class="muted rating-lbl">Rating:</span>
+                  <input type="range" name="rating" id="ratingSlider" min="0" max="5">
+              </div>
             </div>
-          </div>
           <button type="submit" id="btn-search">Search</button>
         </form>
-
       </article>
     </section>
   </main>

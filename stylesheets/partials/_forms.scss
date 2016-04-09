@@ -17,6 +17,14 @@ button {
     background: darken($accent, 10);
     color: $light;
   }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+input {
+  cursor: pointer;
 }
 
 input[type="text"],
@@ -42,6 +50,17 @@ textarea {
   &:focus {
     outline: 0;
   }
+}
+
+select {
+  cursor: pointer;
+  &:focus {
+  outline: 0;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
 }
 
 //Validation
