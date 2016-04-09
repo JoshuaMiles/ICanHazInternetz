@@ -30,6 +30,7 @@ main {
           border: 2px solid $lightgrey;
           margin-right: .2em;
           transition: border .25s linear,color;
+          text-overflow: ellipsis;
 
           &:focus {
             border: 2px solid $yellow;

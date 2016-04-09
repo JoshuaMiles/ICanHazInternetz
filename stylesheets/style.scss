@@ -13,6 +13,8 @@
 @import "partials/footer.scss";
 @import "partials/forms.scss";
 
+//Import extra features
+@import "pages/loginModal.scss";
 
 //Import other pages
 @import "pages/index.scss";

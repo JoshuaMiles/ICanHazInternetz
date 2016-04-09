@@ -1,0 +1,79 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+
+  .modal {
+    width: 500px;
+    position: relative;
+    background: $light;
+    padding: 30px;
+    @include border-radius(2px);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+
+    .btn-close {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      color: $light;
+      font-size: 2em;
+      line-height: 30px;
+      text-align: center;
+      transition: scale 100ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+        //color: $accent;
+      }
+    } //btn-close
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+
+      #name, #password {
+        display: block;
+        height: 40px;
+        border: none; //cancel later
+        font-size: .9em;
+        padding: 0 20px;
+        border-bottom: 2px solid $lightgrey;
+        transition: border .25s linear,color;
+
+        &:focus {
+          border-bottom: 2px solid $accent;
+        }
+      } //name and password fields
+
+      #login {
+        display: block;
+        height: 45px;
+        border: none;
+        @include border-radius(2px);
+        padding: 15px 32px;
+        background: #47B8E0;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1em;
+        color: $light;
+
+        &:hover {
+          background: darken($accent, 10);
+          color: $light;
+        }
+      } //login button
+    } //form
+  } //modal
+} //overlay to fade out the rest of webpage
