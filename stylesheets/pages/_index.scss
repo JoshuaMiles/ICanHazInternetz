@@ -11,14 +11,15 @@ main {
       padding-bottom: 0;
     } //forces extra padding on last article
 
-    article.search {
+    article.search-index {
       background: $light;
-      padding-bottom: 100px;
+      padding-bottom: 110px;
       form {
         display: flex;
         justify-content: center;
         align-content: center;
         font-family: $fontFamily;
+        padding-top: 20px;
 
         input[type="search"] {
           width: 50%;

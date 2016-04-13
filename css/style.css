@@ -35,7 +35,8 @@ article {
 hr.article-title-rule {
   border-top: 2px solid #FFC952;
   width: 100px;
-  margin: 10px auto 30px; }
+  margin: 10px auto 30px;
+  padding-bottom: 10px; }
 
 hr {
   border: solid #ddd;
@@ -342,15 +343,16 @@ main {
     margin: 0 auto; }
     main section:last-child {
       padding-bottom: 0; }
-    main section article.search {
+    main section article.search-index {
       background: #FFFFFF;
-      padding-bottom: 100px; }
-      main section article.search form {
+      padding-bottom: 110px; }
+      main section article.search-index form {
         display: flex;
         justify-content: center;
         align-content: center;
-        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif; }
-        main section article.search form input[type="search"] {
+        font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+        padding-top: 20px; }
+        main section article.search-index form input[type="search"] {
           width: 50%;
           height: 42px;
           background-color: #FFFFFF;
@@ -365,9 +367,9 @@ main {
           margin-right: .2em;
           transition: border .25s linear,color;
           text-overflow: ellipsis; }
-          main section article.search form input[type="search"]:focus {
+          main section article.search-index form input[type="search"]:focus {
             border: 2px solid #FFC952; }
-        main section article.search form button[type="submit"] {
+        main section article.search-index form button[type="submit"] {
           min-width: 15%;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -384,7 +386,7 @@ main {
           -o-border-radius: 4px;
           border: none;
           font-weight: 400; }
-          main section article.search form button[type="submit"]:hover {
+          main section article.search-index form button[type="submit"]:hover {
             background: #23a3d1;
             color: #FFFFFF; }
     main section article.profile-reviews {
