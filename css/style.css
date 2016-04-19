@@ -581,6 +581,27 @@ main .register {
           font-weight: 500;
           line-height: 1.3em; }
 
+.container .resultsTbl {
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 2rem;
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+  display: table;
+  justify-content: center; }
+  .container .resultsTbl thead, .container .resultsTbl tbody, .container .resultsTbl tfoot, .container .resultsTbl tr, .container .resultsTbl th, .container .resultsTbl td {
+    text-align: left;
+    font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    padding: 1.6rem;
+    vertical-align: top; }
+  .container .resultsTbl thead tr th {
+    border-bottom: 1px solid #F5F5F5; }
+  .container .resultsTbl tbody tr:hover {
+    background-color: #F5F5F5;
+    color: #FF6347; }
+
 main .search {
   background: #F5F5F5;
   height: 100%;
