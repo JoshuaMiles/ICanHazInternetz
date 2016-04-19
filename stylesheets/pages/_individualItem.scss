@@ -1,0 +1,48 @@
+.container {
+  .item-container {
+    background: $lightgrey;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .item-img {
+      background: url('http://placehold.it/800x150') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      height: 230px;
+    }
+
+    .user-comments {
+      @include clearfix;
+      width: 100%;
+      .comment {
+        position: relative;
+        width: 80%;
+        height: 45px;
+        background: $light;
+        margin: 20px auto;
+        padding: 5%;
+
+        .comment-txt {
+          display: inline-block;
+        }
+
+        .cmt-icon {
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          color: $accent;
+          right: 0;
+          top: 18px;
+          //float: right;
+          padding-top: 30px;
+
+          i {
+            font-size: 1.8em;
+          }
+        }
+      }
+    }
+
+  }
+}

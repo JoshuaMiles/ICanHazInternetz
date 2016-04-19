@@ -8,17 +8,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <header>
-      <div class="branding"> <!--wrapper -->
-        <div id="brand-group">
-          <div class="logo"></div>
-          <h1>routr</h1>
-          <p>find your local wifi</p>
-        </div>
-      </div>
-    </header> <!-- header -->
-  <nav id="nav">
-    <div class="navbar">
+<!--removed header to gain more screen real estate, and better view of search results -->
+  <nav id="fixed-nav">
+    <div id="fixed-container">
       <div class="brand"><a href="index.html">routr</a></div>
       <ul>
         <li id="active"><a href="#" id="user"><i class="fa fa-user"></i><strong> Elliott</strong></a></li>
@@ -27,6 +19,9 @@
       </ul>
     </div>
   </nav> <!-- navigation -->
+
+  <div class="search-bar">
+  </div>
 
   <main>
     <div class="overlay">
@@ -44,33 +39,41 @@
       </div>
     </div> <!-- login overlay -->
 
-    <section class="search">
-      <article class="search-container">
-        <div class="article-head">Find wifi</div>
+    <section class="results">
+      <article class="results-container">
+        <div class="article-head">Grange Library Wifi</div> <!-- Individual Item -->
         <hr class="article-title-rule">
 
-        <form method="get" action="resultsTable.html" class="searchForm">
-          <input type="search" name="Search for wifi locations" placeholder="Search by rating, suburb or location" id="searchBar">
-          <div class="advanced-options">
-            <input type="checkbox" name="suburb" value="matchingSuburb" id="surroundSuburbs"> <span class="muted">Include surrounding suburbs</span>
-            <div class="options-container">
-              <label for="suburbSelect" class="muted suburb-lbl">Suburb:</label>
-                <select id="suburbSelect">
-                  <option value="" disabled="" selected="" hidden="">Choose a suburb...</option>
-                  <option>Grange</option>
-                  <option>Chermside</option>
-                  <option>Banyo</option>
-                  <option>Everton Park</option>
-                </select>
-                <span class="muted rating-lbl">Rating:</span>
-                  <input type="range" name="rating" id="ratingSlider" min="0" max="5">
+        <div class="container">
+          <div class="item-container">
+            <div class="item-img"></div>
+            <!--<span class="cta"><i class="material-icons">add_circle</i></span>-->
+            <div class="user-comments">
+              <div class="comment">
+                <p class="comment-txt">John Doe said... <br /> <q>This place had the best comfy bean bag chairs ever!!!</q></p>
+                <p class="cmt-icon"><i class="material-icons">comment</i></p>
+              </div>
+
+              <div class="comment">
+                <p class="comment-txt">John Doe said... <br /> <q>This place had the best comfy bean bag chairs ever!!!</q></p>
+                <p class="cmt-icon"><i class="material-icons">comment</i></p>
+              </div>
+
+              <div class="comment">
+                <p class="comment-txt">John Doe said... <br /> <q>This place had the best comfy bean bag chairs ever!!!</q></p>
+                <p class="cmt-icon"><i class="material-icons">comment</i></p>
+              </div>
+
+              <div class="comment-box">
               </div>
             </div>
-          <button type="submit" id="btn-search">Search</button>
-        </form>
+          </div>
+
+        </div>
       </article>
     </section>
-  </main> <!-- main content -->
+  </main>
+
 
   <footer>
     <section class="container">
