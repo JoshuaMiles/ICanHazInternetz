@@ -23,8 +23,11 @@ main {
         }
 
         #firstName,
+        #lastName,
         #email,
-        #password  {
+        #phoneNum,
+        #password,
+        #confirmPassword  {
           padding: 2%;
           border: 0; /* cancels border-radius */
           border-bottom: 2px solid $lightgrey;
@@ -36,10 +39,16 @@ main {
           }
         } //on focus animation
 
+        #phoneNum {
+          &:focus {
+            outline: none;
+          }
+        }
+
         button#signup {
           border: none;
           padding: 15px 32px;
-          margin: 6px 3px;
+          margin: 15px 3px;
           //max-width: 150px;
         } //sign up button
       }

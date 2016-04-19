@@ -13,7 +13,7 @@
     <div id="fixed-container">
       <div class="brand"><a href="index.html">routr</a></div>
       <ul>
-        <li id="active"><a href="#"><i class="fa fa-user"></i><strong> Elliott</strong></a></li> 
+        <li id="active"><a href="#" id="user"><i class="fa fa-user"></i><strong> Elliott</strong></a></li>
         <li><a href="registration.html">register</a></li>
         <li><a href="search.html">find wifi</a></li>
       </ul>
@@ -24,6 +24,21 @@
   </div>
 
   <main>
+    <div class="overlay">
+      <div class="modal">
+        <p class="btn-close">
+          <i class="material-icons">clear</i>
+        </p>
+        <h2 class="article-head">Login</h2>
+        <hr class="article-title-rule">
+        <form action="submit" class="login-form">
+          <input type="text" name="name" placeholder="Name" id="name">
+          <input type="password" name="password" placeholder="Password" id="password">
+          <input type="submit" name="login" value="Login" id="login">
+        </form>
+      </div>
+    </div> <!-- login overlay -->
+    
     <section class="results">
       <article class="results-container">
         <div class="article-head">Results</div>
@@ -104,5 +119,7 @@
       <article>Copyright 2016</article>
     </section>
   </footer> <!-- footer -->
+
+  <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
