@@ -70,10 +70,11 @@ input.required {
   color: orange !important;
 }
 
-/* Custom clear search button */
+// Custom clear search button
 
+/*
 ::-webkit-search-cancel-button {
-  /*Removes default stying*/
+
   -webkit-appearance: none;
 
   height: 10px;
@@ -85,4 +86,4 @@ input.required {
     content: ' ';
     display: block;
   }
-}
+} */
