@@ -776,3 +776,15 @@ main .search {
         padding-top: 30px; }
         .container .item-container .user-comments .comment .cmt-icon i {
           font-size: 1.8em; }
+    .container .item-container .user-comments #getLoc {
+      float: right;
+      width: 9em;
+      height: 2.5em;
+      margin: 2%;
+      background: #47B8E0;
+      color: #FFFFFF;
+      font-size: 1em;
+      font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+      outline: none;
+      border: none;
+      border-radius: 2px; }

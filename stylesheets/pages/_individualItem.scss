@@ -41,6 +41,24 @@
             font-size: 1.8em;
           }
         }
+      } //comment
+
+      .comment-box {
+
+      } //comment-box
+
+      #getLoc {
+        float: right;
+        width: 9em;
+        height: 2.5em;
+        margin: 2%;
+        background: $accent;
+        color: $light;
+        font-size: 1em;
+        font-family: $fontFamily;
+        outline: none;
+        border: none;
+        border-radius: 2px;
       }
     }
 
