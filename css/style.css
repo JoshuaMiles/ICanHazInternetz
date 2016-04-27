@@ -15,7 +15,8 @@ p {
   padding-bottom: 10px; }
 
 a {
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
 
 .muted {
   font-size: 12px;
@@ -292,7 +293,7 @@ input.required {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
@@ -469,7 +470,7 @@ main .register {
   background: #F5F5F5; }
   main .register .user-container {
     background: #FFFFFF;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.26);
     max-width: 830px;
     margin: 0 auto; }
     main .register .user-container .newUser {
@@ -513,6 +514,7 @@ main .register {
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 1;
   background: #ff4d2e;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
@@ -755,3 +757,48 @@ main .search {
       main .search .search-container .searchForm #btn-search {
         margin: 40px 15px 20px 15px;
         border: none; }
+
+.container .item-container {
+  max-width: 830px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.26); }
+  .container .item-container .hotspot {
+    padding-top: 1.5rem;
+    font-size: 1.7em; }
+  .container .item-container .img-item {
+    width: 100%;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.26);
+    position: relative; }
+    .container .item-container .img-item .cta {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      top: 220px;
+      right: 60px;
+      background: #FF6347;
+      border-radius: 50%;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.26);
+      text-align: center; }
+      .container .item-container .img-item .cta:hover {
+        box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.26); }
+      .container .item-container .img-item .cta .add-review {
+        color: #FFFFFF;
+        line-height: 56px; }
+  .container .item-container .comments-section .comment {
+    width: 80%;
+    display: inline-block;
+    padding: 1em;
+    margin: 0 auto; }
+    .container .item-container .comments-section .comment .user-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      float: left;
+      margin-left: 3em; }
+    .container .item-container .comments-section .comment .comment-txt {
+      font-size: .9em;
+      line-height: 70px; }
+      .container .item-container .comments-section .comment .comment-txt q {
+        margin-left: 2em; }

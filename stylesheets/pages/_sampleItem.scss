@@ -1,5 +1,68 @@
 .container {
   .item-container {
+    max-width: 830px;
+    margin: 0 auto;
+    background: $light;
+    box-shadow: 0px 5px 10px $shadow;
 
-  }
+    .hotspot {
+      padding-top: 1.5rem;
+      font-size: 1.7em;
+    }
+
+    .img-item {
+      width: 100%;
+      height: 250px;
+      background: $shadow;
+      position: relative;
+
+      .cta {
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        top: 220px;
+        right: 60px;
+        background: $tomato;
+        border-radius: 50%;
+        box-shadow: 0px 1px 3px $shadow;
+        text-align: center;
+
+        &:hover {
+          //background: darken($accent, 10);
+          box-shadow: 0px 2px 18px $shadow;
+        }
+
+        .add-review {
+          color: $light;
+          line-height: 56px;
+        }
+
+      } //cta
+    } //img-item
+
+    .comments-section {
+      .comment {
+        width: 80%;
+        display: inline-block;
+        padding: 1em;
+        margin: 0 auto;
+        .user-img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          float: left;
+          margin-left: 3em;
+
+        } //user-img
+        .comment-txt {
+          font-size: .9em;
+          line-height: 70px;
+
+          q {
+            margin-left: 2em;
+          }
+        } //actual comment
+      } //comment
+    } //comments-section
+  } //item-container
 }
