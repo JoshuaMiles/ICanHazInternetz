@@ -52,6 +52,14 @@ hr {
   height: 0;
   overflow: visible; }
 
+.reviewTitle {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  padding: 1em; }
+  .reviewTitle .highlight {
+    font-weight: 500;
+    color: #FF6347; }
+
 html {
   position: relative;
   min-height: 100%; }
@@ -219,6 +227,7 @@ button {
   text-align: center;
   cursor: pointer;
   padding: 10px 15px;
+  border: none;
   border-radius: 2px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -256,6 +265,11 @@ input[type="search"]:focus {
   outline: 0; }
 
 textarea {
+  padding: 18px 15px 0;
+  margin-bottom: 10px;
+  font-size: .9em;
+  color: #666;
+  border: 1px solid #666;
   -webkit-appearance: none; }
   textarea:focus {
     outline: 0; }
@@ -777,7 +791,7 @@ main .search {
       height: 56px;
       top: 220px;
       right: 60px;
-      background: #FF6347;
+      background: #47B8E0;
       border-radius: 50%;
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.26);
       text-align: center; }
@@ -786,6 +800,8 @@ main .search {
       .container .item-container .img-item .cta .add-review {
         color: #FFFFFF;
         line-height: 56px; }
+  .container .item-container .comments-section .recommendedReviews {
+    margin-left: 20px; }
   .container .item-container .comments-section .comment {
     width: 80%;
     display: inline-block;
@@ -802,3 +818,40 @@ main .search {
       line-height: 70px; }
       .container .item-container .comments-section .comment .comment-txt q {
         margin-left: 2em; }
+  .container .item-container .comments-section .yourReview {
+    margin-left: 20px; }
+  .container .item-container .comments-section .comment-box {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto; }
+    .container .item-container .comments-section .comment-box .reviewRating {
+      padding-bottom: 50px; }
+      .container .item-container .comments-section .comment-box .reviewRating .stars {
+        display: inline-block;
+        height: 30px;
+        list-style: none; }
+        .container .item-container .comments-section .comment-box .reviewRating .stars .star {
+          width: 30px;
+          height: 30px;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          float: left;
+          margin-right: 5px;
+          transition: all .25ms ease-in-out; }
+          .container .item-container .comments-section .comment-box .reviewRating .stars .star:hover {
+            transform: translateY(-3px);
+            background: #47B8E0; }
+      .container .item-container .comments-section .comment-box .reviewRating .selectRating {
+        font-weight: 300;
+        line-height: 30px;
+        display: block;
+        padding: 1em; }
+    .container .item-container .comments-section .comment-box #addComment {
+      width: 80%; }
+    .container .item-container .comments-section .comment-box #submitReview {
+      display: block;
+      margin-left: 518px; }

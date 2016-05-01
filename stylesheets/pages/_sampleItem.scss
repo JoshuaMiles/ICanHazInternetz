@@ -22,7 +22,7 @@
         height: 56px;
         top: 220px;
         right: 60px;
-        background: $tomato;
+        background: $accent;
         border-radius: 50%;
         box-shadow: 0px 1px 3px $shadow;
         text-align: center;
@@ -41,6 +41,9 @@
     } //img-item
 
     .comments-section {
+      .recommendedReviews {
+        margin-left: 20px;
+      }
       .comment {
         width: 80%;
         display: inline-block;
@@ -63,6 +66,49 @@
           }
         } //actual comment
       } //comment
+      .yourReview {
+        margin-left: 20px;
+      }
+      .comment-box {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        .reviewRating {
+          padding-bottom: 50px;
+          .stars {
+            display: inline-block;
+            height: 30px;
+            list-style: none;
+            .star {
+              width: 30px;
+              height: 30px;
+              background: rgba(0, 0, 0, .2);
+              @include border-radius(50%);
+              float: left;
+              margin-right: 5px;
+              transition: all .25ms ease-in-out;
+
+              &:hover {
+                transform: translateY(-3px);
+                background: $accent;
+              }
+            } //star
+          } //stars
+          .selectRating {
+            font-weight: 300;
+            line-height: 30px;
+            display: block;
+            padding: 1em;
+          }
+        }
+        #addComment {
+          width: 80%;
+        } //#addComment
+        #submitReview {
+          display: block;
+          margin-left: 518px;
+        }
+      } //comment-box
     } //comments-section
   } //item-container
 }
