@@ -55,6 +55,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/test-img.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35244,
+		"inputAbbreviatedPath": "\/images\/test-img.png",
+		"outputAbbreviatedPath": "\/images\/test-img.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/user-img-1.png": {
 		"fileType": 32768,
 		"ignore": 0,

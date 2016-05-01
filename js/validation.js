@@ -13,38 +13,38 @@ function validateSubmitForm() {
 
 
 	if (isEmptyOrUndefined(fname.value)) {
-		alert("Please provide your first name!");
+		//alert("Please provide your first name!");
 		fname.focus();
 		return false;
 	}
 
-	// if (isEmptyOrUndefined(lname.value)) {
-	// 	alert("Please provide your first name!");
-	// 	fname.focus();
-	// 	return false;
-	// }
+	if (isEmptyOrUndefined(lname.value)) {
+		//alert("Please provide your first name!");
+		fname.focus();
+		return false;
+	}
 
 	if (isEmptyOrUndefined(phoneNum.value)) {
-		alert("Please provide your mobile");
+		//alert("Please provide your mobile");
 		phoneNum.focus();
 		return false;
 	}
 
 	if (isEmptyOrUndefined(password.value)) {
-		alert("Please choose a password");
+		//alert("Please choose a password");
 		password.focus();
 		return false;
 	}
 
 
 	if (isEmptyOrUndefined(email.value)) {
-		alert("Please provide your email");
+		//alert("Please provide your email");
 		email.focus();
 		return false;
 	}
 
 	if (checkInvalid(mobileRegex, phoneNum.value)) {
-		alert("Please provide a valid mobile number");
+		//alert("Please provide a valid mobile number");
 		phoneNum.focus();
 		return false;
 	}
@@ -52,14 +52,14 @@ function validateSubmitForm() {
 
 
 	if (checkInvalid(passwordRegex, password.value)) {
-		alert("Please enter a password with with a number, a lowercase, a uppercase, and a special character");
+		//alert("Please enter a password with with a number, a lowercase, a uppercase, and a special character");
 		password.focus();
 		return false;
 	}
 
 
 	if(password.value!=confirmPassword.value){
-	 	alert("Passwords do not match please try again");
+	 	//alert("Passwords do not match please try again");
 	 	password.value = "", confirmPassword.value = "";
 	 	password.focus();
 	}
