@@ -71,25 +71,48 @@ input[type="range"] {
 }
 
 //Validation
-input.required {
-  border-color: orange !important;
-  color: orange !important;
+input {
+  &:valid {
+   border-bottom: 2px solid $accent;
+  }
+  &:invalid {
+    border-bottom: 2px solid $error;
+  }
 }
 
-// Custom clear search button
+label {
+  color: #999;
+  font-size: .9em;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: all .20s ease;
+  -moz-transition: all .20s ease;
+  -webkit-transition: all .20s ease;
+}
 
-/*
-::-webkit-search-cancel-button {
+#firstName, #lastName, #email,
+  #phoneNum, #password, #confirmPassword {
+    width: 100%;
+    padding: 2%;
+    margin-bottom: 1.5em;
+    border: 0; /* cancels border-radius */
+    border-bottom: 2px solid $lightgrey;
+    transition: border .25s linear,color;
+    -moz-transition: border .25s linear,color;
+    -webkit-transition: border .25s linear,color;
+    font-size: .9em;
 
-  -webkit-appearance: none;
+    &:focus {
+      border-bottom: 2px solid $accent;
+      outline: none;
 
-  height: 10px;
-  width: 10px;
-  margin-right: -6px;
-  background: red;
-
-  &:after {
-    content: ' ';
-    display: block;
+      & ~ label {
+        top: -10px;
+        color: $accent;
+        font-size: .75em;
+      }
+    }
   }
-} */

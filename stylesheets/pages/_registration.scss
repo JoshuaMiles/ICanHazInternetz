@@ -1,6 +1,7 @@
 main {
   .register {
     background: $lightgrey;
+    //width: 100%;
     .user-container {
       background: $light;
       box-shadow: 0px 5px 15px $shadow;
@@ -22,26 +23,13 @@ main {
           }
         }
 
-        #firstName,
-        #lastName,
-        #email,
-        #phoneNum,
-        #password,
-        #confirmPassword  {
-          padding: 2%;
-          border: 0; /* cancels border-radius */
-          border-bottom: 2px solid $lightgrey;
-          transition: border .25s linear,color;
-          font-size: .9em;
 
-          &:focus {
-            border-bottom: 2px solid $accent;
-          }
-        } //on focus animation
+        .input-group {
+          position: relative;
 
-        #phoneNum {
-          &:focus {
-            outline: none;
+          #firstName {
+
+      
           }
         }
 
