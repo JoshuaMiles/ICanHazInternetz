@@ -14,6 +14,7 @@ main {
     article.search-index {
       background: $light;
       padding-bottom: 110px;
+
       form {
         display: flex;
         justify-content: center;
@@ -22,14 +23,14 @@ main {
         padding-top: 20px;
 
         input[type="search"] {
-          width: 50%;
+          width: 650px;
           height: 42px;
           background-color: $light;
           border: none;
           border-bottom: 2px solid $lightgrey;
           outline: 0;
           font-size: 1em;
-          margin-right: .2em;
+          margin-right: 1em;
           transition: border .25s linear,color;
           text-overflow: ellipsis;
 
@@ -38,7 +39,8 @@ main {
           }
         } //searchbar
 
-        button[type="submit"] {
+
+        #search-btn {
           min-width: 15%;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -56,7 +58,7 @@ main {
             background: darken($accent, 10);
             color: $light;
           } //hover state
-        } //button
+        } //search-btn
       } //form
     } //article.search
 

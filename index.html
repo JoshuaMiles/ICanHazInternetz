@@ -36,11 +36,19 @@
         </p>
         <h2 class="article-head">Login</h2>
         <hr class="article-title-rule">
+
         <form action="submit" class="login-form">
-          <input type="text" name="name" placeholder="Name" id="name">
-          <input type="password" name="password" placeholder="Password" id="password">
+          <div class="input-group">
+            <input type="text" name="name" id="username" class="lbl-highlight">
+            <label for="firstName">First Name</label>
+          </div>
+          <div class="input-group">
+            <input type="password" name="password" id="password" class="lbl-highlight">
+            <label for="password">Password</label>
+          </div>
           <input type="submit" name="login" value="Login" id="login">
         </form>
+
       </div>
     </div> <!-- login overlay -->
 
@@ -49,8 +57,11 @@
         <div class="article-head">Find Wifi</div>
         <hr class="article-title-rule">
         <form method="get" action="results.html">
-          <input type="search" results="3" placeholder="Search by name, suburb or rating...">
-          <button type="submit">Search</button>
+          <div class="input-group">
+          <input type="search" results="3" id="searchbar-index" class="lbl-highlight">
+          <label for="search">Search by name, suburb or rating...</label>
+          </div>
+          <button type="submit" id="search-btn">Search</button>
         </form>
       </article>
       <article class="profile-reviews">

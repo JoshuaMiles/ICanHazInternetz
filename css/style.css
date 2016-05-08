@@ -261,9 +261,6 @@ input[type="tel"] {
   input[type="tel"]:focus {
     outline: 0; }
 
-input[type="search"]:focus {
-  outline: 0; }
-
 textarea {
   padding: 18px 15px 0;
   margin-bottom: 10px;
@@ -286,21 +283,29 @@ input:valid {
   border-bottom: 2px solid #47B8E0; }
 input:invalid {
   border-bottom: 2px solid #E74C3C; }
+input:focus {
+  outline: 0; }
 
-label {
-  color: #999;
-  font-size: .9em;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: all .20s ease;
-  -moz-transition: all .20s ease;
-  -webkit-transition: all .20s ease; }
+.input-group {
+  position: relative; }
+  .input-group label {
+    color: #999;
+    font-size: .9em;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: all .20s ease;
+    -moz-transition: all .20s ease;
+    -webkit-transition: all .20s ease; }
+  .input-group .lbl-highlight:focus ~ label {
+    top: -10px;
+    color: #47B8E0;
+    font-size: .75em; }
 
 #firstName, #lastName, #email,
-#phoneNum, #password, #confirmPassword {
+#phoneNum, #username, #password, #confirmPassword {
   width: 100%;
   padding: 2%;
   margin-bottom: 1.5em;
@@ -312,14 +317,9 @@ label {
   -webkit-transition: border .25s linear,color;
   font-size: .9em; }
   #firstName:focus, #lastName:focus, #email:focus,
-  #phoneNum:focus, #password:focus, #confirmPassword:focus {
+  #phoneNum:focus, #username:focus, #password:focus, #confirmPassword:focus {
     border-bottom: 2px solid #47B8E0;
     outline: none; }
-    #firstName:focus ~ label, #lastName:focus ~ label, #email:focus ~ label,
-    #phoneNum:focus ~ label, #password:focus ~ label, #confirmPassword:focus ~ label {
-      top: -10px;
-      color: #47B8E0;
-      font-size: .75em; }
 
 .overlay {
   position: absolute;
@@ -411,19 +411,19 @@ main {
         font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
         padding-top: 20px; }
         main section article.search-index form input[type="search"] {
-          width: 50%;
+          width: 650px;
           height: 42px;
           background-color: #FFFFFF;
           border: none;
           border-bottom: 2px solid #F5F5F5;
           outline: 0;
           font-size: 1em;
-          margin-right: .2em;
+          margin-right: 1em;
           transition: border .25s linear,color;
           text-overflow: ellipsis; }
           main section article.search-index form input[type="search"]:focus {
             border-bottom: 2px solid #47B8E0; }
-        main section article.search-index form button[type="submit"] {
+        main section article.search-index form #search-btn {
           min-width: 15%;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -440,7 +440,7 @@ main {
           -o-border-radius: 4px;
           border: none;
           font-weight: 400; }
-          main section article.search-index form button[type="submit"]:hover {
+          main section article.search-index form #search-btn:hover {
             background: #23a3d1;
             color: #FFFFFF; }
     main section article.profile-reviews {

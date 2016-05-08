@@ -41,12 +41,6 @@ input[type="tel"] {
   }
 }
 
-input[type="search"] {
-  &:focus {
-    outline: 0;
-  }
-}
-
 textarea {
   padding: 18px 15px 0;
   margin-bottom: 10px;
@@ -78,41 +72,53 @@ input {
   &:invalid {
     border-bottom: 2px solid $error;
   }
+  &:focus {
+    outline: 0;
+  }
 }
 
-label {
-  color: #999;
-  font-size: .9em;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: all .20s ease;
-  -moz-transition: all .20s ease;
-  -webkit-transition: all .20s ease;
-}
 
-#firstName, #lastName, #email,
-  #phoneNum, #password, #confirmPassword {
-    width: 100%;
-    padding: 2%;
-    margin-bottom: 1.5em;
-    border: 0; /* cancels border-radius */
-    border-bottom: 2px solid $lightgrey;
-    transition: border .25s linear,color;
-    -moz-transition: border .25s linear,color;
-    -webkit-transition: border .25s linear,color;
+
+.input-group {
+  position: relative;
+
+  label {
+    color: #999;
     font-size: .9em;
-
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: all .20s ease;
+    -moz-transition: all .20s ease;
+    -webkit-transition: all .20s ease;
+  }
+  .lbl-highlight {
     &:focus {
-      border-bottom: 2px solid $accent;
-      outline: none;
-
       & ~ label {
         top: -10px;
         color: $accent;
         font-size: .75em;
       }
     }
-  }
+  } //label highlight animation
+}
+
+#firstName, #lastName, #email,
+#phoneNum, #username, #password, #confirmPassword {
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 1.5em;
+  border: 0; /* cancels border-radius */
+  border-bottom: 2px solid $lightgrey;
+  transition: border .25s linear,color;
+  -moz-transition: border .25s linear,color;
+  -webkit-transition: border .25s linear,color;
+  font-size: .9em;
+
+  &:focus {
+    border-bottom: 2px solid $accent;
+    outline: none;
+  } //input focus
+} //input fields
