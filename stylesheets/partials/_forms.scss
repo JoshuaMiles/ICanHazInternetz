@@ -26,20 +26,23 @@ button {
 
 input {
   cursor: pointer;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"] {
-  padding: 5px 10px;
-  @include border-radius(2px);
-  margin-bottom: 10px;
-
   &:focus {
-    outline: 0;
+    outline: none;
   }
 }
+
+// input[type="text"],
+// input[type="email"],
+// input[type="password"],
+// input[type="tel"] {
+//   padding: 5px 10px;
+//   @include border-radius(2px);
+//   margin-bottom: 10px;
+//
+//   &:focus {
+//     outline: 0;
+//   }
+// }
 
 textarea {
   padding: 18px 15px 0;
@@ -64,20 +67,6 @@ input[type="range"] {
   -webkit-appearance: none;
 }
 
-//Validation
-input {
-  &:valid {
-   border-bottom: 2px solid $accent;
-  }
-  &:invalid {
-    border-bottom: 2px solid $error;
-  }
-  &:focus {
-    outline: 0;
-  }
-}
-
-
 
 .input-group {
   position: relative;
@@ -95,12 +84,10 @@ input {
     -webkit-transition: all .20s ease;
   }
   .lbl-highlight {
-    &:focus {
-      & ~ label {
-        top: -10px;
-        color: $accent;
-        font-size: .75em;
-      }
+    &:focus ~ label, &:valid ~ label {
+      top: -10px;
+      font-size: .75em;
+      color: $accent;
     }
   } //label highlight animation
 }
@@ -120,6 +107,17 @@ input {
 
   &:focus {
     border-bottom: 2px solid $accent;
+  }
+
+  &:valid {
     outline: none;
   } //input focus
+
+  /*trigger this with js */
+  // &:invalid {
+  //   label {
+  //     display: none;
+  //   }
+  //   border-bottom: 2px solid $error;
+  // }
 } //input fields
