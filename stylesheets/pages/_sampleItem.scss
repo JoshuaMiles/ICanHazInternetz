@@ -44,71 +44,157 @@
       .recommendedReviews {
         margin-left: 20px;
       }
-      .comment {
-        width: 80%;
-        display: inline-block;
-        padding: 1em;
-        margin: 0 auto;
-        .user-img {
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          float: left;
-          margin-left: 3em;
+      .comment-wrapper {
+        margin: 0 30px;
 
-        } //user-img
-        .comment-txt {
-          font-size: .9em;
-          line-height: 70px;
+        .cmt-box {
+          width: 80%;
+          display: inline-block;
+          padding: 1em;
+          margin: 0 auto;
 
-          q {
-            margin-left: 2em;
+          .user-img img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            float: left;
           }
-        } //actual comment
-      } //comment
+
+          .cmt-body {
+            display: inline-block;
+            font-size: .9em;
+            padding: 6px;
+
+            .user-name {
+              font-weight: 700;
+              color: lighten($darkgrey, 10);
+            }
+
+            .cmt-text {
+              padding: 1em;
+              line-height: 19px;
+
+              &:before {
+                content: url('/images/icons/comment.svg');
+                width: 14px;
+                height: 14px;
+                padding: .5rem;
+              }
+            }
+
+            .star-rating {
+              padding-bottom: 1.5em;
+              padding-left: 1.5em;
+
+              &:before {
+                content: url('/images/icons/full-star.svg');
+                width: 14px;
+                height: 14px;
+                padding-right: .5em;
+              }
+            }
+          }
+        }
+      }
+
       .yourReview {
         margin-left: 20px;
+        margin-bottom: 20px;
+        display: none;
       }
-      .comment-box {
-        width: 80%;
-        text-align: center;
-        margin: 0 auto;
-        .reviewRating {
-          padding-bottom: 50px;
-          .stars {
-            display: inline-block;
-            height: 30px;
-            list-style: none;
-            .star {
-              width: 30px;
-              height: 30px;
-              background: rgba(0, 0, 0, .2);
-              @include border-radius(50%);
-              float: left;
-              margin-right: 5px;
-              transition: all .25ms ease-in-out;
 
-              &:hover {
-                transform: translateY(-3px);
-                background: $accent;
-              }
-            } //star
-          } //stars
-          .selectRating {
-            font-weight: 300;
-            line-height: 30px;
-            display: block;
-            padding: 1em;
+      .cmt-wrapper {
+        width: 80%;
+        margin: 0 auto;
+        padding: 3em 0;
+
+        #userComment {
+          display: block;
+          width: 100%;
+          padding: 6px 12px;
+          margin-top: 20px !important;
+          font-size: 14px;
+          background: $light;
+          border-color: #ccc;
+          border-radius: 4px;
+          margin: 0 auto;
+        }
+
+        .select-rating {
+          @include clearfix;
+          display: inline;
+          list-style: none;
+          height: 30px;
+          padding: 5px;
+          .star {
+            float: left;
+            width: 18px;
+            height: 18px;
+            background: url('/images/icons/empty-star.svg');
+            background-repeat: no-repeat;
+
+            &:hover {
+              background: url('/images/icons/full-star.svg');
+            }
           }
         }
-        #addComment {
-          width: 80%;
-        } //#addComment
-        #submitReview {
-          display: block;
-          margin-left: 518px;
+        .login-notify {
+          font-size: 85%;
+          color: $accent;
+          float: left;
+          margin-top: 20px;
         }
-      } //comment-box
+
+        #submitReview {
+          float: right;
+          margin-top: 20px;
+        }
+
+        .clearfix {
+          @include clearfix;
+        }
+      }
+
+      // .comment-box {
+      //   width: 80%;
+      //   text-align: center;
+      //   margin: 0 auto;
+      //   .reviewRating {
+      //     padding-bottom: 50px;
+      //     .stars {
+      //       display: inline-block;
+      //       height: 30px;
+      //       list-style: none;
+      //       .star {
+      //         width: 30px;
+      //         height: 30px;
+      //         background: rgba(0, 0, 0, .2);
+      //         @include border-radius(50%);
+      //         float: left;
+      //         margin-right: 5px;
+      //         transition: all .25ms ease-in-out;
+      //
+      //         &:hover {
+      //           transform: translateY(-3px);
+      //           background: $accent;
+      //         }
+      //       } //star
+      //     } //stars
+      //     .selectRating {
+      //       font-weight: 300;
+      //       line-height: 30px;
+      //       display: block;
+      //       padding: 1em;
+      //     }
+      //   }
+      //   #addComment {
+      //     width: 80%;
+      //   } //#addComment
+      //   #submitReview {
+      //     display: block;
+      //     margin-left: 518px;
+      //   }
+      // } //comment-box
     } //comments-section
   } //item-container
 }

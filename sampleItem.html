@@ -54,21 +54,56 @@
             </div>
             <article class="comments-section">
               <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews</span> for Grange Public Library Wifi</h2>
-              <div class="comment">
-                <img src="images/user-img-1.png" alt="User Profile" class="user-img">
-                <p class="comment-txt"><q>This place had awesome bean bags!</q></p>
-              </div>
-              <div class="comment">
-                <img src="images/user-img-2.png" alt="User Profile" class="user-img">
-                <p class="comment-txt"><q>Had a coffee cart right outside the entrance, awesome find.</q></p>
-              </div>
-              <div class="comment">
-                <img src="images/user-img-3.png" alt="User Profile" class="user-img">
-                <p class="comment-txt"><q>Wifi experience was less than average, consistent drop outs...</q></p>
+              <div class="comment-wrapper">
+                <div class="cmt-box">
+                  <div class="user-img">
+                    <img src="images/user-img-1.png" alt="user-image">
+                  </div>
+                  <div class="cmt-body">
+                    <strong class="user-name">John Doe</strong>
+                    <span class="muted">3 days ago</span>
+                    <p class="cmt-text"><q>This place had awesome bean bags!</q></p>
+                    <span class="star-rating muted">4.5</span>
+                  </div>
+                </div>
+
+                <div class="cmt-box">
+                  <div class="user-img">
+                    <img src="images/user-img-2.png" alt="user-image">
+                  </div>
+                  <div class="cmt-body">
+                    <strong class="user-name">Jane Doe</strong>
+                    <span class="muted">6 days ago</span>
+                    <p class="cmt-text"><q>Had a coffee cart right outside the entrance, awesome find.</q></p>
+                    <span class="star-rating muted">4.5</span>
+                  </div>
+                </div>
               </div>
               <hr/>
-              <h2 id="yourReview" class="reviewTitle yourReview"><span class="highlight">Your Review</span></h2>
-              <div class="comment-box">
+              <h2 id="yourReview" class="reviewTitle yourReview highlight">Your Review</h2>
+              <div class="cmt-wrapper">
+                <div class="cmt-box">
+                  <div class="cmt-body">
+                    <strong class="user-name">Your Username</strong>
+                    <span class="muted">now</span>
+                    <textarea name="userComment" class="muted" id="userComment" rows="5" placeholder="Your rating helps others find better Wifi."></textarea>
+                    <span class="star-rating muted">
+                      <ul class="select-rating">
+                        <a href="#" class="star"></a>
+                        <a href="#" class="star"></a>
+                        <a href="#" class="star"></a>
+                        <a href="#" class="star"></a>
+                        <a href="#" class="star"></a>
+                      </ul>
+                    </span>
+                    <a href="#" class="login-notify">Login to add a review</a>
+                    <button id="submitReview">Submit comment</button>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="comment-box">
                 <div class="reviewRating">
                   <ul class="stars">
                     <li class="star"></li>
@@ -83,7 +118,7 @@
                 </div>
                 <textarea name="userComment" id="addComment" cols="30" rows="10" placeholder="Your rating helps others find better Wifi."></textarea>
                 <button id="submitReview">Submit</button>
-              </div>
+              </div> -->
             </article>
           </div>
         </div>

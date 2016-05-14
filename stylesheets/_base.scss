@@ -64,8 +64,9 @@ hr {
   color: rgba(0, 0, 0, .7);
   font-weight: 400;
   padding: 1em;
-  .highlight {
-    font-weight: 500;
-    color: $tomato;
-  }
+}
+
+.highlight {
+  font-weight: 500;
+  color: $tomato;
 }

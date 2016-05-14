@@ -1,0 +1,67 @@
+<style>
+  .cmt-box {
+    width: 600px;
+    display: inline-block;
+    padding: 1em;
+    margin: 0 auto;
+    background: grey;
+
+
+    .user-img img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      float: left;
+    }
+
+    .cmt-body {
+      display: inline-block;
+      font-size: .9em;
+      padding: 6px;
+
+      .user-name {
+        font-weight: 700;
+        color: $tomato;
+      }
+
+      .cmt-text {
+        line-height: 19px;
+      }
+
+      .cmt-text:before {
+        content: url('/images/icons/comment.svg');
+        width: 18px;
+        height: 18px;
+        padding: .5rem;
+      }
+
+      .star-rating:before {
+        content: url('/images/icons/full-star.svg');
+        padding-right: .5em;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<div class="cmt-box">
+  <div class="user-img">
+    <img src="images/user-img-1.png" alt="user-image">
+  </div>
+  <div class="cmt-body">
+    <strong class="user-name">John Doe</strong>
+    <span class="muted">3 days ago</span>
+    <p class="cmt-text"><q>This place had awesome bean bags!</q></p>
+    <span class="star-rating">4.5</span>
+  </div>
+</div>

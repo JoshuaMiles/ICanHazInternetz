@@ -56,9 +56,10 @@ hr {
   color: rgba(0, 0, 0, 0.7);
   font-weight: 400;
   padding: 1em; }
-  .reviewTitle .highlight {
-    font-weight: 500;
-    color: #FF6347; }
+
+.highlight {
+  font-weight: 500;
+  color: #FF6347; }
 
 html {
   position: relative;
@@ -798,56 +799,87 @@ main .search {
         line-height: 56px; }
   .container .item-container .comments-section .recommendedReviews {
     margin-left: 20px; }
-  .container .item-container .comments-section .comment {
-    width: 80%;
-    display: inline-block;
-    padding: 1em;
-    margin: 0 auto; }
-    .container .item-container .comments-section .comment .user-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      float: left;
-      margin-left: 3em; }
-    .container .item-container .comments-section .comment .comment-txt {
-      font-size: .9em;
-      line-height: 70px; }
-      .container .item-container .comments-section .comment .comment-txt q {
-        margin-left: 2em; }
-  .container .item-container .comments-section .yourReview {
-    margin-left: 20px; }
-  .container .item-container .comments-section .comment-box {
-    width: 80%;
-    text-align: center;
-    margin: 0 auto; }
-    .container .item-container .comments-section .comment-box .reviewRating {
-      padding-bottom: 50px; }
-      .container .item-container .comments-section .comment-box .reviewRating .stars {
+  .container .item-container .comments-section .comment-wrapper {
+    margin: 0 30px; }
+    .container .item-container .comments-section .comment-wrapper .cmt-box {
+      width: 80%;
+      display: inline-block;
+      padding: 1em;
+      margin: 0 auto; }
+      .container .item-container .comments-section .comment-wrapper .cmt-box .user-img img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        float: left; }
+      .container .item-container .comments-section .comment-wrapper .cmt-box .cmt-body {
         display: inline-block;
-        height: 30px;
-        list-style: none; }
-        .container .item-container .comments-section .comment-box .reviewRating .stars .star {
-          width: 30px;
-          height: 30px;
-          background: rgba(0, 0, 0, 0.2);
-          border-radius: 50%;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          -ms-border-radius: 50%;
-          -o-border-radius: 50%;
-          float: left;
-          margin-right: 5px;
-          transition: all .25ms ease-in-out; }
-          .container .item-container .comments-section .comment-box .reviewRating .stars .star:hover {
-            transform: translateY(-3px);
-            background: #47B8E0; }
-      .container .item-container .comments-section .comment-box .reviewRating .selectRating {
-        font-weight: 300;
-        line-height: 30px;
-        display: block;
-        padding: 1em; }
-    .container .item-container .comments-section .comment-box #addComment {
-      width: 80%; }
-    .container .item-container .comments-section .comment-box #submitReview {
+        font-size: .9em;
+        padding: 6px; }
+        .container .item-container .comments-section .comment-wrapper .cmt-box .cmt-body .user-name {
+          font-weight: 700;
+          color: #4d4d4d; }
+        .container .item-container .comments-section .comment-wrapper .cmt-box .cmt-body .cmt-text {
+          padding: 1em;
+          line-height: 19px; }
+          .container .item-container .comments-section .comment-wrapper .cmt-box .cmt-body .cmt-text:before {
+            content: url("/images/icons/comment.svg");
+            width: 14px;
+            height: 14px;
+            padding: .5rem; }
+        .container .item-container .comments-section .comment-wrapper .cmt-box .cmt-body .star-rating {
+          padding-bottom: 1.5em;
+          padding-left: 1.5em; }
+          .container .item-container .comments-section .comment-wrapper .cmt-box .cmt-body .star-rating:before {
+            content: url("/images/icons/full-star.svg");
+            width: 14px;
+            height: 14px;
+            padding-right: .5em; }
+  .container .item-container .comments-section .yourReview {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: none; }
+  .container .item-container .comments-section .cmt-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 0; }
+    .container .item-container .comments-section .cmt-wrapper #userComment {
       display: block;
-      margin-left: 518px; }
+      width: 100%;
+      padding: 6px 12px;
+      margin-top: 20px !important;
+      font-size: 14px;
+      background: #FFFFFF;
+      border-color: #ccc;
+      border-radius: 4px;
+      margin: 0 auto; }
+    .container .item-container .comments-section .cmt-wrapper .select-rating {
+      display: inline;
+      list-style: none;
+      height: 30px;
+      padding: 5px; }
+      .container .item-container .comments-section .cmt-wrapper .select-rating:before, .container .item-container .comments-section .cmt-wrapper .select-rating:after {
+        content: " ";
+        display: table; }
+      .container .item-container .comments-section .cmt-wrapper .select-rating:after {
+        clear: both; }
+      .container .item-container .comments-section .cmt-wrapper .select-rating .star {
+        float: left;
+        width: 18px;
+        height: 18px;
+        background: url("/images/icons/empty-star.svg");
+        background-repeat: no-repeat; }
+        .container .item-container .comments-section .cmt-wrapper .select-rating .star:hover {
+          background: url("/images/icons/full-star.svg"); }
+    .container .item-container .comments-section .cmt-wrapper .login-notify {
+      font-size: 85%;
+      color: #47B8E0;
+      float: left;
+      margin-top: 20px; }
+    .container .item-container .comments-section .cmt-wrapper #submitReview {
+      float: right;
+      margin-top: 20px; }
+    .container .item-container .comments-section .cmt-wrapper .clearfix:before, .container .item-container .comments-section .cmt-wrapper .clearfix:after {
+      content: " ";
+      display: table; }
+    .container .item-container .comments-section .cmt-wrapper .clearfix:after {
+      clear: both; }
