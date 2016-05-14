@@ -1,13 +1,15 @@
-#nav {
-  @include clearfix;
+#fixed-nav {
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 1;
   background: darken($tomato, 5);
   @include box-shadow(0, 2px, 5px, $shadow);
 
-  .navbar {
+  #fixed-container {
     width: 95%;
     line-height: 2em;
+
     .brand {
       float: left;
       font-weight: $bold;
@@ -46,11 +48,11 @@
           padding: 10px;
 
           &:hover {
-            background-color: $light;
+            background: $light;
             color: $tomato;
           } //hover
         } //a
       } //li
     } //ul
-  } //navbar
-} //nav
+  } //fixed nav container
+} //fixed-nav

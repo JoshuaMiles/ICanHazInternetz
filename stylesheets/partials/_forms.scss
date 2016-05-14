@@ -108,16 +108,4 @@ input[type="range"] {
   &:focus {
     border-bottom: 2px solid $accent;
   }
-
-  &:valid {
-    outline: none;
-  } //input focus
-
-  /*trigger this with js */
-  // &:invalid {
-  //   label {
-  //     display: none;
-  //   }
-  //   border-bottom: 2px solid $error;
-  // }
 } //input fields

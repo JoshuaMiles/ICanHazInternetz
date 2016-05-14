@@ -10,6 +10,7 @@
 //Import Base page
 @import "partials/header.scss";
 @import "partials/nav.scss";
+@import "partials/fixedNav.scss";
 @import "partials/footer.scss";
 @import "partials/forms.scss";
 
@@ -22,5 +23,4 @@
 @import "pages/results.scss";
 @import "pages/resultsTable.scss";
 @import "pages/search.scss";
-// @import "pages/individualItem.scss";
 @import "pages/sampleItem.scss";
