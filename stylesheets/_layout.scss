@@ -1,4 +1,4 @@
-// // Base Layout Styles - can include media queries
+// Base Layout Styles - can include media queries
 html {
   position: relative;
   min-height: 100%;
@@ -16,3 +16,7 @@ footer {
     height: 280px;
     width: 100%;
 }
+
+/* Media Queries */
+
+/* Switch nav links to icons when too small */

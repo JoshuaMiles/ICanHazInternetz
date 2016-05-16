@@ -37,6 +37,10 @@
         &:first-child {
           background-color: $tomato;
         }
+        .user-icon {
+          font-size: 1.3em;
+          vertical-align: text-bottom;
+        }
         a {
           color: $light;
           text-decoration: none;

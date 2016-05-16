@@ -76,6 +76,8 @@ footer {
   height: 280px;
   width: 100%; }
 
+/* Media Queries */
+/* Switch nav links to icons when too small */
 header {
   width: 100%;
   height: 400px;
@@ -158,6 +160,9 @@ header {
       list-style-type: none; }
       #nav .navbar ul li:first-child {
         background-color: #FF6347; }
+      #nav .navbar ul li .user-icon {
+        font-size: 1.3em;
+        vertical-align: text-bottom; }
       #nav .navbar ul li a {
         color: #FFFFFF;
         text-decoration: none;
@@ -203,6 +208,9 @@ header {
       list-style-type: none; }
       #fixed-nav #fixed-container ul li:first-child {
         background-color: #FF6347; }
+      #fixed-nav #fixed-container ul li .user-icon {
+        font-size: 1.3em;
+        vertical-align: text-bottom; }
       #fixed-nav #fixed-container ul li a {
         color: #FFFFFF;
         text-decoration: none;
