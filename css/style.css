@@ -501,11 +501,17 @@ main .register {
       main .register .user-container .newUser #firstName,
       main .register .user-container .newUser #lastName,
       main .register .user-container .newUser #email,
+<<<<<<< Updated upstream
       main .register .user-container .newUser #phoneNum,
       main .register .user-container .newUser #password,
       main .register .user-container .newUser #confirmPassword {
+=======
+      main .register .user-container .newUser #password,
+      main .register .user-container .newUser #mobile {
+>>>>>>> Stashed changes
         padding: 2%;
         border: 0;
+        outline: none;
         /* cancels border-radius */
         border-bottom: 2px solid #F5F5F5;
         transition: border .25s linear,color;
@@ -513,9 +519,14 @@ main .register {
         main .register .user-container .newUser #firstName:focus,
         main .register .user-container .newUser #lastName:focus,
         main .register .user-container .newUser #email:focus,
+<<<<<<< Updated upstream
         main .register .user-container .newUser #phoneNum:focus,
         main .register .user-container .newUser #password:focus,
         main .register .user-container .newUser #confirmPassword:focus {
+=======
+        main .register .user-container .newUser #password:focus,
+        main .register .user-container .newUser #mobile:focus {
+>>>>>>> Stashed changes
           border-bottom: 2px solid #47B8E0; }
       main .register .user-container .newUser #phoneNum:focus {
         outline: none; }

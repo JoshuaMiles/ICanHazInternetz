@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - hotspots@localhost" uuid="4308ad00-ec3a-4f9f-a240-d0c5b36541e3">
+    <database-info product="MySQL" version="5.7.12" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="hotspots"/>
+      <table id="2" parent="1" name="hotspots"/>
+      <table id="3" parent="1" name="users"/>
+      <column id="4" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="5" parent="2" name="hotspot_name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="6" parent="2" name="address">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="7" parent="2" name="suburb">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="8" parent="2" name="latitude">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="9" parent="2" name="longitude">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="11" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="12" parent="3" name="firstName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="13" parent="3" name="lastName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="14" parent="3" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="15" parent="3" name="phone">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="16" parent="3" name="password_hash">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="17" parent="3" name="email_UNIQUE">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="18" parent="3" name="email_UNIQUE">
+        <columns>email</columns>
+        <underlying-index>email_UNIQUE</underlying-index>
+      </key>
+      <key id="19" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
