@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $user = new USER($pdo);
     if($user->register($email,$firstName,$lastName,$phone,$password)){
         //header("Location:~/index.html");
+        var_dump($pdo);
         exit();
     } else {
         header("Location:samepage.php");

@@ -18,7 +18,8 @@
       require_once 'user.php';
       $user = new USER($pdo);
       if($user->register($email,$firstName,$lastName,$phone,$password)){
-          header("Location: http://{$_SERVER['SERVER_NAME']}/");
+//          header("Location: http://{$_SERVER['SERVER_NAME']}/index.html");
+          header("Location:index.html");
           exit();
       } else {
           // header("Location: .php");

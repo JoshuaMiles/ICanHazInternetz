@@ -5,6 +5,7 @@ include("postMaster.php");
 include("user.php");
 
 
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = getPost('email');
     $password = getPost('password');

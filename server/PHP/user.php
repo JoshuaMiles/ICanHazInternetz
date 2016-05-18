@@ -26,15 +26,14 @@ class User
         try {
             //Uses bycrypt
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = $this->db->prepare("INSERT INTO users ( email, lastName, firstName, phone, password_hash ) VALUES (:firstName,:lastName,:email,:phone,:password)");
-//            $sql = $this->db->prepare("INSERT INTO users (firstName, lastName, email, phone, password_hash) VALUES ()");
+            $sql = $this->db->prepare("INSERT INTO users ( email, firstName, lastName, phone, password_hash ) VALUES (:email,:firstName,:lastName,:phone,:password)");
             if (!$sql) {
                 die($this->db->errorInfo());
             }
             $sql->execute(array(
+                ":email" => $email,
                 ":firstName" => $firstName,
                 ":lastName" => $lastName,
-                ":email" => $email,
                 ":phone" => $phone,
                 ":password" => $password_hash
             ));
@@ -51,52 +50,32 @@ class User
      * @param $postEmail
      * @param $postPassword
      */
-    public function login($postEmail,$postPassword)
+    public function login($postEmail, $postPassword)
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        // Goes into the database of users and get the email associated with what the user put in to sign in
-        $emailQuery = $this->db->prepare("SELECT email FROM hotspots.users WHERE email = " . $postEmail);
-        $emailQuery ->execute();
-        $dbEmail = $emailQuery->fetch(PDO::FETCH_COLUMN);
-        // Goes into the database in the users table users and get the password hash associated with what the user used to sign in
-        $passwordQuery= $this->db->prepare("SELECT password_hash FROM hotspots.users WHERE  email = ". $postEmail);
-        $passwordQuery->execute();
-        $dbPassword = $passwordQuery->fetch(PDO::FETCH_COLUMN);
-        $queryID = $this->db->prepare("SELECT id FROM hotspots.users WHERE  email = " . $postEmail);
-        $queryID->execute();
-        $dbID = $queryID->fetch(PDO::FETCH_COLUMN);
+            //post password is raw password, password is the hashed version from the database
 
-        if($postEmail == $dbEmail){
-        echo "workin";
-    } else {
-            echo "not working";
-        }
+            $username = $postEmail;
+            $password = password_hash($postPassword, PASSWORD_DEFAULT);
 
+            $qry = $this->db->prepare('SELECT * FROM hotspots.users WHERE username = :username and password = :password');
 
+            $qry->execute(array(
+                ':username' => $username,
+                ':password' => $password
+            )); // run query
 
-        var_dump($dbEmail);
-        var_dump($dbPassword);
+            if (($qry->rowCount() > 0) && password_verify($postPassword, $password)) {
 
-        echo gettype($dbPassword);
+                $_SESSION['logged_in'] = true;
 
-        // Form error handling
-        if (!$dbEmail || !$dbPassword) { //if the password or the email do not have anything in them
-            echo "There is no user on this system with that username";
-            die("Query Failed");
-            exit();
-        } else  if(!password_verify($postPassword,$dbPassword)) {
-            echo "Failed login";
-            exit();
-        }else {
-
-            $_SESSION['userid'] = $dbID;
-            $_SESSION['email'] = $dbEmail;
-            $_SESSION['password'] = $dbPassword;
-
-            setcookie("id",$dbID,strtotime('+ 15 days'),"/","",true);
-            setcookie("password",$dbPassword,strtotime('+ 15 days'),"/","",true);
-
-            exit();
+                header("Location:  http://{$_SERVER['HTTP_HOST']}/index.html");
+                exit();
+            } else {
+                echo "Login failed";
+                //TODO need to do error handling. Add a span in case
+            }
         }
     }
 
@@ -106,20 +85,20 @@ class User
      * @param $id
      * @param $email
      */
-    public function logout($id,$email){
+    public function logout($id, $email)
+    {
 
         $_Session = array();
-        if($_SESSION['userid'] = $id && $_SESSION['email'] = $email && $_SESSION['password'] = $password){
+        if ($_SESSION['userid'] = $id && $_SESSION['email'] = $email && $_SESSION['password'] = $password) {
 
-            setcookie("userid" ,'', strtotime( '-1 days' ), '/');
-            setcookie( "email",'', strtotime( '-1 days' ), '/');
-            setcookie( "password" ,'', strtotime( '-1 days' ), '/');
+            setcookie("userid", '', strtotime('-1 days'), '/');
+            setcookie("email", '', strtotime('-1 days'), '/');
+            setcookie("password", '', strtotime('-1 days'), '/');
         }
 
         session_destroy();
 
-        if(isset($_SESSION['userid']) || isset($_SESSION['email']) || isset($_SESSION['password'])){
-        //TODO error
+        if (isset($_SESSION['userid']) || isset($_SESSION['email']) || isset($_SESSION['password'])) {
         } else {
             echo 'Go back to the login page';
             exit();
