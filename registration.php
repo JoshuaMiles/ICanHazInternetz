@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <?php include 'server/PHP/signup.php'; ?>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
 
     <section class="register">
       <article class="user-container"> <!--change to generic .form-container -->
-        <h2 class="article-head">Sign Up</div>
+        <h2 class="article-head">Sign Up</h2>
         <hr class="article-title-rule">
 
         <form method="POST" action="" onsubmit="return validateSubmitForm();" name="userForm" class="newUser">
@@ -66,23 +66,23 @@
             <label for="firstName">First Name</label>
           </div>
           <div class="input-group">
-            <input type="text" name="lastName" id="lastName" class="lbl-highlight" pattern="([nN][0-9]{7}" required>
+            <input type="text" name="lastName" id="lastName" class="lbl-highlight">
             <label for="lastName">Last Name</label>
           </div>
           <div class="input-group">
-            <input type="email" name="emailAddress" id="email" class="lbl-highlight" required>
+            <input type="email" name="email" id="email" class="lbl-highlight" required>
             <label for="email">Email</label>
           </div>
           <div class="input-group">
-            <input type="tel" name="phone" id="phoneNum" class="lbl-highlight" pattern="^D*0(D*d){9}D*$" required>
+            <input type="tel" name="phone" id="phoneNum" class="lbl-highlight">
             <label for="phoneNum">Phone Number</label>
           </div>
           <div class="input-group">
-            <input type="password" name="password" id="password" class="lbl-highlight" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.-_*])([a-zA-Z0-9@#$%^&+=*.-_]){3,}$" required>
+            <input type="password" name="password" id="password" class="lbl-highlight">
             <label for="password">Password</label>
           </div>
           <div class="input-group">
-            <input type="password" name="confirmPassword" id="confirmPassword" class="lbl-highlight" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.-_*])([a-zA-Z0-9@#$%^&+=*.-_]){3,}$" required>
+            <input type="password" name="confirmPassword" id="confirmPassword" class="lbl-highlight" >
             <label for="confirmPassword">Confirm Password</label>
           </div>
           <button type="submit" id="signup">Sign Up</button>
