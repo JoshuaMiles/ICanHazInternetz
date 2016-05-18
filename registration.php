@@ -57,7 +57,7 @@
         <h2 class="article-head">Sign Up</div>
         <hr class="article-title-rule">
 
-        <form method="" action="" onsubmit="return validateSubmitForm();" name="userForm" class="newUser">
+        <form method="POST" action="registration.php" onsubmit="return validateSubmitForm();" name="userForm" class="newUser">
           <div class="profile">
             <img src="images/profile.jpg" width="85" height="85" alt="profile">
           </div>
