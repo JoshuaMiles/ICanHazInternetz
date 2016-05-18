@@ -18,22 +18,12 @@
       require_once 'user.php';
       $user = new USER($pdo);
       if($user->register($email,$firstName,$lastName,$phone,$password)){
-          //header("Location:~/index.html");
+          header("Location: http://{$_SERVER['SERVER_NAME']}/");
           exit();
       } else {
-          header("Location:samepage.php");
+          // header("Location: .php");
           echo "Not lit";
       }
 
   }
 ?>
-
-
-<form method="post" action="">
-    <input name="email" type="email">
-    <input name="firstName" type="text">
-    <input name="lastName" type="text">
-    <input name="phone" type="text">
-    <input name="password" type="password">
-    <input type="submit" value="Submit">
-</form>
