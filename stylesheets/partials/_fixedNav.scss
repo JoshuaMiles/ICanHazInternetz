@@ -2,7 +2,7 @@
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   background: darken($tomato, 5);
   @include box-shadow(0, 2px, 5px, $shadow);
 
