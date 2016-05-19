@@ -99,6 +99,7 @@ class User
         session_destroy();
 
         if (isset($_SESSION['userid']) || isset($_SESSION['email']) || isset($_SESSION['password'])) {
+            //TODO something to do if any are still set
         } else {
             echo 'Go back to the login page';
             exit();

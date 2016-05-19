@@ -66,7 +66,11 @@
             <label for="firstName">First Name</label>
           </div>
           <div class="input-group">
+<<<<<<< HEAD
             <input type="text" name="lastName" id="lastName" class="lbl-highlight" >
+=======
+            <input type="text" name="lastName" id="lastName" class="lbl-highlight">
+>>>>>>> 63fa4bdc2c336d8fa5c6a5b4bacc4b99e9a0b0b6
             <label for="lastName">Last Name</label>
           </div>
           <div class="input-group">
@@ -78,7 +82,11 @@
             <label for="phoneNum">Phone Number</label>
           </div>
           <div class="input-group">
+<<<<<<< HEAD
             <input type="password" name="password" id="password" class="lbl-highlight" >
+=======
+            <input type="password" name="password" id="password" class="lbl-highlight">
+>>>>>>> 63fa4bdc2c336d8fa5c6a5b4bacc4b99e9a0b0b6
             <label for="password">Password</label>
           </div>
           <div class="input-group">

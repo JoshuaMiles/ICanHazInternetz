@@ -18,8 +18,10 @@ class Database
     {
 
         $address = '';
+        
+        
 
-        $qry = $this->db->prepare('SELECT NAME, ADDRESS,SUBURB, rating  FROM hotspots.wifihotspots, hotspots.user_comments WHERE  name = :name , address = :address, suburb = :suburb, rating = :rating');
+        $qry = $this->db->prepare('SELECT NAME, ADDRESS,SUBURB, rating  FROM hotspots.wifihotspots, hotspots.user_comments WHERE  name ='  // :name , address = :address, suburb = :suburb, rating = :rating');
 
         $qry->execute(array(
             ':name' => $name,
