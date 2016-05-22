@@ -30,8 +30,8 @@
   </nav> <!-- navigation -->
 
   <main>
-    <?php require_once('server/includes/login.tpl'); ?>
-    
+    <?php require_once('server/includes/login.tpl.php'); ?>
+
     <section class="register">
       <article class="user-container"> <!--change to generic .form-container -->
         <h2 class="article-head">Sign Up</h2>

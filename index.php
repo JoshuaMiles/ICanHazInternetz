@@ -29,7 +29,7 @@
   </nav> <!-- navigation -->
 
   <main>
-    <?php require_once('server/includes/login.tpl'); ?>
+    <?php require_once('server/includes/login.tpl.php'); ?>
 
     <section>
       <article class="search-index">

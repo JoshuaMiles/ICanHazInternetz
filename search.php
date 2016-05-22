@@ -20,7 +20,7 @@
   </nav> <!-- navigation -->
 
   <main>
-    <?php require_once('server/includes/login.tpl'); ?>
+    <?php require_once('server/includes/login.tpl.php'); ?>
 
     <section class="results">
       <div class="searchbar-container">
@@ -144,9 +144,9 @@
             </div>
           </article> -->
 
-          <?php require_once('server/includes/initialState.tpl'); ?>
+          <?php require_once('server/includes/initialState.tpl.php'); ?>
 
-          <?php require_once('server/includes/noResultsFound.tpl'); ?>
+          <?php require_once('server/includes/noResultsFound.tpl.php'); ?>
 
 
 
