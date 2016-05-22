@@ -21,8 +21,7 @@
     <div class="navbar">
         <div class="brand"><a href="index.html">routr</a></div>
         <ul>
-            <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong>
-                        Elliott</strong></a></li> <!--userProfile.html -->
+            <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong>Elliott</strong></a></li> <!--userProfile.html -->
             <li><a href="registration.html">Register</a></li>
             <li><a href="search.html">Find Wifi</a></li>
         </ul>
@@ -50,7 +49,6 @@
                 <a href="registration.html" class="login-notify muted">Don't have an account? Click here</a>
                 <input type="submit" name="login" value="Sign in" id="login">
             </form>
-
         </div>
     </div> <!-- login overlay -->
 
@@ -70,9 +68,7 @@
             <svg class="arc-svg" viewBox="0 0 1440 69" version="1.1" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <path
-                        d="M1440,69.0315425 L1440,0 L0,0 L0,69.0315425 C233.264983,25.0227325 473.943868,2 720,2 C966.056132,2 1206.73502,25.0227325 1440,69.0315425 Z"
-                        id="Combined-Shape"></path>
+                    <path d="M1440,69.0315425 L1440,0 L0,0 L0,69.0315425 C233.264983,25.0227325 473.943868,2 720,2 C966.056132,2 1206.73502,25.0227325 1440,69.0315425 Z" id="Combined-Shape"></path>
                 </g>
             </svg>
             <h2 class="article-head">Recent Places</h2>

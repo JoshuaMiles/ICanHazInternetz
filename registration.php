@@ -20,38 +20,18 @@
   </header> <!-- header -->
   <nav id="nav">
     <div class="navbar">
-      <div class="brand"><a href="index.html">routr</a></div>
+      <div class="brand"><a href="index.php">routr</a></div>
       <ul>
         <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Elliott</strong></a></li>
-        <li><a href="registration.html">Register</a></li>
-        <li><a href="search.html">Find Wifi</a></li>
+        <li><a href="registration.php">Register</a></li>
+        <li><a href="search.php">Find Wifi</a></li>
       </ul>
     </div>
   </nav> <!-- navigation -->
 
   <main>
-    <div class="overlay">
-      <div class="modal">
-        <p class="btn-close">
-          <i class="material-icons">clear</i>
-        </p>
-        <h2 class="article-head">Login</h2>
-        <hr class="article-title-rule">
-        <form action="submit" class="login-form">
-          <div class="input-group">
-            <input type="text" name="name" id="username" class="lbl-highlight">
-            <label for="firstName">First Name</label>
-          </div>
-          <div class="input-group">
-            <input type="password" name="password" id="password" class="lbl-highlight">
-            <label for="password">Password</label>
-          </div>
-          <a href="registration.html" class="login-notify muted">Don't have an account? Click here</a>
-          <input type="submit" name="login" value="Sign in" id="login">
-        </form>
-      </div>
-    </div> <!-- login overlay -->
-
+    <?php require_once('server/includes/login.tpl'); ?>
+    
     <section class="register">
       <article class="user-container"> <!--change to generic .form-container -->
         <h2 class="article-head">Sign Up</h2>
@@ -66,11 +46,8 @@
             <label for="firstName">First Name</label>
           </div>
           <div class="input-group">
-<<<<<<< HEAD
             <input type="text" name="lastName" id="lastName" class="lbl-highlight" >
-=======
             <input type="text" name="lastName" id="lastName" class="lbl-highlight">
->>>>>>> 63fa4bdc2c336d8fa5c6a5b4bacc4b99e9a0b0b6
             <label for="lastName">Last Name</label>
           </div>
           <div class="input-group">
@@ -82,11 +59,8 @@
             <label for="phoneNum">Phone Number</label>
           </div>
           <div class="input-group">
-<<<<<<< HEAD
             <input type="password" name="password" id="password" class="lbl-highlight" >
-=======
             <input type="password" name="password" id="password" class="lbl-highlight">
->>>>>>> 63fa4bdc2c336d8fa5c6a5b4bacc4b99e9a0b0b6
             <label for="password">Password</label>
           </div>
           <div class="input-group">
@@ -103,14 +77,14 @@
   <footer>
     <section class="container">
       <div class="brand">
-        <a href="index.html"><img src="images/routr-logo-sml.png" alt="logo"/></a>
+        <a href="index.php"><img src="images/routr-logo-sml.png" alt="logo"/></a>
         <p class="title">routr</p>
       </div>
         <nav class="footer">
           <ul>
-            <li><a href="search.html">Find Wifi</a></li>
-            <li><a href="registration.html">Register</a></li>
-            <li><a href="userProfile.html">Your Profile</a></li>
+            <li><a href="search.php">Find Wifi</a></li>
+            <li><a href="registration.php">Register</a></li>
+            <li><a href="userProfile.php">Your Profile</a></li>
           </ul>
         </nav>
     </section>

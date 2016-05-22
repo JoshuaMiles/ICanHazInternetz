@@ -19,45 +19,23 @@
   </header> <!-- header -->
   <nav id="nav">
     <div class="navbar">
-      <div class="brand"><a href="index.html">routr</a></div>
+      <div class="brand"><a href="index.php">routr</a></div>
       <ul>
         <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Elliott</strong></a></li> <!--userProfile.html -->
-        <li><a href="registration.html">Register</a></li>
-        <li><a href="search.html">Find Wifi</a></li>
+        <li><a href="registration.php">Register</a></li>
+        <li><a href="search.php">Find Wifi</a></li>
       </ul>
     </div>
   </nav> <!-- navigation -->
 
   <main>
-    <div class="overlay">
-      <div class="modal">
-        <p class="btn-close">
-          <i class="material-icons">clear</i>
-        </p>
-        <h2 class="article-head">Login</h2>
-        <hr class="article-title-rule">
-
-        <form action="submit" class="login-form">
-          <div class="input-group">
-            <input type="text" name="name" id="username" class="lbl-highlight">
-            <label for="firstName">First Name</label>
-          </div>
-          <div class="input-group">
-            <input type="password" name="password" id="password" class="lbl-highlight">
-            <label for="password">Password</label>
-          </div>
-          <a href="registration.html" class="login-notify muted">Don't have an account? Click here</a>
-          <input type="submit" name="login" value="Sign in" id="login">
-        </form>
-
-      </div>
-    </div> <!-- login overlay -->
+    <?php require_once('server/includes/login.tpl'); ?>
 
     <section>
       <article class="search-index">
         <h2 class="article-head">Find Wifi</h2>
         <hr class="article-title-rule">
-        <form method="POST" action="results.html">
+        <form method="POST" action="search.php">
           <div class="input-group">
             <input type="search" name="searchInput" id="searchbar-home">
             <label for="search">Search by name, suburb or rating...</label>
@@ -75,7 +53,9 @@
         <hr class="article-title-rule">
         <div class="container">
 
-          <div class="review-cards">
+          <h1>Change this to pull reviewed hotspots ordered by date limit 6 or 9</h1>
+
+          <!-- <div class="review-cards">
             <a href="#" class="review-card">
               <div class="media"><img src="images/test-img.png" alt="placeholder img"></div>
               <div class="desc">
@@ -132,9 +112,9 @@
       </div>
         <nav class="footer">
           <ul>
-            <li><a href="search.html">Find Wifi</a></li>
-            <li><a href="registration.html">Register</a></li>
-            <li><a href="userProfile.html">Your Profile</a></li>
+            <li><a href="search.php">Find Wifi</a></li>
+            <li><a href="registration.php">Register</a></li>
+            <li><a href="userProfile.php">Your Profile</a></li>
           </ul>
         </nav>
     </section>

@@ -618,149 +618,11 @@ main .register {
     background-color: #F5F5F5;
     color: #FF6347; }
 
-main .search {
-  background: #F5F5F5;
-  height: 100%;
-  padding-bottom: 20px !important; }
-  main .search .search-container {
-    background: #FFFFFF;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    max-width: 830px;
-    margin: 0 auto;
-    margin-bottom: 2em; }
-    main .search .search-container .searchForm {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      padding: 5%;
-      margin: 5%; }
-      main .search .search-container .searchForm #searchBar {
-        padding: 2%;
-        border: 0;
-        /*cancels default border styles*/
-        border-bottom: 2px solid #F5F5F5;
-        transition: border .25s linear,color;
-        font-size: 1em;
-        margin: 0 10px 10px 10px; }
-        main .search .search-container .searchForm #searchBar:focus {
-          border-bottom: 2px solid #47B8E0; }
-      main .search .search-container .searchForm .advanced-options #surroundSuburbs {
-        outline: none;
-        margin: 10px 3px 20px 15px; }
-      main .search .search-container .searchForm .advanced-options .options-container {
-        width: 100%;
-        padding: 15px; }
-        main .search .search-container .searchForm .advanced-options .options-container .suburb-lbl {
-          display: none;
-          /*for screen readers*/ }
-        main .search .search-container .searchForm .advanced-options .options-container #suburbSelect {
-          width: 100%;
-          height: 30px;
-          font-size: .9em;
-          border: 0;
-          border-bottom: 2px solid #F5F5F5;
-          transition: border .25ms linear, color; }
-          main .search .search-container .searchForm .advanced-options .options-container #suburbSelect:focus {
-            border-bottom: 2px solid #47B8E0; }
-        main .search .search-container .searchForm .advanced-options .options-container .rating-lbl {
-          display: none; }
-        main .search .search-container .searchForm .advanced-options .options-container #ratingSlider {
-          width: 100%;
-          padding-top: 25px;
-          cursor: pointer;
-          /*moz styles & fixes*/
-          /*ie styles & fixes - use upper & lower fill to correct styling issues with track not overflowing */ }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider:focus {
-            outline: none; }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-webkit-slider-runnable-track {
-            width: 300px;
-            height: .7em;
-            background: #d7dcdf;
-            border: none;
-            border-radius: 5px;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            -ms-border-radius: 5px;
-            -o-border-radius: 5px; }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            border: none;
-            width: 16px;
-            height: 16px;
-            background: #FFC952;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            -o-border-radius: 50%;
-            margin-top: -.3em;
-            /*changes colour when in use*/ }
-            main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-webkit-slider-thumb:active {
-              background: #34314C; }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-moz-range-track {
-            width: 300px;
-            height: .7em;
-            background: #34314C;
-            border: none;
-            border-radius: 3px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            -ms-border-radius: 3px;
-            -o-border-radius: 3px; }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-moz-range-thumb {
-            border: none;
-            width: 16px;
-            height: 16px;
-            background: #FFC952;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            -o-border-radius: 50%;
-            margin-top: -.3em; }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-ms-track {
-            width: 300px;
-            height: .7em;
-            background: transparent;
-            border-color: transparent;
-            border: none;
-            border-width: 6px 0;
-            border-radius: 3px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            -ms-border-radius: 3px;
-            -o-border-radius: 3px; }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-ms-fill-lower {
-            background: #777;
-            border-radius: 10px; }
-            main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-ms-fill-lower:focus {
-              background: #888; }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-ms-fill-upper {
-            background: #ddd;
-            border-radius: 10px; }
-            main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-ms-fill-upper:focus {
-              background: #ccc; }
-          main .search .search-container .searchForm .advanced-options .options-container #ratingSlider::-ms-thumb {
-            border: none;
-            width: 16px;
-            height: 16px;
-            background: #FFC952;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            -o-border-radius: 50%;
-            margin-top: -.3em; }
-      main .search .search-container .searchForm #btn-search {
-        margin: 40px 15px 20px 15px;
-        border: none; }
-
 .searchbar-container {
   width: 100%;
   height: 64px;
   display: block;
   background: #FFFFFF;
-  box-shadow: 0 2px 5px #cbcbcb;
   position: fixed;
   margin-top: 10px;
   z-index: 2; }
@@ -797,11 +659,65 @@ main .search {
       cursor: pointer;
       order: 3;
       visibility: hidden; }
+  .searchbar-container .line {
+    border: solid #ddd;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 0;
+    height: 0; }
+  .searchbar-container .options {
+    width: 100%;
+    height: 36px;
+    background: #f5f5f5;
+    color: #FFFFFF;
+    box-shadow: 0 2px 5px #cbcbcb; }
+    .searchbar-container .options .options-wrapper {
+      width: 80%;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: .5em;
+      margin: 0 auto; }
+      .searchbar-container .options .options-wrapper #incSuburbs {
+        outline: none; }
+      .searchbar-container .options .options-wrapper .white {
+        margin-left: 10px;
+        margin-right: 40px; }
+      .searchbar-container .options .options-wrapper .rating-select-box {
+        margin-right: 40px; }
+      .searchbar-container .options .options-wrapper #btn-backup-search {
+        width: 100px;
+        background: #FFFFFF;
+        font-size: .9em;
+        border: 0;
+        -webkit-border-radius: 4px;
+        color: #434343;
+        opacity: .7;
+        padding: .3em .1em;
+        margin: 1em 1em 1em 2em; }
+        .searchbar-container .options .options-wrapper #btn-backup-search:hover {
+          color: #47B8E0; }
 
 .pull-down {
   position: relative;
-  margin-top: 84px;
+  margin-top: 120px;
   z-index: 1; }
+
+.search-instructions {
+  width: 100%;
+  border-bottom: 1px solid #f5f5f5;
+  border-radius: 3px;
+  text-align: center;
+  padding: 4em; }
+  .search-instructions #search-headline {
+    font-size: 1.8em;
+    font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
+    opacity: .7; }
+
+.map {
+  width: 100%;
+  margin: 20px auto; }
 
 .container .item-container {
   max-width: 830px;
