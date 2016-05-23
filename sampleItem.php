@@ -38,7 +38,7 @@
               <div class="comment-wrapper">
                 <div class="cmt-box">
                   <div class="user-img">
-                    <img src="images/user-img-1.png" alt="user-image">
+                    <img src="images/usr-icon.png" alt="user-image">
                   </div>
                   <div class="cmt-body">
                     <strong class="user-name">John Doe</strong>
@@ -50,7 +50,7 @@
 
                 <div class="cmt-box">
                   <div class="user-img">
-                    <img src="images/user-img-2.png" alt="user-image">
+                    <img src="images/usr-icon.png" alt="user-image">
                   </div>
                   <div class="cmt-body">
                     <strong class="user-name">Jane Doe</strong>

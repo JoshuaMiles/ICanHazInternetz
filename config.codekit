@@ -55,35 +55,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/user-img-1.png": {
+	"\/images\/usr-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 5631,
-		"inputAbbreviatedPath": "\/images\/user-img-1.png",
-		"outputAbbreviatedPath": "\/images\/user-img-1.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/user-img-2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5812,
-		"inputAbbreviatedPath": "\/images\/user-img-2.png",
-		"outputAbbreviatedPath": "\/images\/user-img-2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/user-img-3.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4478,
-		"inputAbbreviatedPath": "\/images\/user-img-3.png",
-		"outputAbbreviatedPath": "\/images\/user-img-3.png",
+		"initialSize": 4186,
+		"inputAbbreviatedPath": "\/images\/usr-icon.png",
+		"outputAbbreviatedPath": "\/images\/usr-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

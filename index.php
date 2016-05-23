@@ -21,7 +21,7 @@
     <div class="navbar">
       <div class="brand"><a href="index.php">routr</a></div>
       <ul>
-        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Login</strong></a></li> <!--userProfile.html -->
+        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Login</strong></a></li>
         <li><a href="registration.php">Register</a></li>
         <li><a href="search.php">Find Wifi</a></li>
       </ul>
@@ -29,7 +29,7 @@
   </nav> <!-- navigation -->
 
   <main>
-    <?php require_once('server/includes/login.tpl.php'); ?>
+    <?php require_once('server/includes/login.tpl.php'); ?> <!-- login popup modal -->
 
     <section>
       <article class="search-index">
@@ -43,6 +43,7 @@
           <button type="submit" id="search-btn">Search</button>
         </form>
       </article>
+      
       <article class="profile-reviews">
         <svg class="arc-svg" viewBox="0 0 1440 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -79,6 +80,7 @@
       <article>Copyright 2016</article>
     </section>
   </footer> <!-- footer -->
+
   <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

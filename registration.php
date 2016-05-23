@@ -32,14 +32,15 @@
   <main>
     <?php require_once('server/includes/login.tpl.php'); ?>
 
-    <section class="register">
-      <article class="user-container"> <!--change to generic .form-container -->
+    <section class="register"> <!-- register section -->
+      <article class="user-container"> <!-- wrapper for content -->
+
         <h2 class="article-head">Sign Up</h2>
         <hr class="article-title-rule">
 
         <form method="POST" action="" onsubmit="return validateSubmitForm();" name="userForm" class="newUser">
           <div class="profile">
-            <img src="images/profile.jpg" width="85" height="85" alt="profile">
+            <img src="images/usr-icon.png" width="85" height="85" alt="profile">
           </div>
           <div class="input-group">
             <input type="text" name="firstName" id="firstName" class="lbl-highlight" pattern="([nN][0-9]{7}" required>
@@ -69,8 +70,7 @@
         </form>
       </article>
     </section> <!-- register section -->
-  </main>
-
+  </main> <!-- end main content section -->
 
   <footer>
     <section class="container">
