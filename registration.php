@@ -22,7 +22,7 @@
     <div class="navbar">
       <div class="brand"><a href="index.php">routr</a></div>
       <ul>
-        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Elliott</strong></a></li>
+        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Login</strong></a></li>
         <li><a href="registration.php">Register</a></li>
         <li><a href="search.php">Find Wifi</a></li>
       </ul>
@@ -47,7 +47,6 @@
           </div>
           <div class="input-group">
             <input type="text" name="lastName" id="lastName" class="lbl-highlight" >
-            <input type="text" name="lastName" id="lastName" class="lbl-highlight">
             <label for="lastName">Last Name</label>
           </div>
           <div class="input-group">
@@ -60,7 +59,6 @@
           </div>
           <div class="input-group">
             <input type="password" name="password" id="password" class="lbl-highlight" >
-            <input type="password" name="password" id="password" class="lbl-highlight">
             <label for="password">Password</label>
           </div>
           <div class="input-group">
@@ -93,7 +91,7 @@
     </section>
   </footer> <!-- footer -->
 
-  <script type="text/javascript" src="js/modal.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript" src="js/validation.js"></script>
   </body>
 </html>

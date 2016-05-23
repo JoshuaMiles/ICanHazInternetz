@@ -1,7 +1,7 @@
 main {
   .register {
     background: $lightgrey;
-    //width: 100%;
+
     .user-container {
       background: $light;
       box-shadow: 0px 5px 15px $shadow;
@@ -29,7 +29,7 @@ main {
           margin: 15px 3px;
           //max-width: 150px;
         } //sign up button
-      }
-    }
-  }
-}
+      } //newUser
+    } //user-container
+  } //register
+} //main

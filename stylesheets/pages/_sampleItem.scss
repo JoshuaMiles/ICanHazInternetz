@@ -1,4 +1,5 @@
 .container {
+
   .item-container {
     max-width: 830px;
     margin: 0 auto;
@@ -31,12 +32,10 @@
           //background: darken($accent, 10);
           box-shadow: 0px 2px 18px $shadow;
         }
-
         .add-review {
           color: $light;
           line-height: 56px;
         }
-
       } //cta
     } //img-item
 
@@ -80,7 +79,7 @@
                 height: 14px;
                 padding: .5rem;
               }
-            }
+            } //cmt-text
 
             .star-rating {
               padding-bottom: 1.5em;
@@ -92,10 +91,10 @@
                 height: 14px;
                 padding-right: .5em;
               }
-            }
-          }
-        }
-      }
+            } //star-rating
+          } //comment-body
+        } //comment-box
+      } //comment-wrapper
 
       .yourReview {
         margin-left: 20px;
@@ -136,8 +135,8 @@
             &:hover {
               background: url('/images/icons/full-star.svg');
             }
-          }
-        }
+          } //star
+        } //select-rating
         .login-notify {
           font-size: 85%;
           color: $accent;
@@ -153,48 +152,7 @@
         .clearfix {
           @include clearfix;
         }
-      }
-
-      // .comment-box {
-      //   width: 80%;
-      //   text-align: center;
-      //   margin: 0 auto;
-      //   .reviewRating {
-      //     padding-bottom: 50px;
-      //     .stars {
-      //       display: inline-block;
-      //       height: 30px;
-      //       list-style: none;
-      //       .star {
-      //         width: 30px;
-      //         height: 30px;
-      //         background: rgba(0, 0, 0, .2);
-      //         @include border-radius(50%);
-      //         float: left;
-      //         margin-right: 5px;
-      //         transition: all .25ms ease-in-out;
-      //
-      //         &:hover {
-      //           transform: translateY(-3px);
-      //           background: $accent;
-      //         }
-      //       } //star
-      //     } //stars
-      //     .selectRating {
-      //       font-weight: 300;
-      //       line-height: 30px;
-      //       display: block;
-      //       padding: 1em;
-      //     }
-      //   }
-      //   #addComment {
-      //     width: 80%;
-      //   } //#addComment
-      //   #submitReview {
-      //     display: block;
-      //     margin-left: 518px;
-      //   }
-      // } //comment-box
+      } //comment-wrapper
     } //comments-section
   } //item-container
-}
+} //container

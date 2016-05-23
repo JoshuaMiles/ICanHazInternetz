@@ -21,7 +21,7 @@
     <div class="navbar">
       <div class="brand"><a href="index.php">routr</a></div>
       <ul>
-        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Elliott</strong></a></li> <!--userProfile.html -->
+        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Login</strong></a></li> <!--userProfile.html -->
         <li><a href="registration.php">Register</a></li>
         <li><a href="search.php">Find Wifi</a></li>
       </ul>
@@ -55,50 +55,7 @@
 
           <h1>Change this to pull reviewed hotspots ordered by date limit 6 or 9</h1>
 
-          <!-- <div class="review-cards">
-            <a href="#" class="review-card">
-              <div class="media"><img src="images/test-img.png" alt="placeholder img"></div>
-              <div class="desc">
-                <div class="title">Grange Library Wifi</div>
-                <div class="muted">79 Evelyn Street • Grange</div>
-              </div>
-            </a>
-            <a href="#" class="review-card">
-              <div class="media"><img src="images/routr-logo-sml.png" alt="placeholder img"></div>
-              <div class="desc">
-                <div class="title">Mt Coot-tha Botanic Gardens Library Wifi</div>
-                <div class="muted">Administration Building • Toowong</div>
-              </div>
-            </a>
-            <a href="#" class="review-card">
-              <div class="media"><img src="images/routr-logo-sml.png" alt="placeholder img"></div>
-              <div class="desc">
-                <div class="title">Post Office Square</div>
-                <div class="muted">Queen &amp; Adelaide St • Brisbane City</div>
-              </div>
-            </a>
-            <a href="#" class="review-card">
-              <div class="media"><img src="images/test-img.png" alt="placeholder img"></div>
-              <div class="desc">
-                <div class="title">Post Office Square</div>
-                <div class="muted">Queen &amp; Adelaide St • Brisbane City</div>
-              </div>
-            </a>
-            <a href="#" class="review-card">
-              <div class="media"><img src="images/routr-logo-sml.png" alt="placeholder img"></div>
-              <div class="desc">
-                <div class="title">Post Office Square</div>
-                <div class="muted">Queen &amp; Adelaide St • Brisbane City</div>
-              </div>
-            </a>
-            <a href="#" class="review-card">
-              <div class="media"><img src="images/routr-logo-sml.png" alt="placeholder img"></div>
-              <div class="desc">
-                <div class="title">Post Office Square</div>
-                <div class="muted">Queen &amp; Adelaide St • Brisbane City</div>
-              </div>
-            </a>
-          </div> <!-- recent reviews -pull from db -->
+
         </div>
       </article>
     </section>
@@ -122,7 +79,6 @@
       <article>Copyright 2016</article>
     </section>
   </footer> <!-- footer -->
-  <script type="text/javascript" src="js/modal.js"></script>
-  <script type="text/javascript" src="js/geo.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

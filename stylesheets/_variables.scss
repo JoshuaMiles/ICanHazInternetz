@@ -1,18 +1,23 @@
-// Variables
-
-// Fonts
+// Imports
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
 
 // Font Awesome & Icons
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
+// Fonts
+$fontFamily : Roboto, Helvetica, 'Helvetica Neue', sans-serif;
+// Weights
+$thin   : 300;
+$normal : 400;
+$bold   : 500;
+$heavy  : 700;
+
 // Colour Palette
 $tomato     : #FF6347;
 $yellow     : #FFC952;
 $darkpurple : #34314C;
 $accent     : #47B8E0;
-$lightblue  : #00BFFF;
 $darkgrey   : #333333;
 $lightgrey  : #F5F5F5;
 $darkergrey : #1E1E1E;
@@ -22,19 +27,6 @@ $dark       : #000000;
 $bg-colour  : $lightgrey;
 $shadow     : rgba(0,0,0,0.26); // cards : 0 2px 5px colour
 
-// Fonts
-$fontFamily : Roboto, Helvetica, 'Helvetica Neue', sans-serif;
-
-// Weights
-$thin   : 300;
-$normal : 400;
-$bold   : 500;
-$heavy  : 700;
-
-// Media breakpoints - add in later
-
-
 // Form Elements
-
-//Error
+// Error
 $error : #E74C3C;
