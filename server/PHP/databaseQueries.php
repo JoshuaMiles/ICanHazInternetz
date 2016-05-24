@@ -21,13 +21,13 @@ class Database
         
         
 
-        $qry = $this->db->prepare('SELECT NAME, ADDRESS,SUBURB, rating  FROM hotspots.wifihotspots, hotspots.user_comments WHERE  name ='  // :name , address = :address, suburb = :suburb, rating = :rating');
+        $qry = $this->db->prepare('SELECT NAME, ADDRESS,SUBURB, rating  FROM hotspots.reviews, hotspots.items WHERE  name =');  // :name , address = :address, suburb = :suburb, rating = :rating');
 
         $qry->execute(array(
             ':name' => $name,
             ':suburb' => $suburb,
             ':rating' => $rating,
-            ':address' => $address,
+            ':address' => $address
         )); // run query
 
 
@@ -55,6 +55,23 @@ class Database
     public function insert()
     {
     
+
+    }
+
+
+    public function getAverageForRating($hotspotName){
+
+
+        $qry = $this->db->prepare('SELECT AVG(rating) FROM hotspots.reviews WHERE hotspotName=');
+
+        $qry->execute(array(
+            ':hotspotName' => $hotspotName
+        ));
+
+        foreach ($qry as $avg){
+            echo $avg;
+        }
+
 
     }
 

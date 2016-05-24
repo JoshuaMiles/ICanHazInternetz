@@ -66,15 +66,18 @@ class User
                 ':password' => $password
             )); // run query
 
-            if (($qry->rowCount() > 0) && password_verify($postPassword, $password)) {
+//            password_verify($postPassword, $password)
 
+            echo $qry->rowCount();
+
+            if (($qry->rowCount() > 0)) {
+                echo $qry->rowCount();
                 $_SESSION['logged_in'] = true;
 
                 header("Location:  http://{$_SERVER['HTTP_HOST']}/index.html");
                 exit();
             } else {
                 echo "Login failed";
-                //TODO need to do error handling. Add a span in case
             }
         }
     }
@@ -99,6 +102,7 @@ class User
         session_destroy();
 
         if (isset($_SESSION['userid']) || isset($_SESSION['email']) || isset($_SESSION['password'])) {
+            $_SESSION = null;
             //TODO something to do if any are still set
         } else {
             echo 'Go back to the login page';

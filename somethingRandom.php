@@ -80,25 +80,34 @@
             <?php
             include('server/php/pdo.php');
 
+            include('server/php/databaseQueries.php');
+
+
 
             $pdo = getPDO();
-            $result = $pdo->prepare('SELECT NAME,ADDRESS,SUBURB FROM hotspots.wifihotspots LIMIT 9;');
+            $result = $pdo->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');
             $result->execute();
+
+
 
             echo '<article class="results-container">';
             echo '<div class="container">';
             echo '<div class="review-cards">';
+            $anAverage = new Database(getPDO());
+            $anAverage->getAverageForRating('7th Brigade Park');
             foreach ($result as $hotspot) {
 
                 echo '<a href="sampleItem.html" class="review-card">';
                 echo '<div class="media">';
-                echo '<img src="images/img-test.png" alt="hotspot-img">';
+                echo '<img src="https://maps.googleapis.com/maps/api/streetview?maptype=satellite&heading=151.78&pitch=-0.76&location=' . $hotspot['LATITUDE'] . ',' . $hotspot['LONGITUDE'] . '&zoom=18&size=300x200" alt="hotspot-img">';
                 echo '</div>';
                 echo '<div class="desc">';
                 // Change to database values from sql query
-                echo '<div class"title">' . $hotspot['NAME'] . '</div>';
+//                echo '<div class"title">' . $hotspot['NAME'] . '</div>';
 //                echo '<div class"muted">' . $hotspot['RATING'] . '</div>';
-                echo '<div class"muted">' . $hotspot['ADDRESS'] . $hotspot['SUBURB'] .  '</div>';
+//                echo '<div class"title">' .  . '</div>';
+//                echo '<div class"muted">' . $hotspot['ADDRESS'] . $hotspot['SUBURB'] .  '</div>';
+                echo '<div class"muted">' . $hotspot['SUBURB'] .  '</div>';
                 echo '</div>';
                 echo '</a>';
 
