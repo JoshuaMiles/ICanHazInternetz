@@ -82,11 +82,6 @@
 
             include('server/php/databaseQueries.php');
 
-
-            include('server/php/databaseQueries.php');
-
-
-
             $pdo = getPDO();
             $result = $pdo->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');
             $result->execute();
@@ -98,6 +93,8 @@
             echo '<div class="review-cards">';
             $anAverage = new Database(getPDO());
             $anAverage->getAverageForRating('7th Brigade Park');
+
+
             foreach ($result as $hotspot) {
 
                 echo '<a href="sampleItem.html" class="review-card">';
