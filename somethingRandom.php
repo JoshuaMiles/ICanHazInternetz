@@ -83,6 +83,9 @@
             include('server/php/databaseQueries.php');
 
 
+            include('server/php/databaseQueries.php');
+
+
 
             $pdo = getPDO();
             $result = $pdo->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');

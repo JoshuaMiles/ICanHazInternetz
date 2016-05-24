@@ -1,4 +1,4 @@
-//Form styles
+// Form styles
 
 form {
   margin-bottom: 20px;
@@ -31,19 +31,6 @@ input {
   }
 }
 
-// input[type="text"],
-// input[type="email"],
-// input[type="password"],
-// input[type="tel"] {
-//   padding: 5px 10px;
-//   @include border-radius(2px);
-//   margin-bottom: 10px;
-//
-//   &:focus {
-//     outline: 0;
-//   }
-// }
-
 textarea {
   padding: 18px 15px 0;
   margin-bottom: 10px;
@@ -67,7 +54,6 @@ input[type="range"] {
   -webkit-appearance: none;
 }
 
-
 .input-group {
   position: relative;
 
@@ -90,7 +76,7 @@ input[type="range"] {
       color: $accent;
     }
   } //label highlight animation
-}
+} //input-group
 
 #firstName, #lastName, #email,
 #phoneNum, #username, #password, #confirmPassword {

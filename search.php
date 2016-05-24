@@ -10,37 +10,17 @@
   <body>
   <nav id="fixed-nav">
     <div id="fixed-container">
-      <div class="brand"><a href="index.html">routr</a></div>
+      <div class="brand"><a href="index.php">routr</a></div>
       <ul>
-        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Elliott</strong></a></li>
-        <li><a href="registration.html">Register</a></li>
-        <li><a href="search.html">Find Wifi</a></li>
+        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Login</strong></a></li>
+        <li><a href="registration.php">Register</a></li>
+        <li><a href="search.php">Find Wifi</a></li>
       </ul>
     </div>
   </nav> <!-- navigation -->
 
   <main>
-    <div class="overlay">
-      <div class="modal">
-        <p class="btn-close">
-          <i class="material-icons">clear</i>
-        </p>
-        <h2 class="article-head">Login</h2>
-        <hr class="article-title-rule">
-        <form action="submit" class="login-form">
-          <div class="input-group">
-            <input type="text" name="name" id="username" class="lbl-highlight">
-            <label for="firstName">First Name</label>
-          </div>
-          <div class="input-group">
-            <input type="password" name="password" id="password" class="lbl-highlight">
-            <label for="password">Password</label>
-          </div>
-          <a href="registration.html" class="login-notify muted">Don't have an account? Click here</a>
-          <input type="submit" name="login" value="Sign in" id="login">
-        </form>
-      </div>
-    </div> <!-- login overlay -->
+    <?php require_once('server/includes/login.tpl.php'); ?>
 
     <section class="results">
       <div class="searchbar-container">
@@ -55,10 +35,37 @@
             </span>
           </form>
         </div>
+        <hr class="line">
+        <div class="options">
+          <div class="options-wrapper">
+            <input type="checkbox" name="incSuburbs" id="incSuburbs">
+            <span class="muted white">Include surrounding suburbs</span>
+
+            <select name="search-rating" class="rating-select-box">
+              <option value="" disabled selected>Rating...</option>
+              <option value="1">1 - generate with PHP</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+
+            <select name="search-suburb" class="suburb-select-box">
+              <option value="" disabled selected>Suburb...</option>
+              <option value="1">Generate with PHP</option>
+              <option value="2">Grange</option>
+              <option value="3">Ashgrove</option>
+              <option value="4">Toowong</option>
+              <option value="5">Mt Gravatt</option>
+            </select>
+
+            <input type="submit" value="Search" id="btn-backup-search">
+          </div>
+        </div>
       </div>
         <div class="container pull-down">
 
-          <article class="results-container">
+          <!-- <article class="results-container">
             <div class="container">
               <div class="review-cards">
                 <a href="sampleItem.html" class="review-card">
@@ -133,17 +140,20 @@
                     <div class="muted">Inala Shopping Centre, Corsair Ave • Inala</div>
                   </div>
                 </a>
-              </div> <!-- recent reviews -pull from db -->
+              </div>
             </div>
-          </article>
+          </article> -->
+
+          <?php require_once('server/includes/initialState.tpl.php'); ?>
+
+          <?php require_once('server/includes/noResultsFound.tpl.php'); ?>
 
 
-          checkbox, rating, geolocation svgs (default:off)
 
-          <br>on load, have map and look(big text) and then search
-          <br> on empty search just display: <br>
-          massive text - Not found what you're looking for? Try advanced search options
-          <br> if results found: display card table template
+          If results found:
+          <h1>SHOW MAP WITH RESULTS - as pop up?</h1>
+          <h2>Then card layout or table underneath</h2>
+
         </div>
     </section>
   </main>
@@ -152,14 +162,14 @@
   <footer>
     <section class="container">
       <div class="brand">
-        <a href="index.html"><img src="../images/routr-logo-sml.png" alt="logo"/></a>
+        <a href="index.php"><img src="../images/routr-logo-sml.png" alt="logo"/></a>
         <p class="title">routr</p>
       </div>
         <nav class="footer">
           <ul>
-            <li><a href="search.html">Find Wifi</a></li>
-            <li><a href="registration.html">Register</a></li>
-            <li><a href="userProfile.html">Your Profile</a></li>
+            <li><a href="search.php">Find Wifi</a></li>
+            <li><a href="registration.php">Register</a></li>
+            <li><a href="userProfile.php">Your Profile</a></li>
           </ul>
         </nav>
     </section>
@@ -167,9 +177,6 @@
       <article>Copyright 2016</article>
     </section>
   </footer> <!-- footer -->
-
-  <script type="text/javascript" src="js/modal.js"></script>
-  <script type="text/javascript" src="js/geo.js"></script>
-  <script type="text/javascript" src="js/icon-toggle.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
