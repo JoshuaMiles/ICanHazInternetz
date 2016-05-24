@@ -1,6 +1,5 @@
 <?php
 
-
 function getPDO()
 {
     $db_name = 'hotspots';

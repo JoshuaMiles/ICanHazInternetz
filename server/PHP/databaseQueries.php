@@ -18,8 +18,7 @@ class Database
     {
 
         $address = '';
-        
-        
+
 
         $qry = $this->db->prepare('SELECT NAME, ADDRESS,SUBURB, rating  FROM hotspots.reviews, hotspots.items WHERE  name =');  // :name , address = :address, suburb = :suburb, rating = :rating');
 
@@ -43,7 +42,7 @@ class Database
             // Change to database values from sql query
             echo '<div class"title">' . $hotspot['NAME'] . '</div>';
             echo '<div class"muted">' . $hotspot['RATING'] . '</div>';
-            echo '<div class"muted">' . $hotspot['ADDRESS'] . $hotspot['SUBURB'] .  '</div>';
+            echo '<div class"muted">' . $hotspot['ADDRESS'] . $hotspot['SUBURB'] . '</div>';
             echo '</div>';
             echo '</a>';
             echo '</div>';
@@ -52,14 +51,33 @@ class Database
 
     }
 
-    public function insert()
+    public function insert($postEmail, $hotspotName, $firstName, $rating, $comment)
     {
-    
+
+        echo "INSERT INTO hotspots.reviews( email, hotspotName,firstName, reviewDate ,rating, comment ) VALUES $postEmail,$hotspotName,$firstName," . time() . ",$rating,$comment<br>";
+
+        $qry = $this->db->prepare('
+        INSERT INTO
+        hotspots.reviews(`email`, `hotspotName`, `firstName`, `reviewDate`, `rating`, `comment`)
+        VALUES (:postEmail, :hotspotName, :firstName, :reviewDate, :rating, :comment)');  // :name , address = :address, suburb = :suburb, rating = :rating');
+
+        $qry->execute(array(
+            ':postEmail' => $postEmail,
+            ':hotspotName' => $hotspotName,
+            ':firstName' => $firstName,
+            ':reviewDate' => time(),
+            ':rating' => $rating,
+            ':comment' => $comment
+        ));
+
+        print_r( $this->db->errorInfo());
+
 
     }
 
 
-    public function getAverageForRating($hotspotName){
+    public function getAverageForRating($hotspotName)
+    {
 
 
         $qry = $this->db->prepare('SELECT AVG(rating) FROM hotspots.reviews WHERE hotspotName=');
@@ -68,7 +86,7 @@ class Database
             ':hotspotName' => $hotspotName
         ));
 
-        foreach ($qry as $avg){
+        foreach ($qry as $avg) {
             echo $avg;
         }
 
@@ -77,6 +95,7 @@ class Database
 
 
 }
+
 ?>
 
 

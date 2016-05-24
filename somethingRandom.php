@@ -78,7 +78,7 @@
             <h2 class="article-head">Recent Places</h2>
             <hr class="article-title-rule">
             <?php
-            include('server/php/pdo.php');
+            include('server/php/pdoMaster.php');
 
             include('server/php/databaseQueries.php');
 

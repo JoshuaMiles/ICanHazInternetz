@@ -1,20 +1,22 @@
 <?php
 include('databaseQueries.php');
-include('pdo.php');
+include('pdoMaster.php');
+include('postMaster.php');
+
 if (!empty($_POST)) {
     $pdo = getPDO();
 
     $db = new Database($pdo);
 
 
-    $email = $_POST['email'];
-    $hotspotName = $_POST['hotspotName'];
-    $firstName = $_POST['firstName'];
-    $rating = $_POST['rating'];
-    $comment = $_POST['comment'];
+    $email = getPost('email');
+    $hotspotName = getPost('hotspotName');
+    $firstName = getPost('firstName');
+    $rating = getPost('rating');
+    $comment = getPost('comment');
 
     $db->insert($email, $hotspotName, $firstName, $rating, $comment);
-    echo "INSERTED !";
+
 }
 
 ?>

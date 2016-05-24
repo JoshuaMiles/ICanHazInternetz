@@ -3,7 +3,7 @@
   ini_set('display_errors', 1);
 
   session_start();
-  include_once("pdo.php");
+  include_once("pdoMaster.php");
   include("postMaster.php");
 
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
