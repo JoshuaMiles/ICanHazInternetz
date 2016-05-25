@@ -45,8 +45,18 @@
         <div class="container">
           <div class="review-cards">
 
-            <?php include('server/includes/recentReview.tpl.php'); ?>
 
+            <?php
+            include('server/php/pdoMaster.php');
+
+
+            $pdo = getPDO();
+            $query = new Database($pdo);
+
+            $query->sampleItemQuery();
+
+
+            ?>
 
 
         </div>
