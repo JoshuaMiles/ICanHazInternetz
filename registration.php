@@ -16,7 +16,6 @@
     <?php require_once('server/includes/nav.tpl.php'); ?>
 
   <main>
-    <?php require_once('server/includes/login.tpl.php'); ?>
 
     <section class="register"> <!-- register section -->
       <article class="user-container"> <!-- wrapper for content -->

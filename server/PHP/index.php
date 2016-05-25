@@ -3,7 +3,7 @@ error_reporting(-1);
 ini_set('display_errors', 1);
 
 session_start();
-include_once("pdo.php");
+include_once("pdoMaster.php");
 include("postMaster.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -30,11 +30,3 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 ?>
 
 
-<form method="post" action="">
-    <input name="email" type="email">
-    <input name="firstName" type="text">
-    <input name="lastName" type="text">
-    <input name="phone" type="text">
-    <input name="password" type="password">
-    <input type="submit" value="Submit">
-</form>

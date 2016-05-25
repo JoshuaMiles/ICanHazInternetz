@@ -1,4 +1,4 @@
-<?php include('server/PHP/login.php'); ?>
+<?php include_once('server/PHP/login.php'); ?>
 <div class="overlay">
   <div class="modal">
     <p class="btn-close">

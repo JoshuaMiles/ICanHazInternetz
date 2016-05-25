@@ -2,7 +2,6 @@
   error_reporting(-1);
   ini_set('display_errors', 1);
 
-  session_start();
   include_once("pdoMaster.php");
   include("postMaster.php");
 

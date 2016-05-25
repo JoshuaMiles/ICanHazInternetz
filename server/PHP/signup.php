@@ -1,10 +1,9 @@
 <?php
   error_reporting(-1);
   ini_set('display_errors', 1);
+  require_once("pdoMaster.php");
 
-  session_start();
-  include_once("pdo.php");
-  include("postMaster.php");
+//  include("postMaster.php");
 
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
 

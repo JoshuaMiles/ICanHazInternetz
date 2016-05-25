@@ -1,4 +1,5 @@
-<?php include_once('server/PHP/databaseQueries.php'); ?>
+<?php include('server/PHP/databaseQueries.php'); ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,15 +11,15 @@
   </head>
   <body>
   <!-- Header -->
-  <?php require_once('server/includes/header.tpl.php'); ?>
+  <?php include('server/includes/header.tpl.php'); ?>
 
   <!-- Navigation -->
-  <?php require_once('server/includes/nav.tpl.php'); ?>
+  <?php include('server/includes/nav.tpl.php'); ?>
 
   <!-- Content -->
   <main>
     <!-- Login -->
-    <?php require_once('server/includes/login.tpl.php'); ?>
+    <?php include('server/includes/login.tpl.php'); ?>
 
     <section>
       <article class="search-index">
@@ -45,10 +46,8 @@
         <div class="container">
           <div class="review-cards">
             <?php
-              include('server/php/pdoMaster.php');
               $pdo = getPDO();
               $query = new Database($pdo);
-
               $query->sampleItemQuery();
             ?>
         </div>
@@ -57,7 +56,7 @@
   </main> <!-- content area -->
 
     <!-- Footer -->
-    <?php require_once('server/includes/footer.tpl.php'); ?>
+    <?php include('server/includes/footer.tpl.php'); ?>
 
   <script type="text/javascript" src="js/script.js"></script>
   </body>
