@@ -5,10 +5,10 @@
     </p>
     <h2 class="article-head">Login</h2>
     <hr class="article-title-rule">
-    <form action="submit" class="login-form">
+    <form method="POST" action="submit" class="login-form">
       <div class="input-group">
-        <input type="text" name="name" id="username" class="lbl-highlight">
-        <label for="firstName">First Name</label>
+        <input type="email" name="email" id="username" class="lbl-highlight">
+        <label for="firstName">Email</label>
       </div>
       <div class="input-group">
         <input type="password" name="password" id="password" class="lbl-highlight">

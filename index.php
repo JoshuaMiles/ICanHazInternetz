@@ -44,21 +44,13 @@
 
         <div class="container">
           <div class="review-cards">
-
-
             <?php
-            include('server/php/pdoMaster.php');
-
-
-            $pdo = getPDO();
-            $query = new Database($pdo);
-
-            $query->sampleItemQuery();
-
-
+              // include('server/php/pdoMaster.php');
+              // $pdo = getPDO();
+              // $query = new Database($pdo);
+              //
+              // $query->sampleItemQuery();
             ?>
-
-
         </div>
       </article>
     </section>
