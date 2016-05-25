@@ -1,7 +1,4 @@
-<?php
-//session_start();
 
-?>
 <nav id="nav">
   <div class="navbar">
     <div class="brand"><a href="index.php">routr</a></div>
@@ -16,7 +13,7 @@
           } else {
             echo('<li id="active"><a href="#" id="user">
                   <i class="material-icons user-icon">person</i>
-                  <strong> '.$name.' </strong></a>
+                  <strong> '.$_SESSION["username"].' </strong></a>
               </li>');
           }
       ?>
