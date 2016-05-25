@@ -13,8 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
   $login = new User($pdo);
 
-  $verify = $login->login($email, $password);
-  echo $verify;
+  $login->login($email, $password);
 
 }
 ?>

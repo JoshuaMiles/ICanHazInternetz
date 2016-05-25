@@ -58,14 +58,15 @@ class User {
 
 
       $data = $statement->fetch();
-      global $name;
-      $name = $data["firstName"];
+      echo "something";
+
       if (!empty($data)) {
 
         $db_hashed_pw = $data["password_hash"];
         if (password_verify($postPassword, $db_hashed_pw)) {
-          echo $name;
           $_SESSION['logged_in'] = true;
+          $_SESSION["username"] = $data["firstName"];
+
           header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
           exit;
         } else {
@@ -77,25 +78,6 @@ class User {
       }
 
       exit;
-
-      //post password is raw password, password is the hashed version from the database
-      $username = $postEmail;
-      $password = password_hash($postPassword, PASSWORD_DEFAULT);
-
-      //$qry = $this->db->prepare('SELECT * FROM hotspots.members WHERE email = :username and password_hash = :password');
-      $qry = $this->db->prepare('SELECT * FROM hotspots.members');
-
-      //$qry->execute(array(
-      //  ':username' => $username,
-      //  ':password' => $password
-      //)); // run query
-//      echo $username . " ". $password;
-      $data = $qry->fetchAll(PDO::FETCH_ASSOC);
-      echo "<br>before:<br>";
-      echo print_r($data);
-      echo "<br>after:<br>";
-      EXIT;
-      echo password_verify($postPassword, $password);
     }
   }
 
@@ -108,6 +90,12 @@ class User {
   public function logout($id, $email) {
 
     $_Session = array();
+
+    if(session_destroy()){
+      header("Location: index.php");
+      $msg = "Logged Out";
+      echo '<span>' . $msg .'</span>';
+    }
     if ($_SESSION['userid'] = $id && $_SESSION['email'] = $email && $_SESSION['password'] = $password) {
 
       setcookie("userid", '', strtotime('-1 days'), '/');
@@ -115,13 +103,10 @@ class User {
       setcookie("password", '', strtotime('-1 days'), '/');
     }
 
-    $name = '';
-    session_destroy();
 
     if (isset($_SESSION['userid']) || isset($_SESSION['email']) || isset($_SESSION['password'])) {
       $_SESSION = null;
 
-      //TODO something to do if any are still set
     } else {
       echo 'Go back to the login page';
       exit();
