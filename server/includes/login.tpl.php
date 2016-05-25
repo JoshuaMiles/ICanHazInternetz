@@ -1,3 +1,4 @@
+<?php include('server/PHP/login.php'); ?>
 <div class="overlay">
   <div class="modal">
     <p class="btn-close">
@@ -5,7 +6,7 @@
     </p>
     <h2 class="article-head">Login</h2>
     <hr class="article-title-rule">
-    <form method="POST" action="submit" class="login-form">
+    <form method="POST" action="" class="login-form">
       <div class="input-group">
         <input type="email" name="email" id="username" class="lbl-highlight">
         <label for="firstName">Email</label>
