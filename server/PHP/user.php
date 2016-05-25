@@ -26,14 +26,14 @@ class User
         try {
             //Uses bycrypt
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = $this->db->prepare("INSERT INTO users ( email, firstName, lastName, phone, password_hash ) VALUES (:email,:firstName,:lastName,:phone,:password)");
+            $sql = $this->db->prepare("INSERT INTO hotspots.members( firstName, lastName, email, phone, password_hash ) VALUES (:firstName,:lastName, :email,:phone,:password)");
             if (!$sql) {
                 die($this->db->errorInfo());
             }
             $sql->execute(array(
-                ":email" => $email,
                 ":firstName" => $firstName,
                 ":lastName" => $lastName,
+              ":email" => $email,
                 ":phone" => $phone,
                 ":password" => $password_hash
             ));
@@ -73,11 +73,10 @@ class User
             if (($qry->rowCount() > 0)) {
                 echo $qry->rowCount();
                 $_SESSION['logged_in'] = true;
-
-                header("Location:  http://{$_SERVER['HTTP_HOST']}/index.html");
+                header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
                 exit();
             } else {
-                echo "Login failed";
+                echo '<span class="error"> Fuck off you</span>';
             }
         }
     }

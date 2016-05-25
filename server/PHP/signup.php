@@ -17,8 +17,8 @@
       $pdo = getPDO();
       require_once 'user.php';
       $user = new USER($pdo);
-      if($user->register($email,$firstName,$lastName,$phone,$password)){
-          header("Location: index.html");
+      if($user->register($firstName,$lastName,$email,$phone,$password)){
+          header("Location: index.php");
           exit();
       } else {
           // header("Location: .php");
