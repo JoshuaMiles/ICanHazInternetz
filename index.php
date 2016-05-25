@@ -1,3 +1,4 @@
+<?php include_once('server/PHP/databaseQueries.php'); ?>
 <!DOCTYPE html>
 <html>
   <head>
