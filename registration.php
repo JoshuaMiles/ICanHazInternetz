@@ -1,33 +1,20 @@
 <?php include 'server/PHP/signup.php'; ?>
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <title>routr</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-<header>
-    <div class="branding"> <!--wrapper -->
-        <div id="brand-group">
-            <div class="logo"></div>
-            <h1>routr</h1>
-            <p>find your local wifi</p>
-        </div>
-    </div>
-</header> <!-- header -->
-<nav id="nav">
-    <div class="navbar">
-      <div class="brand"><a href="index.php">routr</a></div>
-      <ul>
-        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Login</strong></a></li>
-        <li><a href="registration.php">Register</a></li>
-        <li><a href="search.php">Find Wifi</a></li>
-      </ul>
-    </div>
-</nav> <!-- navigation -->
+  </head>
+  <body>
+    <!-- Header -->
+    <?php require_once('server/includes/header.tpl.php'); ?>
+
+    <!-- Navigation -->
+    <?php require_once('server/includes/nav.tpl.php'); ?>
+
   <main>
     <?php require_once('server/includes/login.tpl.php'); ?>
 
@@ -70,25 +57,10 @@
       </article>
     </section> <!-- register section -->
   </main> <!-- end main content section -->
-<footer>
-    <section class="container">
 
-      <div class="brand">
-        <a href="index.php"><img src="images/routr-logo-sml.png" alt="logo"/></a>
-        <p class="title">routr</p>
-      </div>
-        <nav class="footer">
-          <ul>
-            <li><a href="search.php">Find Wifi</a></li>
-            <li><a href="registration.php">Register</a></li>
-            <li><a href="userProfile.php">Your Profile</a></li>
-          </ul>
-        </nav>
-    </section>
-    <section class="copyright">
-        <article>Copyright 2016</article>
-    </section>
-</footer> <!-- footer -->
+  <!-- Footer -->
+  <?php require_once('server/includes/footer.tpl.php'); ?>
+
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript" src="js/validation.js"></script>
   </body>

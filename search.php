@@ -8,16 +8,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-  <nav id="fixed-nav">
-    <div id="fixed-container">
-      <div class="brand"><a href="index.php">routr</a></div>
-      <ul>
-        <li id="active"><a href="#" id="user"><i class="material-icons user-icon">person</i><strong> Login</strong></a></li>
-        <li><a href="registration.php">Register</a></li>
-        <li><a href="search.php">Find Wifi</a></li>
-      </ul>
-    </div>
-  </nav> <!-- navigation -->
+    <!-- Navigation fixed -->
+    <?php require_once('server/includes/fixedNav.tpl.php'); ?>
 
   <main>
     <?php require_once('server/includes/login.tpl.php'); ?>
@@ -158,25 +150,9 @@
     </section>
   </main>
 
+  <!-- Footer -->
+  <?php require_once('server/includes/footer.tpl.php'); ?>
 
-  <footer>
-    <section class="container">
-      <div class="brand">
-        <a href="index.php"><img src="../images/routr-logo-sml.png" alt="logo"/></a>
-        <p class="title">routr</p>
-      </div>
-        <nav class="footer">
-          <ul>
-            <li><a href="search.php">Find Wifi</a></li>
-            <li><a href="registration.php">Register</a></li>
-            <li><a href="userProfile.php">Your Profile</a></li>
-          </ul>
-        </nav>
-    </section>
-    <section class="copyright">
-      <article>Copyright 2016</article>
-    </section>
-  </footer> <!-- footer -->
   <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
