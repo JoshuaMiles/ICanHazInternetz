@@ -12,5 +12,12 @@
     $login = new User($pdo);
     // Call login function
     $login->login($email, $password);
+
+    if (!isset($email)) {
+      echo 'please enter email address';
+    }
+    if (isset($password)) {
+      echo 'please enter password';
+    }
   }
 ?>
