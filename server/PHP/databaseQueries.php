@@ -22,6 +22,20 @@ class Database {
     }
   }
 
+  public function showAll() {
+
+    $address = '';
+    
+    // No limit
+    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items;');
+    $qry->execute();
+
+    foreach ($qry as $hotspot) {
+      include('server/includes/recentReview.tpl.php');
+    }
+  }
+
+
 
   public function reviewItemQuery() {
 
@@ -35,7 +49,7 @@ class Database {
 
   public function searchQuery($postName, $postAddress, $postSuburb) {
 
-    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM hotspots.items,hotspots.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR items.NAME LIKE "' . $postName . '" OR items.Suburb LIKE "' . $postSuburb . '"');
+    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM hotspots.items,hotspots.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR items.NAME LIKE "' . $postName . '" OR items.Suburb LIKE "' . $postSuburb . '" LIMIT 1');
     $qry->execute();
 
 
@@ -69,10 +83,12 @@ class Database {
   public function getReviewIfRating(){
     //
 
-    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,reviews.rating FROM hotspots.items INNER JOIN reviews ON reviews.hotspotName=items.NAME');
+    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,reviews.rating FROM hotspots.items INNER JOIN reviews ON reviews.hotspotName=items.NAME LIMIT 1');
     $qry->execute();
 
-    
+    foreach ($qry as $hotspot){
+      include('server/includes/recentReview.tpl.php');
+    }
 
   }
 

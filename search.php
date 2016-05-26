@@ -66,16 +66,25 @@
             <?php
             include("server/PHP/databaseQueries.php");
             include("server/php/pdoMaster.php");
+            $db = new Database(getPDO());
+            $searchBox =isset( $_GET["searchBox"]) ? $_GET["searchBox"] : '';
             $suburb = isset( $_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
-            echo $suburb;
+
+            
+
             $rating =  isset( $_GET["search-rating"]) ? $_GET["search-rating"] : '';
             $address = "";
-            $searchBox =isset( $_GET["searchBox"]) ? $_GET["searchBox"] : '';
-            echo $searchBox;
-            $db = new Database(getPDO());
-            $rating = $db->getAverageForRating($searchBox);
-            $test = $db->searchQuery($searchBox, $address , $suburb , $rating);
 
+            if(!isset( $_GET["searchBox"])){
+              $showAll = $db->showAll($db);
+            } else {
+              $test = $db->searchQuery($searchBox, $address , $suburb , $rating);
+            }
+
+
+            $rating = $db->getAverageForRating($searchBox);
+
+            $reviewAndRating = $db->getReviewIfRating();
             ?>
           </div>
         </div>
