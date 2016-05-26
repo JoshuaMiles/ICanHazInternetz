@@ -29,6 +29,7 @@
       echo 'fuck you';
     }
   }
+}
 ?>
 <div class="overlay">
   <div class="modal">
