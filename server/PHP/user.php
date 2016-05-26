@@ -88,13 +88,11 @@ class User {
    * @param $email
    */
   public function logout($id, $email) {
-
-    $_Session = array();
-
-    if(session_destroy()){
+    
+    if (session_destroy()) {
       header("Location: index.php");
       $msg = "Logged Out";
-      echo '<span>' . $msg .'</span>';
+      echo '<span>' . $msg . '</span>';
     }
     if ($_SESSION['userid'] = $id && $_SESSION['email'] = $email && $_SESSION['password'] = $password) {
 
@@ -113,6 +111,4 @@ class User {
     }
 
   }
-
-
 }
