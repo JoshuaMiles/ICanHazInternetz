@@ -16,6 +16,13 @@
         <label for="password">Password</label>
       </div>
       <a href="registration.php" class="login-notify muted">Don't have an account? Click here</a>
+      <div>
+        <?php
+        foreach($errors as $error){
+          echo "<p>".$error."</p>"
+        }
+        ?>
+      </div>
       <input type="submit" name="login" value="Sign in" id="login">
     </form>
   </div>

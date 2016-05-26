@@ -3,6 +3,8 @@
   include("postMaster.php");
   include("user.php");
 
+  $error = array();
+
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = getPost('email');
     $password = getPost('password');
@@ -14,10 +16,10 @@
     $login->login($email, $password);
 
     if (!isset($email)) {
-      echo 'please enter email address';
+      $error[] = 'please enter email address';
     }
     if (isset($password)) {
-      echo 'please enter password';
+      $error[] = 'please enter password';
     }
   }
 ?>
