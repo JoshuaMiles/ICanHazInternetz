@@ -53,3 +53,38 @@ closeBtn.addEventListener("click", closeLoginModal, false);
 includeSuburbs.addEventListener("change", showNearbyResults, false);
 searchBox.addEventListener("keyup", toggleClearBtn, false);
 clearBtn.addEventListener("click", clearSearch, false);
+
+function processLogin(){
+
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function(){
+    console.log(request.responseText);
+  };
+
+  request.open("POST", window.location.href, true);
+  var req_object = {
+    email : document.querySelector('#username').value
+  };
+
+
+  // send the request to the server
+  request.send(req_object);
+
+  switch (request.status){
+    case 200:
+      // login is fine - close the modal.
+      break;
+    default:
+    // login failed.  add a span that says 'failed!'
+  }
+}
+
+// now, you need to hook in to the form's onsubmit, so you can stop it doing whatever it is doing.
+var form = document.querySelector('.login-form');//find your form
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  console.log('form submitting');
+  processLogin();
+});

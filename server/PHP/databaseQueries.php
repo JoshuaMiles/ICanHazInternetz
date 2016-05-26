@@ -35,8 +35,10 @@
 
     public function searchQuery($postName,$postAddress,$postSuburb,$postcode) {
 
-      $qry = $this->db->prepare('SELECT * FROM hotspots.items WHERE ADDRESS LIKE "'.$postAddress.'" OR items.NAME LIKE "'.$postName.'" OR items.Suburb LIKE "'.$postSuburb.'" OR items.postcode LIKE "'.$postcode.'"');
+      $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items WHERE ADDRESS LIKE "'.$postAddress.'" OR items.NAME LIKE "'.$postName.'" OR items.Suburb LIKE "'.$postSuburb.'" OR items.postcode LIKE "'.$postcode.'"');
       $qry->execute();
+      
+//      $data = $qry->fetchAll();
 
       foreach ($qry as $hotspot) {
         include('server/includes/recentReview.tpl.php');

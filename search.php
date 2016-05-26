@@ -58,6 +58,18 @@
         </div>
       </div>
         <div class="container pull-down">
+          <article class="results-container">
+          <div class="container">
+            <div class="review-cards">
+          <?php
+          include("server/PHP/databaseQueries.php");
+          $db = new Database(getPDO());
+          $test = $db->searchQuery("Brisbane Square Library","","","4000");
+
+          ?>
+              </div>
+            </div>
+            </article>
 
           <!-- <article class="results-container">
             <div class="container">
@@ -138,9 +150,9 @@
             </div>
           </article> -->
 
-          <?php include('server/includes/initialState.tpl.php'); ?>
+          <?php //include('server/includes/initialState.tpl.php'); ?>
 
-          <?php include('server/includes/noResultsFound.tpl.php'); ?>
+          <?php //include('server/includes/noResultsFound.tpl.php'); ?>
 
 
 
