@@ -29,6 +29,7 @@
                   <strong>Login/Register</strong>
                 </a>
               </li>
+              <li><a href="registration.php">Register</a></li>
             ');
         }
         // // On load
@@ -67,7 +68,7 @@
         //     ');
         //   }
       ?>
-      <li><a href="registration.php">Register</a></li>
+      <!-- <li><a href="registration.php">Register</a></li> -->
       <li><a href="search.php">Find Wifi</a></li>
     </ul>
   </div>
