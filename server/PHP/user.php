@@ -67,9 +67,9 @@ class User {
 
           header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
           exit();
-        } else {
-          $error[] = 'please enter email address';
-          $error[] = 'please enter password';
+        } else if (password_verify($postPassword, $db_hashed_pw)) {
+          echo 'Wrong password';
+          exit();
         }
       } else {
         echo "INVALID EMAIL";
