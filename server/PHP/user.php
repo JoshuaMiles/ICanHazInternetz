@@ -65,7 +65,7 @@ class User {
           $_SESSION['logged_in'] = true;
           $_SESSION["username"] = $data["firstName"];
 
-          header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
+        //  header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
           exit();
         } else {
           $error[] = 'please enter email address';
