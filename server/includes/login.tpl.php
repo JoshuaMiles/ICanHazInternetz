@@ -6,6 +6,9 @@
     </p>
     <h2 class="article-head">Login</h2>
     <hr class="article-title-rule">
+
+    <?php if (isset($_SESSION['errors'])); ?>
+
     <form method="POST" action="index.php" class="login-form">
       <div class="input-group">
         <input type="email" name="email" id="username" class="lbl-highlight">
@@ -16,6 +19,11 @@
         <label for="password">Password</label>
       </div>
       <a href="registration.php" class="login-notify muted">Don't have an account? Click here</a>
+      <?php
+        foreach($_SESSION['errors'] as $error) {
+          echo '<p>'. $error . '</p>';
+        }
+      ?>
       <input type="submit" name="login" value="Sign in" id="login">
     </form>
   </div>
