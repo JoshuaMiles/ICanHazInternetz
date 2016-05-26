@@ -1,51 +1,32 @@
 <?php
 
-  include('config.php'); // include db connection file
-  session_start(); // session begin
+include('pdoMaster.php');
+$pdo = getPDO();
 
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+  $postEmail = $_POST['email'];
+  $postPassword = $_POST['password'];
 
-    $qry = $pdo->prepare('SELECT * FROM admins WHERE username = :username and password = SHA2(CONCAT(:password, salt), 0)');
+  $statement = $pdo->prepare('SELECT email, firstName, password_hash FROM hotspots.members WHERE email = ?');
+  $statement->bindParam(1, $postEmail);
+  $statement->execute();
 
-    $qry->execute(array(
-      ':username' => $username,
-      ':password' => $password
-    )); // run query
+  $data = $statement->fetch();
 
-    if ($qry->rowCount() > 0) {
-      // session_register("username"); // just 'username'?
-      // session_register("password");
-      // $_SESSION['logged_in'] = $username;
+  if (!empty($data)) {
+    $db_hashed_pw = $data["password_hash"];
+
+    if (password_verify($postPassword, $db_hashed_pw)) {
       $_SESSION['logged_in'] = true;
+      $_SESSION["username"] = $data["firstName"];
 
-      header("Location:  http://{$_SERVER['HTTP_HOST']}/private.php");
+      header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
       exit();
-    }
-    else {
+    } else {
       $error = "Login failed";
+      echo 'fuck you';
     }
   }
+}
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-  </head>
-  <body>
-
-    <?php include 'menu.inc'; ?>
-
-    <form action="login.php" method="post">
-      <input type="text" name="username" value="">
-      <input type="password" name="password" value="">
-      <input type="submit" name="login" value="Login">
-    </form>
-
-    <div class="message"><?php echo $error; ?></div>
-
-  </body>
-</html>

@@ -35,7 +35,7 @@
 
     public function searchQuery($postName,$postAddress,$postSuburb,$postcode) {
 
-      $qry = $this->db->prepare('SELECT * FROM hotspots.items LIKE "'.$postAddress.'"' OR "'.$postName.'" OR "'.$postSuburb.'" OR "'.$postcode.'");
+      $qry = $this->db->prepare('SELECT * FROM hotspots.items WHERE ADDRESS LIKE "'.$postAddress.'" OR items.NAME LIKE "'.$postName.'" OR items.Suburb LIKE "'.$postSuburb.'" OR items.postcode LIKE "'.$postcode.'"');
       $qry->execute();
 
       foreach ($qry as $hotspot) {
