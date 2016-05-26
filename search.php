@@ -5,9 +5,11 @@
     <title>routr - results</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7rWGqvYfHMPhTMETa0JlKwAo6nA-Zu8" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
+    <!-- <body onload="load()"> for google maps --> 
     <!-- Navigation fixed -->
     <?php include('server/includes/fixedNav.tpl.php'); ?>
 
