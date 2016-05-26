@@ -34,7 +34,7 @@
         float: right;
         list-style-type: none;
 
-        &:first-child {
+        &:nth-child(2) {
           background-color: $tomato;
         }
         .user-icon {
