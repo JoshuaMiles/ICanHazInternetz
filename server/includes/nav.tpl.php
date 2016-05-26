@@ -5,7 +5,7 @@
       <?php
         session_start();
 
-        if ($_SESSION['logged_in'] == true) {
+        if (isset($_SESSION['logged_in'])) {
           echo('
             <li>
               <a href="server/PHP/logout.php">
@@ -21,7 +21,7 @@
               </a>
             </li>
           ');
-        } else if ($_SESSION['logged_in'] == false) {
+        } else if (!isset($_SESSION['logged_in'])) {
             echo('
               <li id="active">
                 <a href="#" id="user">
