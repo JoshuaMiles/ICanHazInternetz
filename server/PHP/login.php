@@ -15,11 +15,11 @@
     // Call login function
     $login->login($email, $password);
 
-    if (!isset($email)) {
-      $error[] = 'please enter email address';
-    }
-    if (!isset($password)) {
-      $error[] = 'please enter password';
-    }
+    // if (!isset($email)) {
+    //   $error[] = 'please enter email address';
+    // }
+    // if (!isset($password)) {
+    //   $error[] = 'please enter password';
+    // }
   }
 ?>

@@ -18,8 +18,8 @@
       <a href="registration.php" class="login-notify muted">Don't have an account? Click here</a>
       <div>
         <?php
-          foreach ($error as $errors) {
-            echo "<p>".'$error'."</p>";
+          foreach ($errors as $error) {
+            echo "<p>".$error."</p>";
           }
         ?>
       </div>
