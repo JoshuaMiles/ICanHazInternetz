@@ -2,6 +2,7 @@
 
   include('server/PHP/pdoMaster.php');
   $pdo = getPDO();
+  $error = '';
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
