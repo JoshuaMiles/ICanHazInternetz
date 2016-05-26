@@ -8,8 +8,8 @@
       </div>
       <div itemscope itemtype="http://schema.org/Place" class="desc">
         <div class="title">' . $hotspot['NAME'] . '</div>
-        <div itemprop="address" class="muted">' . $hotspot['ADDRESS'] . '•' . $hotspot['SUBURB'] . '</div>
-        //add rating here
+        <div itemprop="address" class="muted">' . $hotspot['ADDRESS'] . ' • ' . $hotspot['SUBURB'] . '</div>
+        // <div itemprop="rating" class="muted">' . $hotspot['RATING'] . '</div>
       </div>
     </a>
   ');

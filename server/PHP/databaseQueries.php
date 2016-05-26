@@ -14,14 +14,11 @@
     public function sampleItemQuery() {
 
       $address = '';
-
       $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');
       $qry->execute();
 
       foreach ($qry as $hotspot) {
-
         include('server/includes/recentReview.tpl.php');
-
       }
     }
 
