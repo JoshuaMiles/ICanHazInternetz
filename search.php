@@ -12,7 +12,7 @@
     <?php require_once('server/includes/fixedNav.tpl.php'); ?>
 
   <main>
-    <?php require_once('server/includes/login.tpl.php'); ?>
+    <?php require_once('server/includes/login.tpl.php'); ?> 
 
     <section class="results">
       <div class="searchbar-container">
