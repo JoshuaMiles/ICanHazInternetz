@@ -6,7 +6,7 @@
     </p>
     <h2 class="article-head">Login</h2>
     <hr class="article-title-rule">
-    <form method="POST" action="" class="login-form">
+    <form method="POST" action="login.tpl.php" class="login-form">
       <div class="input-group">
         <input type="email" name="email" id="username" class="lbl-highlight">
         <label for="firstName">Email</label>

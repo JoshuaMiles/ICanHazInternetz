@@ -67,6 +67,8 @@ class User {
           header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
           exit();
         } else {
+          echo '<script> openLoginModal(); </script>';
+          $error = 'Invalid password or ';
           echo '<span class="error"> Invalid password</span>';
         }
       } else {
