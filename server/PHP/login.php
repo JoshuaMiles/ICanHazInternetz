@@ -18,7 +18,7 @@
     if (!isset($email)) {
       $error[] = 'please enter email address';
     }
-    if (isset($password)) {
+    if (!isset($password)) {
       $error[] = 'please enter password';
     }
   }
