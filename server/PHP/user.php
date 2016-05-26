@@ -21,8 +21,6 @@ class User {
   public function register($firstName, $lastName, $email, $phone, $password) {
 
     try {
-
-
       //Uses bycrypt
       $password_hash = password_hash($password, PASSWORD_DEFAULT);
       $sql = $this->db->prepare("INSERT INTO hotspots.members( firstName, lastName, email, phone, password_hash ) VALUES (:firstName,:lastName, :email,:phone,:password)");
@@ -39,8 +37,9 @@ class User {
       var_dump($this->db->errorInfo());
       echo "\n\n\nInsert ID is : {$this->db->lastInsertId()}\n\n\n\n\n";
       return $sql;
+
     } catch (PDOException $e) {
-      die("Error! :" . $e->getMessage() . "</br>");
+        die("Error! :" . $e->getMessage() . "</br>");
     }
   }
 
@@ -56,28 +55,24 @@ class User {
       $statement->bindParam(1, $postEmail);
       $statement->execute();
 
-
       $data = $statement->fetch();
-      echo "something";
 
       if (!empty($data)) {
-
         $db_hashed_pw = $data["password_hash"];
+
         if (password_verify($postPassword, $db_hashed_pw)) {
           $_SESSION['logged_in'] = true;
           $_SESSION["username"] = $data["firstName"];
 
           header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
-          exit;
+          exit();
         } else {
-          echo "NAH UR NOT";
           echo '<span class="error"> Invalid password</span>';
         }
       } else {
         echo "INVALID EMAIL";
       }
-
-      exit;
+      exit();
     }
   }
 
@@ -113,6 +108,5 @@ class User {
     }
 
   }
-
-
+  
 }

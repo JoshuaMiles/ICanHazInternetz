@@ -9,7 +9,7 @@
       <div itemscope itemtype="http://schema.org/Place" class="desc">
         <div class="title">' . $hotspot['NAME'] . '</div>
         <div itemprop="address" class="muted">' . $hotspot['ADDRESS'] . '•' . $hotspot['SUBURB'] . '</div>
-       
+        //add rating here
       </div>
     </a>
   ');

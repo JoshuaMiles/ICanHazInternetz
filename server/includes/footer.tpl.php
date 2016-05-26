@@ -15,4 +15,4 @@
   <section class="copyright">
     <article>Copyright 2016</article>
   </section>
-</footer> <!-- footer -->
+</footer>
