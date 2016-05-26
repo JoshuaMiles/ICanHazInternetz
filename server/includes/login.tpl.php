@@ -1,6 +1,6 @@
 <?php
 
-  include('pdoMaster.php');
+  include('server/PHP/pdoMaster.php');
   $pdo = getPDO();
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
