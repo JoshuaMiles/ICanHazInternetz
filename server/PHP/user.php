@@ -48,31 +48,31 @@ class User {
    * @param $postEmail
    * @param $postPassword
    */
-  public function login($postEmail, $postPassword) {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-      $statement = $this->db->prepare('SELECT email,firstName, password_hash FROM hotspots.members WHERE email = ?');
-      $statement->bindParam(1, $postEmail);
-      $statement->execute();
-
-      $data = $statement->fetch();
-
-      if (!empty($data)) {
-        $db_hashed_pw = $data["password_hash"];
-
-        if (password_verify($postPassword, $db_hashed_pw)) {
-          $_SESSION['logged_in'] = true;
-          $_SESSION["username"] = $data["firstName"];
-
-          header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
-          exit();
-        } else {
-          $_SESSION['errors'] = array("Your email or password are incorrect");
-        }
-      }
-      exit();
-    }
-  }
+  // public function login($postEmail, $postPassword) {
+  //   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  //
+  //     $statement = $this->db->prepare('SELECT email,firstName, password_hash FROM hotspots.members WHERE email = ?');
+  //     $statement->bindParam(1, $postEmail);
+  //     $statement->execute();
+  //
+  //     $data = $statement->fetch();
+  //
+  //     if (!empty($data)) {
+  //       $db_hashed_pw = $data["password_hash"];
+  //
+  //       if (password_verify($postPassword, $db_hashed_pw)) {
+  //         $_SESSION['logged_in'] = true;
+  //         $_SESSION["username"] = $data["firstName"];
+  //
+  //         header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
+  //         exit();
+  //       } else {
+  //         $_SESSION['errors'] = array("Your email or password are incorrect");
+  //       }
+  //     }
+  //     exit();
+  //   }
+  // }
 
 
   /**

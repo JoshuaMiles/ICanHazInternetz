@@ -1,4 +1,4 @@
-<?php include_once('server/PHP/login.php'); ?>
+<?php include_once('server/PHP/login_fix.php'); ?>
 <div class="overlay">
   <div class="modal">
     <p class="btn-close">
@@ -6,8 +6,6 @@
     </p>
     <h2 class="article-head">Login</h2>
     <hr class="article-title-rule">
-
-    <?php //if (isset($_SESSION['errors'])); ?>
 
     <form method="POST" action="index.php" class="login-form">
       <div class="input-group">
@@ -19,11 +17,7 @@
         <label for="password">Password</label>
       </div>
       <a href="registration.php" class="login-notify muted">Don't have an account? Click here</a>
-      <?php
-        foreach($_SESSION['errors'] as $error) {
-          echo '<p>'. $error . '</p>';
-        }
-      ?>
+      <?php echo $error; ?>
       <input type="submit" name="login" value="Sign in" id="login">
     </form>
   </div>
