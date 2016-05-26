@@ -39,7 +39,6 @@
                 </a>
               </li>
             ');
-            //echo '<script> logout(); </script>'
           }
       ?>
       <li><a href="registration.php">Register</a></li>
