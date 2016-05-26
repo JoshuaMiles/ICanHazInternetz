@@ -36,7 +36,7 @@
 
     public function searchQuery($postName,$postAddress,$postSuburb,$postcode) {
 
-      $qry = $this->db->prepare('SELECT * FROM hotspots.items, hotspots.reviews LIKE "'.$postAddress.'pu"');
+      // $qry = $this->db->prepare('SELECT * FROM hotspots.items, hotspots.reviews LIKE "'.$postAddress.'pu"');
       $qry->execute();
 
       foreach ($qry as $hotspot) {
@@ -79,14 +79,14 @@
         echo $avg;
       }
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
   }
 
 ?>
