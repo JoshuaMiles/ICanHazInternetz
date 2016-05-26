@@ -19,10 +19,12 @@
   <!-- Content -->
   <main>
     <!-- Login -->
-    <?php include('server/includes/login.tpl.php'); ?>
+    <?php //include('server/includes/login.tpl.php'); ?>
 
     <section>
-      <article class="search-index">
+
+      <?php include('server/includes/newLogin.tpl.php'); ?>
+      <!-- <article class="search-index">
         <h2 class="article-head">Find Wifi</h2>
         <hr class="article-title-rule">
         <form method="POST" action="search.php">
@@ -31,7 +33,7 @@
             <label for="search">Search by name, suburb or rating...</label>
           </div>
           <button type="submit" id="search-btn">Search</button>
-        </form>
+        </form> -->
       </article>
 
       <article class="profile-reviews">
