@@ -7,7 +7,7 @@
     <h2 class="article-head">Login</h2>
     <hr class="article-title-rule">
 
-    <?php if (isset($_SESSION['errors'])); ?>
+    <?php //if (isset($_SESSION['errors'])); ?>
 
     <form method="POST" action="index.php" class="login-form">
       <div class="input-group">
