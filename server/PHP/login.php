@@ -3,7 +3,7 @@
   include("postMaster.php");
   include("user.php");
 
-  // $errors = array();
+  $errors = array();
 
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = getPost('email');
