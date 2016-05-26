@@ -34,6 +34,16 @@
       }
     }
 
+    public function searchQuery($postName,$postAddress,$postSuburb,$postcode) {
+
+      $qry = $this->db->prepare('SELECT * FROM hotspots.items, hotspots.reviews LIKE "'.$postAddress.'pu"');
+      $qry->execute();
+
+      foreach ($qry as $hotspot) {
+        include('server/includes/recentReview.tpl.php');
+      }
+    }
+
 
 
     public function insert($postEmail, $hotspotName, $firstName, $rating, $comment) {
@@ -65,11 +75,18 @@
       $qry->execute(array(
         ':hotspotName' => $hotspotName
       ));
-
       foreach ($qry as $avg) {
         echo $avg;
       }
     }
+    
+    
+    
+    
+    
+    
+    
+    
   }
 
 ?>
