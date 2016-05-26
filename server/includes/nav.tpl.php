@@ -4,17 +4,16 @@
     <ul>
       <?php
         session_start();
-        // if (!isset($_SESSION['logged_in'])) {
-        //   echo('
-        //     <li id="active">
-        //       <a href="#" id="user">
-        //         <i class="material-icons user-icon">person</i>
-        //         <strong>Login</strong>
-        //       </a>
-        //     </li>
-        //   ');
-        // }
-        if (!isset($_SESSION['username']) || !isset($_SESSION['logged_in'])) {
+        // On load
+          echo('
+            <li id="active">
+              <a href="#" id="user">
+                <i class="material-icons user-icon">person</i>
+                <strong>Login</strong>
+              </a>
+            </li>
+          ');
+        if (!isset($_SESSION['username'])) {
             echo('
               <li id="active">
                 <a href="#" id="user">
