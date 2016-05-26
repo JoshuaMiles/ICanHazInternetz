@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <!-- <body onload="load()"> for google maps --> 
+    <!-- <body onload="load()"> for google maps -->
     <!-- Navigation fixed -->
     <?php include('server/includes/fixedNav.tpl.php'); ?>
 
@@ -22,7 +22,7 @@
         <div class="searchbar-items">
 
           <i class="material-icons icon-search">search</i>
-          <form action="search.php" method="post" id="searchWifiForm">
+          <form action="search.php" method="" id="searchWifiForm">
             <span class="input-wrapper">
               <input type="search" name="searchBox" id="searchBox" placeholder="Search">
               <i class="material-icons icon-clear" id="clearBtn">clear</i>
