@@ -29,14 +29,13 @@
       $qry->execute();
 
       foreach ($qry as $hotspot) {
-
         include('server/includes/recentReview.tpl.php');
       }
     }
 
     public function searchQuery($postName,$postAddress,$postSuburb,$postcode) {
 
-      // $qry = $this->db->prepare('SELECT * FROM hotspots.items, hotspots.reviews LIKE "'.$postAddress.'pu"');
+      $qry = $this->db->prepare('SELECT * FROM hotspots.items LIKE "'.$postAddress.'"' OR "'.$postName.'" OR "'.$postSuburb.'" OR "'.$postcode.'");
       $qry->execute();
 
       foreach ($qry as $hotspot) {
