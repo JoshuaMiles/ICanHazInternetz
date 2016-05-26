@@ -108,4 +108,29 @@ class User {
   //   }
   // }
 
+
+  public function logout($id, $email) {
+
+    if (session_destroy()) {
+      header("Location: index.php");
+      $msg = "Logged Out";
+      echo '<span>' . $msg . '</span>';
+    }
+    if ($_SESSION['userid'] = $id && $_SESSION['email'] = $email && $_SESSION['password'] = $password) {
+
+      setcookie("userid", '', strtotime('-1 days'), '/');
+      setcookie("email", '', strtotime('-1 days'), '/');
+      setcookie("password", '', strtotime('-1 days'), '/');
+    }
+
+
+    if (isset($_SESSION['userid']) || isset($_SESSION['email']) || isset($_SESSION['password'])) {
+      $_SESSION = null;
+
+    } else {
+      echo 'Go back to the login page';
+      exit();
+    }
+
+  }
 }
