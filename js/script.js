@@ -1,11 +1,16 @@
 // Setup //
+var width = window.innerWidth;
+var height = window.innerHeight;
+
+// Login //
 var login = document.getElementById('user');
 var overlay = document.getElementsByClassName('overlay')[0];
 var closeBtn = document.getElementsByClassName('btn-close')[0];
 
-var width = window.innerWidth;
-var height = window.innerHeight;
+// Logout //
+var logoutBtn = document.getElementById('logout');
 
+// Search Page //
 var includeSuburbs = document.querySelector('#incSuburbs');
 var searchBox = document.getElementById('searchBox');
 var clearBtn = document.getElementById('clearBtn');
@@ -33,6 +38,10 @@ function closeLoginModal() {
   overlay.style.display = "none";
 }
 
+function logout() {
+  console.log('logged out');
+}
+
 function toggleClearBtn() {
   // Show clear btn if input field is not empty
   clearBtn.style.visibility = (this.value.length) ? "visible" : "hidden";
@@ -48,6 +57,7 @@ function clearSearch() {
 //-- Event Listeners -- //
 login.addEventListener("click", openLoginModal, false);
 closeBtn.addEventListener("click", closeLoginModal, false);
+logout.addEventListener("click", logout, false);
 includeSuburbs.addEventListener("change", showNearbyResults, false);
 searchBox.addEventListener("keyup", toggleClearBtn, false);
 clearBtn.addEventListener("click", clearSearch, false);
