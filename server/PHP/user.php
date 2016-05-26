@@ -50,7 +50,6 @@ class User {
    */
   public function login($postEmail, $postPassword) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      $error = array();
 
       $statement = $this->db->prepare('SELECT email,firstName, password_hash FROM hotspots.members WHERE email = ?');
       $statement->bindParam(1, $postEmail);
@@ -68,8 +67,6 @@ class User {
           header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
           exit();
         } else {
-          $error[] = 'please enter email address';
-          $error[] = 'please enter password';
         }
       } else {
         echo "INVALID EMAIL";
