@@ -69,7 +69,6 @@ class User {
           exit();
         } else if (password_verify($postPassword, $db_hashed_pw)) {
           echo 'Wrong password';
-          exit();
         }
       } else {
         echo "INVALID EMAIL";
