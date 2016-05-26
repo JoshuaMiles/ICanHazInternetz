@@ -3,7 +3,7 @@
 include('server/PHP/pdoMaster.php');
 $pdo = getPDO();
 $error = '';
-$db_hashed_pw  = '';
+$db_hashed_pw = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -24,11 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION["username"] = $data["firstName"];
 
     header("HTTP/1.1 200 OK");
-
-
     exit();
+
   } else {
-    $error = "Login failed";
     header("HTTP/1.1 401 Unauthorised");
     echo $error;
     exit();
