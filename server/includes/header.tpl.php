@@ -6,4 +6,4 @@
       <p>find your local wifi</p>
     </div>
   </div>
-</header> <!-- header -->
+</header>

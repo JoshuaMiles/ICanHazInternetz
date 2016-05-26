@@ -14,25 +14,15 @@
       $password = $_POST['password'];
 
       $pdo = getPDO();
-      require_once 'user.php';
+      require_once('user.php');
       $user = new USER($pdo);
-      if($user->register($email,$firstName,$lastName,$phone,$password)){
-          //header("Location:~/index.html");
+      if ($user->register($email, $firstName, $lastName, $phone, $password)) {
+          echo 'Registered'; // add in msg or notifcation to say registered
+          header("Location: index.php");
           exit();
       } else {
-          header("Location:samepage.php");
-          echo "Not lit";
+          echo 'Error during registration'; // add error msg
+          header("Refresh: 0");
       }
-
   }
 ?>
-
-
-<form method="post" action="">
-    <input name="email" type="email">
-    <input name="firstName" type="text">
-    <input name="lastName" type="text">
-    <input name="phone" type="text">
-    <input name="password" type="password">
-    <input type="submit" value="Submit">
-</form>
