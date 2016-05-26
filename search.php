@@ -9,10 +9,10 @@
   </head>
   <body>
     <!-- Navigation fixed -->
-    <?php require_once('server/includes/fixedNav.tpl.php'); ?>
+    <?php include('server/includes/fixedNav.tpl.php'); ?>
 
   <main>
-    <?php require_once('server/includes/login.tpl.php'); ?> 
+    <?php include('server/includes/login.tpl.php'); ?>
 
     <section class="results">
       <div class="searchbar-container">
@@ -136,9 +136,9 @@
             </div>
           </article> -->
 
-          <?php require_once('server/includes/initialState.tpl.php'); ?>
+          <?php include('server/includes/initialState.tpl.php'); ?>
 
-          <?php require_once('server/includes/noResultsFound.tpl.php'); ?>
+          <?php include('server/includes/noResultsFound.tpl.php'); ?>
 
 
 
@@ -151,7 +151,7 @@
   </main>
 
   <!-- Footer -->
-  <?php require_once('server/includes/footer.tpl.php'); ?>
+  <?php include('server/includes/footer.tpl.php'); ?>
 
   <script type="text/javascript" src="js/script.js"></script>
   </body>
