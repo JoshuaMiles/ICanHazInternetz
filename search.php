@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<!-- <body onload="load()"> for google maps -->
+ <body onload="load()"> for google maps
 <!-- Navigation fixed -->
 <?php include('server/includes/fixedNav.tpl.php'); ?>
 

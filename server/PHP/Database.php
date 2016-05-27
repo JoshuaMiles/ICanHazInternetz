@@ -31,7 +31,7 @@ class Database {
   public function sampleItemQuery() {
 
     $address = '';
-    $qry = $this->db->prepare('SELECT id, NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');
+    $qry = $this->db->prepare('SELECT DISTINCT id, NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');
     $qry->execute();
 
     foreach ($qry as $hotspot) {
@@ -44,7 +44,7 @@ class Database {
     $address = '';
 
     // No limit
-    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items;');
+    $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items;');
     $qry->execute();
 
     foreach ($qry as $hotspot) {
@@ -55,7 +55,7 @@ class Database {
 
   public function reviewItemQuery() {
 
-    $qry = $this->db->prepare('SELECT NAME,EMAIL,RATING FROM hotspots.items, hotspots.reviews INNER JOIN WHERE hotspots.items.EMAIL=hotspots.reviews.EMAIL ');
+    $qry = $this->db->prepare('SELECT DISTINCT NAME,EMAIL,RATING FROM hotspots.items, hotspots.reviews INNER JOIN WHERE hotspots.items.EMAIL=hotspots.reviews.EMAIL ');
     $qry->execute();
 
     foreach ($qry as $hotspot) {
@@ -64,7 +64,7 @@ class Database {
   }
 
   public function searchQuery($postName, $postAddress, $postSuburb) {
-    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM hotspots.items,hotspots.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR items.NAME LIKE "' . $postName . '" OR items.Suburb LIKE "' . $postSuburb . '" LIMIT 1');
+    $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM hotspots.items,hotspots.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR items.NAME LIKE "' . $postName . '" OR items.Suburb LIKE "' . $postSuburb . '" LIMIT 1');
     $qry->execute();
 
 

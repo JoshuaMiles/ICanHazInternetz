@@ -1,14 +1,13 @@
 <?php
-  // Change this to our db connection
-  include('config.php');
+  include('Database.php');
 
   // XML file defaults
   $dom = new DOMDocument('1.0');
   $node = $dom->createElement('markers');
   $parnode = $dom->appendChild($node);
 
-  $query = "SELECT * FROM wifihotspots";
-  $result = $pdo->query($query);
+//  $query = "SELECT * FROM wifihotspots";
+  $result = $db->sampleItemQuery();
 
   if (!$result) {
     die('Invalid query' . mysql_error());
@@ -19,6 +18,7 @@
   foreach($result as $row) {
       $node = $dom->createElement('marker');
       $newnode = $parnode->appendChild($node);
+
 
       $newnode->setAttribute('name', $row['NAME']);
       $newnode->setAttribute('address', $row['ADDRESS']);
