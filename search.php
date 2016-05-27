@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
- <body onload="load()"> for google maps
+ <body onload="load()">
 <!-- Navigation fixed -->
 <?php include('server/includes/fixedNav.tpl.php'); ?>
 
@@ -88,7 +88,7 @@
               $test = $db->searchQuery($searchBox, $address, $suburb, $rating);
             }
 
-            
+
 //            $rating = $db->getAverageForRating($searchBox);
 
 //            $reviewAndRating = $db->getReviewIfRating();
@@ -109,5 +109,6 @@
 <?php include('server/includes/footer.tpl.php'); ?>
 
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/maps.js"></script>
 </body>
 </html>
