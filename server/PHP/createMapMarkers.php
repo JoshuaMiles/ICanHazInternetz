@@ -1,5 +1,6 @@
 <?php
   include('Database.php');
+  $db = new Database();
 
   // XML file defaults
   $dom = new DOMDocument('1.0');
