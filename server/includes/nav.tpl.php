@@ -3,10 +3,9 @@
     <div class="brand"><a href="index.php">routr</a></div>
     <ul>
       <?php
-        session_start();
 
-        if (isset($_SESSION['logged_in'])) {
-          echo('
+      if (isset($user)) {
+        echo('
             <li>
               <a href="server/PHP/logout.php">
                 <svg id="logoutBtn" style="width:1.3em;height:1.3em;vertical-align:text-bottom;" viewBox="0 0 24 24">
@@ -17,12 +16,12 @@
             <li id="active">
               <a href="#" id="user">
                 <i class="material-icons user-icon">person</i>
-                <strong> '.$_SESSION["username"].' </strong>
+                <strong> ' . $user->getFirstName() . ' </strong>
               </a>
             </li>
           ');
-        } else if (!isset($_SESSION['logged_in'])) {
-            echo('
+      } else {
+        echo('
               <li id="active">
                 <a href="#" id="user">
                   <i class="material-icons user-icon">person</i>
@@ -31,7 +30,7 @@
               </li>
               <li><a href="registration.php">Register</a></li>
             ');
-        }
+      }
       ?>
       <li><a href="search.php">Find Wifi</a></li>
     </ul>

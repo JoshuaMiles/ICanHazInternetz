@@ -1,7 +1,5 @@
 <?php
   include('databaseQueries.php');
-  include('pdoMaster.php');
-  include('postMaster.php');
 
   if (!empty($_POST)) {
       $pdo = getPDO();
