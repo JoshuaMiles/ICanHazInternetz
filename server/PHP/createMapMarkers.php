@@ -9,23 +9,34 @@
 
   $result = $db->sampleItemQuery();
 
-  if (isset($result)) {
+  if (!$result) {
     die('Invalid query' . mysql_error());
   }
 
   header("Content-type: text/xml");
 
-  foreach($result as $row) {
-      $node = $dom->createElement('marker');
-      $newnode = $parnode->appendChild($node);
+  while ($row = @mysql_fetch_assoc($result)){
+  // ADD TO XML DOCUMENT NODE
+  $node = $dom->createElement("marker");
+  $newnode = $parnode->appendChild($node);
+  $newnode->setAttribute("name",$row['name']);
+  $newnode->setAttribute("address", $row['address']);
+  $newnode->setAttribute("lat", $row['lat']);
+  $newnode->setAttribute("lng", $row['lng']);
+  $newnode->setAttribute("type", $row['type']);
+}
 
-
-      $newnode->setAttribute('name', $row['NAME']);
-      $newnode->setAttribute('address', $row['ADDRESS']);
-      $newnode->setAttribute('suburb', $row['SUBURB']);
-      $newnode->setAttribute('postcode', $row['POSTCODE']);
-      $newnode->setAttribute('lat', $row['LATITUDE']);
-      $newnode->setAttribute('long', $row['LONGITUDE']);
-  }
+  // foreach($result as $row) {
+  //     $node = $dom->createElement('marker');
+  //     $newnode = $parnode->appendChild($node);
+  //
+  //
+  //     $newnode->setAttribute('name', $row['NAME']);
+  //     $newnode->setAttribute('address', $row['ADDRESS']);
+  //     $newnode->setAttribute('suburb', $row['SUBURB']);
+  //     $newnode->setAttribute('postcode', $row['POSTCODE']);
+  //     $newnode->setAttribute('lat', $row['LATITUDE']);
+  //     $newnode->setAttribute('long', $row['LONGITUDE']);
+  // }
   echo $dom->saveXML();
 ?>
