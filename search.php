@@ -21,31 +21,53 @@
     <div class="searchbar-container">
 
       <div class="searchbar-items">
-
         <i class="material-icons icon-search">search</i>
+<<<<<<< HEAD
         <form action="search.php" method="GET" id="searchWifiForm">
             <span class="input-wrapper">
               <input type="search" name="searchBox" id="searchBox" placeholder="Search">
               <i class="material-icons icon-clear" id="clearBtn">clear</i>
             </span>
 
+=======
+        <form  action="search.php" method="GET" id="searchWifiForm">
+          <span class="input-wrapper">
+            <input type="search" name="searchBox" id="searchBox" placeholder="Search">
+            <i class="material-icons icon-clear" id="clearBtn">clear</i>
+          </span>
+>>>>>>> ed4d99a72613355f669c0cf844f3d4dc775aeeb2
       </div>
       <hr class="line">
       <div class="options">
         <div class="options-wrapper">
+
           <input type="checkbox" name="incSuburbs" id="incSuburbs">
           <span class="muted white">Include surrounding suburbs</span>
 
+<<<<<<< HEAD
+=======
+          Replace with includes for dropdowns
+
+          <?php include('server/includes/searchRating.tpl.php'); ?>
+
+
+          <?php include('server/includes/suburbSelect.tpl.php'); ?>
+
+
+
+>>>>>>> ed4d99a72613355f669c0cf844f3d4dc775aeeb2
           <input type="Submit" value="Search" id="btn-backup-search">
+          </form>
         </div>
       </div>
     </div>
-    </form>
+
     <div class="container pull-down">
       <article class="results-container">
         <div class="container">
           <div class="review-cards">
             <?php
+<<<<<<< HEAD
             include("server/PHP/Database.php");
             //            $db = new Database(getPDO());
             //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
@@ -65,12 +87,39 @@
             //            $rating = $db->getAverageForRating($searchBox);
 
 
+=======
+              include("server/PHP/databaseQueries.php");
+              include("server/php/pdoMaster.php");
+              $db = new Database(getPDO());
+              $searchBox =isset( $_GET["searchBox"]) ? $_GET["searchBox"] : '';
+              $suburb = isset( $_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
+
+
+
+              $rating =  isset( $_GET["search-rating"]) ? $_GET["search-rating"] : '';
+              $address = "";
+
+              if(!isset( $_GET["searchBox"])){
+                $showAll = $db->showAll($db);
+              } else {
+                $test = $db->searchQuery($searchBox, $address , $suburb , $rating);
+              }
+
+
+              $rating = $db->getAverageForRating($searchBox);
+
+              $reviewAndRating = $db->getReviewIfRating();
+>>>>>>> ed4d99a72613355f669c0cf844f3d4dc775aeeb2
             ?>
           </div>
         </div>
       </article>
 
+<<<<<<< HEAD
       <?php //include('server/includes/initialState.tpl.php'); ?>
+=======
+      <?php include('server/includes/initialState.tpl.php'); ?>
+>>>>>>> ed4d99a72613355f669c0cf844f3d4dc775aeeb2
 
       <?php //include('server/includes/noResultsFound.tpl.php'); ?>
 

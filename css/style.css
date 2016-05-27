@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -184,11 +183,16 @@ header .branding #brand-group p {
   float: right;
   list-style-type: none;
 }
-#nav .navbar ul li:first-child {
+#nav .navbar ul li:nth-child(2) {
   background-color: #FF6347;
 }
 #nav .navbar ul li .user-icon {
   font-size: 1.3em;
+  vertical-align: text-bottom;
+}
+#nav .navbar ul li #logoutBtn {
+  width: 1.3em;
+  height: 1.3em;
   vertical-align: text-bottom;
 }
 #nav .navbar ul li a {
@@ -416,51 +420,21 @@ input[type="range"] {
   border-bottom: 2px solid #47B8E0;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 4;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-.overlay .modal {
+.modal {
   width: 500px;
-  position: relative;
   background: #FFFFFF;
   top: 20px;
   padding: 20px;
   border-radius: 2px;
   -webkit-border-radius: 2px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
 }
-.overlay .modal .btn-close {
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  height: 30px;
-  width: 30px;
-  cursor: pointer;
-  color: #FFFFFF;
-  font-size: 2em;
-  line-height: 30px;
-  text-align: center;
-  transition: scale 100ms ease-in-out;
-}
-.overlay .modal .btn-close:hover {
-  transform: scale(1.2);
-}
-.overlay .modal .login-form {
+.modal .login-form {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
-.overlay .modal .login-form #name, .overlay .modal .login-form #password {
+.modal .login-form #name, .modal .login-form #password {
   display: block;
   height: 40px;
   border: none;
@@ -469,10 +443,10 @@ input[type="range"] {
   border-bottom: 2px solid #F5F5F5;
   transition: border .25s linear,color;
 }
-.overlay .modal .login-form #name:focus, .overlay .modal .login-form #password:focus {
+.modal .login-form #name:focus, .modal .login-form #password:focus {
   border-bottom: 2px solid #47B8E0;
 }
-.overlay .modal .login-form #login {
+.modal .login-form #login {
   display: block;
   height: 45px;
   border: none;
@@ -486,7 +460,7 @@ input[type="range"] {
   color: #FFFFFF;
   margin-top: 1.5em;
 }
-.overlay .modal .login-form #login:hover {
+.modal .login-form #login:hover {
   background: #23a3d1;
   color: #FFFFFF;
 }

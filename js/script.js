@@ -1,11 +1,11 @@
 // Setup //
-var width = window.innerWidth;
-var height = window.innerHeight;
+// var width = window.innerWidth;
+// var height = window.innerHeight;
 
-// Login //
-var login = document.getElementById('user');
-var overlay = document.getElementsByClassName('overlay')[0];
-var closeBtn = document.getElementsByClassName('btn-close')[0];
+// // Login //
+// var login = document.getElementById('user');
+// var overlay = document.getElementsByClassName('overlay')[0];
+// var closeBtn = document.getElementsByClassName('btn-close')[0];
 
 // Search Page //
 var includeSuburbs = document.querySelector('#incSuburbs');
@@ -25,15 +25,15 @@ function showNearbyResults() {
   });
 }
 
-function openLoginModal() {
-  overlay.offsetLeft = (width - overlay.offsetWidth /2) + document.body.scrollLeft + "px";
-  overlay.offsetTop = (height - overlay.offsetHeight /2) + document.body.scrollTop + "px";
-  overlay.style.display = "flex";
-}
+// function openLoginModal() {
+//   overlay.offsetLeft = (width - overlay.offsetWidth /2) + document.body.scrollLeft + "px";
+//   overlay.offsetTop = (height - overlay.offsetHeight /2) + document.body.scrollTop + "px";
+//   overlay.style.display = "flex";
+// }
 
-function closeLoginModal() {
-  overlay.style.display = "none";
-}
+// function closeLoginModal() {
+//   overlay.style.display = "none";
+// }
 
 function toggleClearBtn() {
   // Show clear btn if input field is not empty
@@ -48,8 +48,8 @@ function clearSearch() {
 
 
 //-- Event Listeners -- //
-login.addEventListener("click", openLoginModal, false);
-closeBtn.addEventListener("click", closeLoginModal, false);
+// login.addEventListener("click", openLoginModal, false);
+// closeBtn.addEventListener("click", closeLoginModal, false);
 includeSuburbs.addEventListener("change", showNearbyResults, false);
 searchBox.addEventListener("keyup", toggleClearBtn, false);
 clearBtn.addEventListener("click", clearSearch, false);
