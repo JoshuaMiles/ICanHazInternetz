@@ -9,7 +9,7 @@
 
   $result = $db->sampleItemQuery();
 
-  if (!$result) {
+  if (isset($result)) {
     die('Invalid query' . mysql_error());
   }
 
