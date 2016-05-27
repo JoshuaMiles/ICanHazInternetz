@@ -6,7 +6,6 @@
   $node = $dom->createElement('markers');
   $parnode = $dom->appendChild($node);
 
-//  $query = "SELECT * FROM wifihotspots";
   $result = $db->sampleItemQuery();
 
   if (!$result) {

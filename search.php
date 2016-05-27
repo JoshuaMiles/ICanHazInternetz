@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
- <body onload="load()">
+ <body onload="load();">
 <!-- Navigation fixed -->
 <?php include('server/includes/fixedNav.tpl.php'); ?>
 
@@ -96,6 +96,9 @@
           </div>
         </div>
       </article>
+
+      <div id="map" style="width: 800px; height: 500px"></div>
+
 
       <?php include('server/includes/initialState.tpl.php'); ?>
 
