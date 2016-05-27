@@ -2,4 +2,4 @@
 *.css.map
 .DS_store
 .idea/
-server/PHP/databaseQueries.php
+server/PHP/Database.php

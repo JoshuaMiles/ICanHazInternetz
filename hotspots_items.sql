@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS `items`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `items` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `NAME` varchar(36) NOT NULL,
   `ADDRESS` varchar(107) NOT NULL,
   `SUBURB` varchar(20) NOT NULL,

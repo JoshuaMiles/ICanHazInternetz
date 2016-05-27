@@ -1,5 +1,5 @@
 <?php
-  include('databaseQueries.php');
+  include('Database.php');
   include('pdoMaster.php');
   include('postMaster.php');
 
