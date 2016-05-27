@@ -24,6 +24,8 @@
     <section>
 
       <?php include('test-login.tpl.php'); ?>
+      <?php echo 'Welcome '. $_SESSION['username']; ?>
+
       <!-- <article class="search-index">
         <h2 class="article-head">Find Wifi</h2>
         <hr class="article-title-rule">

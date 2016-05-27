@@ -1,6 +1,6 @@
 <?php
   echo('
-    <a href="sampleItem.php" class="review-card">
+    <a href="sampleItem.php?id='.$hotspot['ID'].'" class="review-card">
       <div class="media">
         <input type="hidden" itemprop="latitude" content="'.$hotspot['LATITUDE'].'">
         <input type="hidden" itemprop="longitude" content="'.$hotspot['LONGITUDE'].'">
