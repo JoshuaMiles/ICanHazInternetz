@@ -37,27 +37,12 @@
 
           Replace with includes for dropdowns
 
-          <?php //include('server/includes/searchRating.tpl.php'); ?>
+          <?php include('server/includes/searchRating.tpl.php'); ?>
 
-          <!-- <select name="search-rating" class="rating-select-box">
-            <option value="" disabled selected>Rating...</option>
-            <option value="1">1 - generate with PHP</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select> -->
 
-          <?php //include('server/includes/suburbSelect.tpl.php'); ?>
+          <?php include('server/includes/suburbSelect.tpl.php'); ?>
 
-          <!-- <select name="search-suburb" class="suburb-select-box">
-            <option value="" disabled selected>Suburb...</option>
-            <option value="1">Generate with PHP</option>
-            <option value="Grange">Grange</option>
-            <option value="3">Ashgrove</option>
-            <option value="4">Toowong</option>
-            <option value="5">Mt Gravatt</option>
-          </select> -->
+
 
           <input type="Submit" value="Search" id="btn-backup-search">
           </form>
