@@ -1,3 +1,7 @@
+<?php
+  include("server/PHP/Database.php");
+  $db = new Database();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +19,7 @@
 <?php include('server/includes/fixedNav.tpl.php'); ?>
 
 <main>
-  <?php include('server/includes/login.tpl.php'); ?>
+  <?php //include('server/includes/login.tpl.php'); ?>
 
   <section class="results">
     <div class="searchbar-container">
@@ -24,12 +28,6 @@
         <i class="material-icons icon-search">search</i>
 
         <form action="search.php" method="GET" id="searchWifiForm">
-            <span class="input-wrapper">
-              <input type="search" name="searchBox" id="searchBox" placeholder="Search">
-              <i class="material-icons icon-clear" id="clearBtn">clear</i>
-            </span>
-
-        <form  action="search.php" method="GET" id="searchWifiForm">
           <span class="input-wrapper">
             <input type="search" name="searchBox" id="searchBox" placeholder="Search">
             <i class="material-icons icon-clear" id="clearBtn">clear</i>
@@ -39,17 +37,10 @@
       <div class="options">
         <div class="options-wrapper">
 
-          <input type="checkbox" name="incSuburbs" id="incSuburbs">
-          <span class="muted white">Include surrounding suburbs</span>
-
-          Replace with includes for dropdowns
-
           <?php include('server/includes/searchRating.tpl.php'); ?>
 
 
-          <?php include('server/includes/suburbSelect.tpl.php'); ?>
-
-
+          <?php $db->populateSuburbDropdown(); ?>
 
           <input type="Submit" value="Search" id="btn-backup-search">
           </form>
@@ -62,10 +53,32 @@
         <div class="container">
           <div class="review-cards">
             <?php
-            include("server/PHP/Database.php");
+//            include("server/PHP/Database.php");
             //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
             $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
             $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
+            $rating = isset($_GET["search-rating"]) ? $_GET["search-rating"] : '';
+            $address = "";
+//            $db = new Database();
+
+
+            if (!isset($_GET["searchBox"])) {
+              $db->showAll();
+            } else {
+              $db->searchQuery($searchBox, $address, $suburb, $rating);
+              if (isset($_GET['search-rating'])) {
+                $reviewAndRating = $db->getReviewIfRating();
+              }
+            }
+
+
+            //            $rating = $db->getAverageForRating($searchBox);
+
+
+            $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
+            $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
+
+
             $rating = isset($_GET["search-rating"]) ? $_GET["search-rating"] : '';
             $address = "";
 
@@ -73,34 +86,12 @@
               $showAll = $db->showAll($db);
             } else {
               $test = $db->searchQuery($searchBox, $address, $suburb, $rating);
-              $reviewAndRating = $db->getReviewIfRating();
             }
 
+            
+//            $rating = $db->getAverageForRating($searchBox);
 
-            //            $rating = $db->getAverageForRating($searchBox);
-
-
-              include("server/PHP/databaseQueries.php");
-              include("server/php/pdoMaster.php");
-              $db = new Database(getPDO());
-              $searchBox =isset( $_GET["searchBox"]) ? $_GET["searchBox"] : '';
-              $suburb = isset( $_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
-
-
-
-              $rating =  isset( $_GET["search-rating"]) ? $_GET["search-rating"] : '';
-              $address = "";
-
-              if(!isset( $_GET["searchBox"])){
-                $showAll = $db->showAll($db);
-              } else {
-                $test = $db->searchQuery($searchBox, $address , $suburb , $rating);
-              }
-
-
-              $rating = $db->getAverageForRating($searchBox);
-
-              $reviewAndRating = $db->getReviewIfRating();
+//            $reviewAndRating = $db->getReviewIfRating();
             ?>
           </div>
         </div>

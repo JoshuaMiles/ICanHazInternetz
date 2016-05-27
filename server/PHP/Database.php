@@ -1,7 +1,7 @@
 <?php
 
 class Database {
-  
+
   private $db;
 
   function __construct() {
@@ -18,7 +18,7 @@ class Database {
     $this->db = $pdo;
     return $this->db;
   }
-  
+
   public function getPDO() {
     return $this->db;
   }
@@ -42,7 +42,7 @@ class Database {
   public function showAll() {
 
     $address = '';
-    
+
     // No limit
     $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items;');
     $qry->execute();
@@ -51,7 +51,6 @@ class Database {
       include('server/includes/recentReview.tpl.php');
     }
   }
-
 
 
   public function reviewItemQuery() {
@@ -65,7 +64,6 @@ class Database {
   }
 
   public function searchQuery($postName, $postAddress, $postSuburb) {
-
     $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM hotspots.items,hotspots.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR items.NAME LIKE "' . $postName . '" OR items.Suburb LIKE "' . $postSuburb . '" LIMIT 1');
     $qry->execute();
 
@@ -97,13 +95,13 @@ class Database {
     print_r($this->db->errorInfo());
   }
 
-  public function getReviewIfRating(){
+  public function getReviewIfRating() {
     //
 //Try to get distinct
     $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,reviews.rating FROM hotspots.items INNER JOIN reviews ON reviews.hotspotName=items.NAME ');
     $qry->execute();
 
-    foreach ($qry as $hotspot){
+    foreach ($qry as $hotspot) {
       include('server/includes/recentReview.tpl.php');
     }
 
@@ -113,7 +111,6 @@ class Database {
   public function getAverageForRating($hotspotName) {
 
 
-
     $qry = $this->db->prepare('SELECT AVG(rating) FROM hotspots.reviews WHERE hotspotName=');
     $qry->execute(array(
       ':hotspotName' => $hotspotName
@@ -121,6 +118,22 @@ class Database {
     foreach ($qry as $avg) {
       return $avg;
     }
+  }
+
+  public function populateSuburbDropdown() {
+
+    $qry = $this->db->prepare('SELECT DISTINCT SUBURB FROM hotspots.items;');
+    $qry->execute();
+
+    echo('
+    <select name="search-suburb" class="suburb-select-box">
+      <option disabled selected value="">Suburb...</option>
+   ');
+    foreach($qry as $hotspot) {
+      echo '<option value="'.$hotspot['SUBURB'].'">'.$hotspot['SUBURB'].'</option>';
+    }
+    echo '</select>';
+
   }
 
 

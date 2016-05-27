@@ -5,7 +5,7 @@
     <option disabled selected value="">Rating...</option>
   ');
 
-  foreach($qry as $rating) {
+  foreach($db as $rating) {
     echo '<option value="'.$rating['rating'].'">'.$rating['rating'].'</option>';
   }
   echo '</select>';

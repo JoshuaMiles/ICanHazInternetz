@@ -48,11 +48,16 @@ function clearSearch() {
 
 
 //-- Event Listeners -- //
-if (login) login.addEventListener("click", openLoginModal, false);
-if (closeBtn) closeBtn.addEventListener("click", closeLoginModal, false);
-if (includeSuburbs) includeSuburbs.addEventListener("change", showNearbyResults, false);
-if (searchBox) searchBox.addEventListener("keyup", toggleClearBtn, false);
-if (clearBtn) clearBtn.addEventListener("click", clearSearch, false);
+if (login)
+  login.addEventListener("click", openLoginModal, false);
+if (closeBtn)
+  closeBtn.addEventListener("click", closeLoginModal, false);
+if (includeSuburbs)
+  includeSuburbs.addEventListener("change", showNearbyResults, false);
+if (searchBox)
+  searchBox.addEventListener("keyup", toggleClearBtn, false);
+if (clearBtn)
+  clearBtn.addEventListener("click", clearSearch, false);
 
 function processLogin(){
 
@@ -87,3 +92,4 @@ form.addEventListener('submit', function(e){
   e.preventDefault();
   processLogin();
 });
+
