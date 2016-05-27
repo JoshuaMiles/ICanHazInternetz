@@ -13,7 +13,9 @@
 
   <main>
     <!-- Login  -->
-              <!-- Change the the nav to include a load the index page and focus into the form  -->
+              <!-- Change the the nav to include a load the index page and focus into the form
+                  index.php#login-form
+              -->
     <?php //include('server/includes/login.tpl.php'); ?>
 
     <!-- Content -->
@@ -32,12 +34,12 @@
               <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews</span> for <?php echo $hotspot['NAME']; ?> </h2>
               <!-- <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews</span> for Grange Public Library Wifi</h2> -->
                 <div class="comment-wrapper">
-                  <?php require_once('server/includes/comment.tpl.php'); ?>
+                  <?php include('server/includes/comment.tpl.php'); ?>
                 </div>
               <hr/>
 
               <h2 id="yourReview" class="reviewTitle yourReview highlight">Your Review</h2>
-                <?php require_once('server/includes/addReview.tpl.php'); ?>
+                <?php include('server/includes/addReview.tpl.php'); ?>
             </article>
           </div>
         </div>
@@ -46,7 +48,7 @@
   </main>
 
     <!-- Footer -->
-    <?php require_once('server/includes/footer.tpl.php'); ?>
+    <?php include('server/includes/footer.tpl.php'); ?>
 
   <script type="text/javascript" src="js/script.js"></script>
   </body>
