@@ -6,6 +6,7 @@
       <textarea name="userComment" class="muted" id="userComment" rows="5" placeholder="Your rating helps others find better Wifi."></textarea>
       <span class="star-rating muted">
         <?php
+          //add pdo and db stuff here
           echo '<select class="select-rating">';
           foreach($qry as $rating) {
             echo '<option class="star" value="'.$rating['rating'].'">'.$rating['rating'].'</option>';
@@ -24,17 +25,10 @@
 
       <?php
         if(!isset($_SESSION['username'])) {
-          echo('
-            <a href="#" id="user" class="login-notify">Login to add a review</a>
-          ');
-        } else {
-          echo('
-            <button id="submitReview">Submit comment</button>
-          ');
+          echo('<a href="#" id="user" class="login-notify">Login to add a review</a>');
         }
+        echo('<button id="submitReview">Submit comment</button>');
       ?>
-      <!-- <a href="#" id="user" class="login-notify">Login to add a review</a> -->
-      <!-- <button id="submitReview">Submit comment</button> -->
       <div class="clearfix"></div>
     </div>
   </div>
