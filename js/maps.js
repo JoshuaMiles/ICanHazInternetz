@@ -7,7 +7,7 @@ function load() {
     var infoWindow = new google.maps.InfoWindow;
 
     // Change this depending on the name of your PHP file - and path
-    downloadUrl("createMapMarkers.php", function(data) {
+    downloadUrl("server/PHP/createMapMarkers.php", function(data) {
       var xml = data.responseXML;
       var markers = xml.documentElement.getElementsByTagName("marker");
       for (var i = 0; i < markers.length; i++) {
