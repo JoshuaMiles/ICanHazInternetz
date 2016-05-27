@@ -5,6 +5,8 @@ $pdo = getPDO();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+  var_dump($_POST);
+
   $postEmail = $_POST['email'];
   $postPassword = $_POST['password'];
 
@@ -20,12 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (password_verify($postPassword, $db_hashed_pw)) {
       $_SESSION['logged_in'] = true;
       $_SESSION["username"] = $data["firstName"];
-
-      header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
+      http_send_status(200);
+      header('Content-Type: application/json');
+      $return = Array('button' => 'David says hello');
+      echo json_encode($return);
+      //header("Location:  http://{$_SERVER['HTTP_HOST']}/index.php");
       exit();
     } else {
-      $error = "Login failed";
-      echo 'fuck you';
+      //$error = "Login failed";
+      //echo 'fuck you';
+      http_send_status(401);
+      exit();
     }
   }
 }

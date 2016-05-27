@@ -38,7 +38,7 @@
 
           <select name="search-rating" class="rating-select-box">
             <option value="" disabled selected>Rating...</option>
-            <option value="1">1 - generate with PHP</option>
+            <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -65,13 +65,10 @@
           <div class="review-cards">
             <?php
             include("server/PHP/databaseQueries.php");
-            include("server/php/pdoMaster.php");
-            $db = new Database(getPDO());
+//            $db = new Database(getPDO());
+            //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
             $searchBox =isset( $_GET["searchBox"]) ? $_GET["searchBox"] : '';
             $suburb = isset( $_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
-
-            
-
             $rating =  isset( $_GET["search-rating"]) ? $_GET["search-rating"] : '';
             $address = "";
 
@@ -79,12 +76,13 @@
               $showAll = $db->showAll($db);
             } else {
               $test = $db->searchQuery($searchBox, $address , $suburb , $rating);
+              $reviewAndRating = $db->getReviewIfRating();
             }
 
 
-            $rating = $db->getAverageForRating($searchBox);
+//            $rating = $db->getAverageForRating($searchBox);
 
-            $reviewAndRating = $db->getReviewIfRating();
+
             ?>
           </div>
         </div>

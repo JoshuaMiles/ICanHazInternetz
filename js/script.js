@@ -48,36 +48,36 @@ function clearSearch() {
 
 
 //-- Event Listeners -- //
-login.addEventListener("click", openLoginModal, false);
-closeBtn.addEventListener("click", closeLoginModal, false);
-includeSuburbs.addEventListener("change", showNearbyResults, false);
-searchBox.addEventListener("keyup", toggleClearBtn, false);
-clearBtn.addEventListener("click", clearSearch, false);
+if (login) login.addEventListener("click", openLoginModal, false);
+if (closeBtn) closeBtn.addEventListener("click", closeLoginModal, false);
+if (includeSuburbs) includeSuburbs.addEventListener("change", showNearbyResults, false);
+if (searchBox) searchBox.addEventListener("keyup", toggleClearBtn, false);
+if (clearBtn) clearBtn.addEventListener("click", clearSearch, false);
 
 function processLogin(){
 
   var request = new XMLHttpRequest();
 
   request.onreadystatechange = function(){
-    console.log(request.responseText);
+    switch (request.status){
+      case 200:
+        console.log('youre logged in');
+        closeBtn.click();
+        break;
+      default:
+        console.log('you couldnt log in ');
+    }
   };
 
-  request.open("POST", window.location.href, true);
   var req_object = {
-    email : document.querySelector('#username').value
+    email : document.querySelector('#username').value,
+    password : document.querySelector('#password').value
   };
+  request.open("POST", '/index.php', true);
 
-
+  request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   // send the request to the server
-  request.send(req_object);
-
-  switch (request.status){
-    case 200:
-      // login is fine - close the modal.
-      break;
-    default:
-    // login failed.  add a span that says 'failed!'
-  }
+  request.send('email=' + encodeURIComponent(req_object.email) + '&password=' + encodeURIComponent(req_object.password));
 }
 
 // now, you need to hook in to the form's onsubmit, so you can stop it doing whatever it is doing.
@@ -85,6 +85,5 @@ var form = document.querySelector('.login-form');//find your form
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
-  console.log('form submitting');
   processLogin();
 });

@@ -1,9 +1,26 @@
 <?php
 
 class Database {
+  
+  private $db;
 
-  function __construct($connection) {
-    $this->db = $connection;
+  function __construct() {
+    $db_name = 'hotspots';
+    $db_username = 'root';
+    $db_password = '';
+    $db_host = "127.0.0.1:3306";
+    try {
+      $pdo = new PDO ("mysql:host=$db_host;dbname=$db_name", $db_username, $db_password);
+    } catch (PDOException $e) {
+      echo $e;
+      exit();
+    }
+    $this->db = $pdo;
+    return $this->db;
+  }
+  
+  public function getPDO() {
+    return $this->db;
   }
 
   /**
@@ -82,8 +99,8 @@ class Database {
 
   public function getReviewIfRating(){
     //
-
-    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,reviews.rating FROM hotspots.items INNER JOIN reviews ON reviews.hotspotName=items.NAME LIMIT 1');
+//Try to get distinct
+    $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,reviews.rating FROM hotspots.items INNER JOIN reviews ON reviews.hotspotName=items.NAME ');
     $qry->execute();
 
     foreach ($qry as $hotspot){

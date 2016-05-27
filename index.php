@@ -1,4 +1,39 @@
-<?php include('server/PHP/databaseQueries.php'); ?>
+<?php
+  require('server/PHP/databaseQueries.php');
+  $database = new Database();
+  $db = $database->getPDO();
+?>
+<?php include 'server/PHP/user.php' ?>
+<?php
+  session_start();
+  if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    $email =  $_POST['email'];
+    $user = new User($email);
+    $user->login($_POST['password']);
+//    if ($user = User::register()){
+//      // successfully registered
+//    } else {
+//      // something went wrong
+//    }
+    if ($user->isAuthed()){
+      header("HTTP/1.1 200 OK");
+      header('Content-type', 'application/json');
+      $response = Array('hello' => 'Josh');
+      echo json_encode($response);
+    } else {
+      header("HTTP/1.1 401 Unauthorised");
+    }
+    exit();
+  }
+
+  if (isset($_SESSION['email'])){
+    // load user from session
+    $user = User::fromSession();
+  }
+  var_dump($_SESSION);
+
+  var_dump($_REQUEST);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -46,8 +81,7 @@
         <div class="container">
           <div class="review-cards">
             <?php
-              $pdo = getPDO();
-              $query = new Database($pdo);
+              $query = new Database();
               $query->sampleItemQuery();
             ?>
         </div>

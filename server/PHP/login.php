@@ -1,5 +1,4 @@
 <?php
-  include("pdoMaster.php");
   include("postMaster.php");
   include("user.php");
 
@@ -11,7 +10,7 @@
 
     // Gets database object
     $login = new User($pdo);
-    // Call login function
+    // Call login function with the appropriate email and password
     $login->login($email, $password);
   }
 ?>
