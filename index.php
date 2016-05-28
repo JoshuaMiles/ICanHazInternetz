@@ -79,10 +79,7 @@ var_dump($_REQUEST);
 
       <div class="container">
         <div class="review-cards">
-          <?php
-          $query = new Database();
-          $query->sampleItemQuery();
-          ?>
+          <?php $db->sampleItemQuery(); ?>
         </div>
     </article>
   </section>
