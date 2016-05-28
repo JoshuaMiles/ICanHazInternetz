@@ -1,6 +1,9 @@
 <?php
   // Load database connection
-  require('db.php');
+  require('Database.php');
+  $db = new Database();
+
+  $pdo = $db->getPDO();
 
   // Start XML file, create parent node
   $dom = new DOMDocument("1.0");

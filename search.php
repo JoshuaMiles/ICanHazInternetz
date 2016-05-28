@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7rWGqvYfHMPhTMETa0JlKwAo6nA-Zu8" type="text/javascript"></script>
-  <script type="text/javascript" src="map.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body onload="load()">
