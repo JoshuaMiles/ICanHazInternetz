@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     header("Location: index.php");
     exit();
   } else {
+    //refreshes the page if the user couldn't register
     header("Refresh: 0");
   }
 }
