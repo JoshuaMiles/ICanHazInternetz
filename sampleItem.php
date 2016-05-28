@@ -40,7 +40,6 @@ $hotspotName = $_GET['name'];
             </div>
             <hr/>
 
-            <h2 id="yourReview" class="reviewTitle yourReview highlight">Your Review</h2>
             <?php include('server/includes/addReview.tpl.php'); ?>
           </article>
         </div>
