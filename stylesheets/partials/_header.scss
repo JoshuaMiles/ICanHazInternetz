@@ -24,7 +24,6 @@ header {
       .logo {
         background: url('../images/routr-logo.png') no-repeat;
         background-position: center center;
-        //display: flex;
         min-width: 50%;
         height: 155px;
         margin: 10px 10px;
@@ -38,7 +37,6 @@ header {
         text-align: center;
         text-transform: lowercase;
         font-family: $fontFamily;
-        text-shadow: ($darkergrey, 0 0 20px);
       }
       p {
         display: block;

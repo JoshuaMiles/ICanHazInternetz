@@ -137,7 +137,6 @@ header .branding #brand-group h1 {
   text-align: center;
   text-transform: lowercase;
   font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
-  text-shadow: #1E1E1E, 0 0 20px;
 }
 header .branding #brand-group p {
   display: block;
@@ -397,7 +396,6 @@ input[type="range"] {
   font-size: .9em;
   font-weight: normal;
   position: absolute;
-  pointer-events: none;
   left: 5px;
   top: 10px;
   transition: all .20s ease;
