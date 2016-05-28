@@ -50,10 +50,10 @@ var_dump($_REQUEST);
 <!-- Content -->
 <main>
   <!-- Login -->
-  <?php //include('server/includes/login.tpl.php'); ?>
+  <?php include('server/includes/login.tpl.php'); ?>
 
   <section>
-    <article class="search-index">
+    <!-- <article class="search-index">
       <h2 class="article-head">Find Wifi</h2>
       <hr class="article-title-rule">
       <form method="POST" action="search.php">
@@ -63,7 +63,7 @@ var_dump($_REQUEST);
         </div>
         <button type="submit" id="search-btn">Search</button>
       </form>
-    </article>
+    </article> -->
 
     <article class="profile-reviews">
       <svg class="arc-svg" viewBox="0 0 1440 69" version="1.1" xmlns="http://www.w3.org/2000/svg"

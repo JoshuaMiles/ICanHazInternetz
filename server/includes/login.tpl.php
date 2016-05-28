@@ -1,8 +1,8 @@
 <div class="overlay">
   <div class="modal">
-    <p class="btn-close">
+    <!-- <p class="btn-close">
       <i class="material-icons">clear</i>
-    </p>
+    </p> -->
     <h2 class="article-head">Login</h2>
     <hr class="article-title-rule">
 
