@@ -31,7 +31,7 @@ class Database {
   public function sampleItemQuery() {
 
     $address = '';
-    $qry = $this->db->prepare('SELECT DISTINCT id, NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');
+    $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');
     $qry->execute();
 
     foreach ($qry as $hotspot) {

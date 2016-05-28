@@ -50,8 +50,6 @@ function clearSearch() {
 //-- Event Listeners -- //
 if (login)
   login.addEventListener("click", openLoginModal, false);
-if (closeBtn)
-  closeBtn.addEventListener("click", closeLoginModal, false);
 if (includeSuburbs)
   includeSuburbs.addEventListener("change", showNearbyResults, false);
 if (searchBox)
@@ -67,7 +65,7 @@ function processLogin(){
     switch (request.status){
       case 200:
         console.log('youre logged in');
-        closeBtn.click();
+        window.location.href='search.php';
         break;
       default:
         console.log('you couldnt log in ');

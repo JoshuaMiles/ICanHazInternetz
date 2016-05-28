@@ -84,7 +84,9 @@ class User {
        $db_hashed_pw = $data["password_hash"];
        if (password_verify($postPassword, $db_hashed_pw)) {
          $_SESSION['email'] = $data['email'];
+
          $this->authed = true;
+     
        }
      }
    }

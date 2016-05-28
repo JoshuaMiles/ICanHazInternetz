@@ -27,8 +27,8 @@ if (isset($_SESSION['email'])) {
   // load user from session
   $user = User::fromSession();
 }
-var_dump($_SESSION);
-var_dump($_REQUEST);
+//var_dump($_SESSION);
+//var_dump($_REQUEST);
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +79,8 @@ var_dump($_REQUEST);
 
       <div class="container">
         <div class="review-cards">
-          <?php $db->sampleItemQuery(); ?>
+          <?php
+          $database->sampleItemQuery(); ?>
         </div>
     </article>
   </section>
