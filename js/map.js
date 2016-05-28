@@ -16,9 +16,7 @@ function load() {
       var point = new google.maps.LatLng(
         parseFloat(markers[i].getAttribute("lat")),
         parseFloat(markers[i].getAttribute("long")));
-      var html = "<b>" + name + "</b> <br/>" + address + "<a href='sampleItem.php?name='name> More info </a>"
-
-      ;
+      var html = "<b>" + name + "</b> <br/>" + address + "<a href='sampleItem.php?name=" + name + "'> More info </a>";
       var marker = new google.maps.Marker({
         map: map,
         position: point
