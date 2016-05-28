@@ -1,5 +1,5 @@
 <?php
-  include("server/PHP/requireMaster.php");
+include("server/PHP/requireMaster.php");
 session_start();
 $user = User::fromSession();
 ?>
@@ -10,7 +10,8 @@ $user = User::fromSession();
   <title>routr - results</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7rWGqvYfHMPhTMETa0JlKwAo6nA-Zu8" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7rWGqvYfHMPhTMETa0JlKwAo6nA-Zu8"
+          type="text/javascript"></script>
   <script type="text/javascript" src="js/map.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -49,52 +50,29 @@ $user = User::fromSession();
     </div>
 
     <div class="container pull-down">
-      
+
       <?php include('server/includes/initialState.tpl.php'); ?>
 
       <article class="results-container">
         <div class="container">
           <div class="review-cards">
             <?php
-//            include("server/PHP/Database.php");
+            //            include("server/PHP/Database.php");
             //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
             $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
             $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
             $rating = isset($_GET["search-rating"]) ? $_GET["search-rating"] : '';
             $address = "";
-//            $db = new Database();
+            //            $db = new Database();
 
+            $database->searchQuery($searchBox, $address, $suburb, $rating);
 
+            // Populates the page with all of the items or all searched
             if (!isset($_GET["searchBox"])) {
               $database->showAll();
-            } else {
-              $database->searchQuery($searchBox, $address, $suburb, $rating);
-              if (isset($_GET['search-rating'])) {
-                $reviewAndRating = $db->getReviewIfRating();
-              }
+            } else if (isset($_GET['search-rating'])) {
+              $reviewAndRating = $db->getReviewIfRating();
             }
-
-
-            //            $rating = $db->getAverageForRating($searchBox);
-
-
-            $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
-            $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
-
-
-            $rating = isset($_GET["search-rating"]) ? $_GET["search-rating"] : '';
-            $address = "";
-
-            if (!isset($_GET["searchBox"])) {
-              $database->showAll();
-            } else {
-              $database->searchQuery($searchBox, $address, $suburb);
-            }
-
-
-//            $rating = $db->getAverageForRating($searchBox);
-
-//            $reviewAndRating = $db->getReviewIfRating();
             ?>
           </div>
         </div>

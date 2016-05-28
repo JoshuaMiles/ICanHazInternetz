@@ -43,25 +43,22 @@ class Database {
     return $this->hotspotName;
   }
 
+  //Populates the fields within the individual item page
   public function sampleItemQuery($hotspotName) {
 
     $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB, LATITUDE,LONGITUDE FROM hotspots.items WHERE NAME = ?');
     $qry-> bindParam(1,$hotspotName);
     $qry->execute();
-//    $data = $qry->fetch();
-
-//    $this->hotspotName = $data['NAME'];
 
     foreach ($qry as $hotspot) {
+
       include('server/includes/item.tpl.php');
     }
   }
 
+  // Queries the Database for all of the items
   public function showAll() {
 
-    $address = '';
-
-    // No limit
     $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items;');
     $qry->execute();
 
@@ -80,7 +77,7 @@ class Database {
       include('server/includes/recentReview.tpl.php');
     }
   }
-
+//The Query used to search the database for a certain element
   public function searchQuery($postName, $postAddress, $postSuburb) {
     $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM hotspots.items,hotspots.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR items.NAME LIKE "' . $postName . '" OR items.Suburb LIKE "' . $postSuburb . '" LIMIT 1');
     $qry->execute();
