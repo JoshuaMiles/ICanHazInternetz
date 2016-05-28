@@ -422,12 +422,27 @@ input[type="range"] {
 
 .modal {
   width: 500px;
+  position: relative;
   background: #FFFFFF;
   top: 20px;
   padding: 20px;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  margin: 0 auto;
+  margin: 40px auto;
+}
+.modal .btn-close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 2em;
+  line-height: 30px;
+  text-align: center;
+  transition: scale 100ms ease-in-out;
+}
+.modal .btn-close:hover {
+  transform: scale(1.2);
 }
 .modal .login-form {
   display: flex;
@@ -795,10 +810,10 @@ main .register .user-container .newUser button#signup {
   font-family: Roboto, Helvetica, "Helvetica Neue", sans-serif;
   opacity: .7;
 }
-
-.map {
-  width: 100%;
-  margin: 20px auto;
+.search-instructions #map {
+  width: 1000px !important;
+  height: 500px !important;
+  margin: 0 auto !important;
 }
 
 .container .item-container {

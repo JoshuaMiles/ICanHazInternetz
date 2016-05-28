@@ -53,12 +53,12 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/js\/maps.js": {
+	"\/js\/map.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/maps.js",
-		"outputAbbreviatedPath": "\/js\/min\/maps-min.js",
+		"inputAbbreviatedPath": "\/js\/map.js",
+		"outputAbbreviatedPath": "\/js\/min\/map-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -85,6 +85,15 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
+		},
+	"\/loadMap.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/loadMap.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/README.md": {
 		"criticStyle": 0,
@@ -115,6 +124,204 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/Report\/images\/1024x1024.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52993,
+		"inputAbbreviatedPath": "\/Report\/images\/1024x1024.png",
+		"outputAbbreviatedPath": "\/Report\/images\/1024x1024.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/1024x1024__lowest.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 256959,
+		"inputAbbreviatedPath": "\/Report\/images\/1024x1024__lowest.png",
+		"outputAbbreviatedPath": "\/Report\/images\/1024x1024__lowest.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/1024x1024_even_lower.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 297374,
+		"inputAbbreviatedPath": "\/Report\/images\/1024x1024_even_lower.png",
+		"outputAbbreviatedPath": "\/Report\/images\/1024x1024_even_lower.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/1024x1024_lower.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 601855,
+		"inputAbbreviatedPath": "\/Report\/images\/1024x1024_lower.png",
+		"outputAbbreviatedPath": "\/Report\/images\/1024x1024_lower.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/crossSiteScripting.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 70964,
+		"inputAbbreviatedPath": "\/Report\/images\/crossSiteScripting.png",
+		"outputAbbreviatedPath": "\/Report\/images\/crossSiteScripting.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/crossSiteScripting2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 72615,
+		"inputAbbreviatedPath": "\/Report\/images\/crossSiteScripting2.png",
+		"outputAbbreviatedPath": "\/Report\/images\/crossSiteScripting2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/doesntExistInDb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 671992,
+		"inputAbbreviatedPath": "\/Report\/images\/doesntExistInDb.png",
+		"outputAbbreviatedPath": "\/Report\/images\/doesntExistInDb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/doesntExistInDb2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 397679,
+		"inputAbbreviatedPath": "\/Report\/images\/doesntExistInDb2.png",
+		"outputAbbreviatedPath": "\/Report\/images\/doesntExistInDb2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/doesntExistInDb3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 308669,
+		"inputAbbreviatedPath": "\/Report\/images\/doesntExistInDb3.png",
+		"outputAbbreviatedPath": "\/Report\/images\/doesntExistInDb3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31671,
+		"inputAbbreviatedPath": "\/Report\/images\/logo.png",
+		"outputAbbreviatedPath": "\/Report\/images\/logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/mobile_login.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 50200,
+		"inputAbbreviatedPath": "\/Report\/images\/mobile_login.png",
+		"outputAbbreviatedPath": "\/Report\/images\/mobile_login.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/mobile_mid.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 303325,
+		"inputAbbreviatedPath": "\/Report\/images\/mobile_mid.png",
+		"outputAbbreviatedPath": "\/Report\/images\/mobile_mid.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/mobile_register.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 34482,
+		"inputAbbreviatedPath": "\/Report\/images\/mobile_register.png",
+		"outputAbbreviatedPath": "\/Report\/images\/mobile_register.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/noSpecialCharsSoNosqlInjection.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 449648,
+		"inputAbbreviatedPath": "\/Report\/images\/noSpecialCharsSoNosqlInjection.png",
+		"outputAbbreviatedPath": "\/Report\/images\/noSpecialCharsSoNosqlInjection.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/Screen Shot 2016-05-28 at 1.52.56 pm.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 59139,
+		"inputAbbreviatedPath": "\/Report\/images\/Screen Shot 2016-05-28 at 1.52.56 pm.png",
+		"outputAbbreviatedPath": "\/Report\/images\/Screen Shot 2016-05-28 at 1.52.56 pm.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/sqlInjection.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 460295,
+		"inputAbbreviatedPath": "\/Report\/images\/sqlInjection.png",
+		"outputAbbreviatedPath": "\/Report\/images\/sqlInjection.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/sqlInjection2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 468818,
+		"inputAbbreviatedPath": "\/Report\/images\/sqlInjection2.png",
+		"outputAbbreviatedPath": "\/Report\/images\/sqlInjection2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Report\/images\/sqlInjectionAgain.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 477861,
+		"inputAbbreviatedPath": "\/Report\/images\/sqlInjectionAgain.png",
+		"outputAbbreviatedPath": "\/Report\/images\/sqlInjectionAgain.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/results.html": {
 		"fileType": 8192,
@@ -242,47 +449,38 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/server\/PHP\/createMapMarkers.php": {
+	"\/server\/includes\/searchRating.tpl.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/server\/PHP\/createMapMarkers.php",
+		"inputAbbreviatedPath": "\/server\/includes\/searchRating.tpl.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/server\/PHP\/databaseQueries.php": {
+	"\/server\/includes\/suburbSelect.tpl.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/server\/PHP\/databaseQueries.php",
+		"inputAbbreviatedPath": "\/server\/includes\/suburbSelect.tpl.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/server\/PHP\/DELETEANDDONTDOGIT.php": {
+	"\/server\/PHP\/createMarkers.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/server\/PHP\/DELETEANDDONTDOGIT.php",
+		"inputAbbreviatedPath": "\/server\/PHP\/createMarkers.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/server\/PHP\/login.php": {
+	"\/server\/PHP\/Database.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/server\/PHP\/login.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/server\/PHP\/login_fix.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/server\/PHP\/login_fix.php",
+		"inputAbbreviatedPath": "\/server\/PHP\/Database.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -292,15 +490,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/server\/PHP\/logout.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/server\/PHP\/pdoMaster.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/server\/PHP\/pdoMaster.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

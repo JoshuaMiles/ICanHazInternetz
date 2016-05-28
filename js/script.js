@@ -1,12 +1,3 @@
-// Setup //
-var width = window.innerWidth;
-var height = window.innerHeight;
-
-// Login //
-// var login = document.getElementById('user');
-// var overlay = document.getElementsByClassName('overlay')[0];
-// var closeBtn = document.getElementsByClassName('btn-close')[0];
-
 // Search Page //
 var includeSuburbs = document.querySelector('#incSuburbs');
 var searchBox = document.getElementById('searchBox');
@@ -25,16 +16,6 @@ function showNearbyResults() {
   });
 }
 
-// function openLoginModal() {
-//   overlay.offsetLeft = (width - overlay.offsetWidth /2) + document.body.scrollLeft + "px";
-//   overlay.offsetTop = (height - overlay.offsetHeight /2) + document.body.scrollTop + "px";
-//   overlay.style.display = "flex";
-// }
-
-// function closeLoginModal() {
-//   overlay.style.display = "none";
-// }
-
 function toggleClearBtn() {
   // Show clear btn if input field is not empty
   clearBtn.style.visibility = (this.value.length) ? "visible" : "hidden";
@@ -48,8 +29,6 @@ function clearSearch() {
 
 
 //-- Event Listeners -- //
-// if (login)
-//   login.addEventListener("click", openLoginModal, false);
 if (includeSuburbs)
   includeSuburbs.addEventListener("change", showNearbyResults, false);
 if (searchBox)
@@ -57,25 +36,43 @@ if (searchBox)
 if (clearBtn)
   clearBtn.addEventListener("click", clearSearch, false);
 
-function processLogin(){
+
+// Login function 
+
+function processLogin() {
 
   var request = new XMLHttpRequest();
 
   request.onreadystatechange = function(){
     switch (request.status){
       case 200:
-        console.log('youre logged in');
+        console.log('Logged in');
         window.location.href = 'search.php';
         break;
       default:
-        console.log('you couldnt log in ');
+        document.getElementById('errors').innerHTML = "Incorrect email address or password";
+        console.log('Login failed');
     }
   };
 
+  // Setup an request object to be passed using ajax
   var req_object = {
     email : document.querySelector('#username').value,
     password : document.querySelector('#password').value
   };
+
+  // If no email address or password entered - show errors
+  if (req_object.email.value == "") {
+    document.getElementById('errors').innerHTML = "Please enter an email address";
+    return false;
+  }
+
+  if (req_object.password.value == "") {
+    document.getElementById('errors').innerHTML = "Please enter a password";
+    return false;
+  }
+
+  // If data OK - post values and reload index.php
   request.open("POST", '/index.php', true);
 
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -83,10 +80,11 @@ function processLogin(){
   request.send('email=' + encodeURIComponent(req_object.email) + '&password=' + encodeURIComponent(req_object.password));
 }
 
-// now, you need to hook in to the form's onsubmit, so you can stop it doing whatever it is doing.
-var form = document.querySelector('.login-form');//find your form
+var form = document.querySelector('.login-form');
 
 form.addEventListener('submit', function(e){
+  // Prevents the form from automatically submitting - to check for valid input
   e.preventDefault();
+  // Callback
   processLogin();
 });

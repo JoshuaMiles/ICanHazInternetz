@@ -11,6 +11,7 @@
       <input type="password" name="password" id="password" class="lbl-highlight">
       <label for="password">Password</label>
     </div>
+    <div id="errors"></div>
     <a href="registration.php" class="login-notify muted">Don't have an account? Click here</a>
     <input type="submit" name="login" value="Sign in" id="login">
   </form>
