@@ -1,5 +1,7 @@
-<?php require 'server/PHP/requireMaster.php';
-$hotspotName = $_GET['name']?>
+<?php
+  require 'server/PHP/requireMaster.php';
+  $hotspotName = $_GET['name'];
+?>
 
 <!DOCTYPE html>
 <html>
