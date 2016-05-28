@@ -9,68 +9,11 @@
   <title>routr - results</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7rWGqvYfHMPhTMETa0JlKwAo6nA-Zu8"
-          type="text/javascript"></script>
-  <script type="text/javascript">
-  function load() {
-      var map = new google.maps.Map(document.getElementById("map"), {
-        center: new google.maps.LatLng(-27.4710, 153.0234),
-        zoom: 13,
-        mapTypeId: 'roadmap'
-      });
-      var infoWindow = new google.maps.InfoWindow;
-
-      // Change this depending on the name of your PHP file - and path
-      downloadUrl("server/PHP/createMapMarkers.php", function(data) {
-        var xml = data.responseXML;
-        var markers = xml.documentElement.getElementsByTagName("marker");
-        for (var i = 0; i < markers.length; i++) {
-          var name = markers[i].getAttribute("name");
-          var address = markers[i].getAttribute("address");
-          var suburb = markers[i].getAttribute("suburb");
-          var point = new google.maps.LatLng(
-              parseFloat(markers[i].getAttribute("lat")),
-              parseFloat(markers[i].getAttribute("long")));
-          var html = "<b>" + name + "</b> <br/>" + address;
-          //var icon = customIcons[type] || {};
-          var marker = new google.maps.Marker({
-            map: map,
-            position: point
-          });
-          bindInfoWindow(marker, map, infoWindow, html);
-        }
-      });
-    }
-
-    function bindInfoWindow(marker, map, infoWindow, html) {
-      google.maps.event.addListener(marker, 'click', function() {
-        infoWindow.setContent(html);
-        infoWindow.open(map, marker);
-      });
-    }
-
-    function downloadUrl(url, callback) {
-      var request = window.ActiveXObject ?
-          new ActiveXObject('Microsoft.XMLHTTP') :
-          new XMLHttpRequest;
-
-      request.onreadystatechange = function() {
-        if (request.readyState == 4) {
-          request.onreadystatechange = doNothing;
-          callback(request, request.status);
-        }
-      };
-
-      request.open('GET', url, true);
-      request.send(null);
-    }
-    function doNothing() {}
-
-  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7rWGqvYfHMPhTMETa0JlKwAo6nA-Zu8" type="text/javascript"></script>
+  <script type="text/javascript" src="map.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
- <body onload="load()">
+<body onload="load()">
 <!-- Navigation fixed -->
 <?php include('server/includes/fixedNav.tpl.php'); ?>
 
