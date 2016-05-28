@@ -17,8 +17,10 @@
           var point = new google.maps.LatLng(
               parseFloat(markers[i].getAttribute("lat")),
               parseFloat(markers[i].getAttribute("long")));
-          var html = "<b>" + name + "</b> <br/>" + address;
-          // var icon = customIcons[type] || {};
+          var html = {
+            "<b>" + name + "</b> <br/>" + address +
+            "<a href='sampleItem.php?hotspotName='" + name + ">";
+          };
           var marker = new google.maps.Marker({
             map: map,
             position: point
