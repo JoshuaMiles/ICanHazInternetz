@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   $lastName = $_POST['lastName'];
   $phone = $_POST['phone'];
   $password = $_POST['password'];
+
+  echo "signup";
   $member = new User($email);
 
   if ($member->register($firstName, $lastName, $email, $phone, $password)) {

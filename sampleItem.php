@@ -1,4 +1,7 @@
-<<!DOCTYPE html>
+<?php require 'server/PHP/requireMaster.php';
+$hotspotName = $_GET['name']?>
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
+
   <!-- Navigation fixed -->
   <?php include('server/includes/fixedNav.tpl.php'); ?>
 
@@ -23,7 +27,11 @@
       <article>
         <div class="container">
           <div class="item-container">
-            <?php include('server/includes/item.tpl.php'); ?>
+
+        <?php
+        $database->sampleItemQuery($hotspotName);
+        //include('server/includes/item.tpl.php'); ?>
+
             <!-- <h2 class="article-head hotspot">Grange Public Library Wifi</h2>
             <hr class="article-title-rule">
             <div class="img-item">
@@ -31,7 +39,7 @@
               <a href="#userComment" class="cta"><i class="material-icons add-review">mode_edit</i></a>
             </div> -->
             <article class="comments-section">
-              <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews</span> for <?php echo $hotspot['NAME']; ?> </h2>
+              <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews</span> for <?php echo $hotspotName; ?> </h2>
               <!-- <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews</span> for Grange Public Library Wifi</h2> -->
                 <div class="comment-wrapper">
                   <?php include('server/includes/comment.tpl.php'); ?>

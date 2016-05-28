@@ -3,6 +3,7 @@
  * This class is used to instantiate a user so that when enever an action of user is needed, this class is called.
  */
 
+
 class User {
   private $email;
   private $authed = false;
@@ -47,7 +48,7 @@ class User {
         ":password" => $password_hash
       ));
 //      var_dump($db->errorInfo());
-      echo "\n\n\nInsert ID is : {$db->lastInsertId()}\n\n\n\n\n";
+      
       $user = new User($email);
       $user->authed = true;
 

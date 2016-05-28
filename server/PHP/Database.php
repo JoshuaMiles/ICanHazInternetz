@@ -3,6 +3,7 @@
 class Database {
 
   private $db;
+  private $hotspotName;
 
   function __construct() {
     $db_name = 'hotspots';
@@ -28,13 +29,36 @@ class Database {
    * @param $suburb
    * @param $rating
    */
-  public function sampleItemQuery() {
+  public function distinctRecentReviewQuery() {
 
     $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items LIMIT 9;');
     $qry->execute();
 
     foreach ($qry as $hotspot) {
       include('server/includes/recentReview.tpl.php');
+    }
+
+    $data = $qry->fetch();
+    $hotspotName = '';
+    $this->$hotspotName  = $data['name'];
+
+  }
+
+  public function getHotspotName(){
+    return $this->hotspotName;
+  }
+
+  public function sampleItemQuery($hotspotName) {
+
+    $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB, LATITUDE,LONGITUDE FROM hotspots.items WHERE NAME = ?');
+    $qry-> bindParam(1,$hotspotName);
+    $qry->execute();
+//    $data = $qry->fetch();
+
+//    $this->hotspotName = $data['NAME'];
+
+    foreach ($qry as $hotspot) {
+      include('server/includes/item.tpl.php');
     }
   }
 

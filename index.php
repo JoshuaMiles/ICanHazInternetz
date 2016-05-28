@@ -5,6 +5,7 @@
   session_start();
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['email'];
+    echo "index.php i think";
     $user = new User($email);
     $user->login($_POST['password']);
   //    if ($user = User::register()){
@@ -24,6 +25,7 @@
   }
   if (isset($_SESSION['email'])) {
     // load user from session
+    echo "index.php";
     $user = User::fromSession();
   }
   //var_dump($_SESSION);
@@ -73,7 +75,7 @@
       <div class="container">
         <div class="review-cards">
           <?php
-          $database->sampleItemQuery();
+          $database->distinctRecentReviewQuery();
           ?>
         </div>
     </article>
