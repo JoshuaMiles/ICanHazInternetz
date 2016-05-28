@@ -50,19 +50,11 @@ function processLogin() {
   };
 
   function emailIsEmpty() {
-
     return req_object.email === "";
-    // if (req_object.email.value === "") {
-    //   // document.getElementById('errors').innerHTML = "Please enter an email address";
-    // }
   }
 
   function passwordIsEmpty() {
-
     return req_object.password === "";
-      // if (req_object.password.value === "") {
-      //   document.getElementById('errors').innerHTML = "Please enter a password";
-      // }
   }
 
   request.onreadystatechange = function(){
@@ -75,7 +67,7 @@ function processLogin() {
         if (emailIsEmpty() === true || passwordIsEmpty() === true) {
           document.getElementById('errors').innerHTML = "Please enter an email address and a password";
         } else {
-          //document.getElementById('errors').innerHTML = "Incorrect email address or password";
+          document.getElementById('errors').innerHTML = "Incorrect email address or password";
         }
         console.log('Login failed');
     }
