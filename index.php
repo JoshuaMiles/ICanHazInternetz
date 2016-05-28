@@ -1,10 +1,11 @@
 <?php
 
   require 'server/PHP/requireMaster.php';
+require 'server/PHP/postMaster.php';
 
   session_start();
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $email = getPost($_POST['email']);
+    $email = $_POST['email'];
     $user = new User($email);
     $user->login($_POST['password']);
     //TODO make sure to delete this if we do not need it

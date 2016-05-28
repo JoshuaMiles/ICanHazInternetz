@@ -8,7 +8,6 @@
         <ul>
           <li><a href="search.php">Find Wifi</a></li>
           <li><a href="registration.php">Register</a></li>
-          <li><a href="userProfile.php">Your Profile</a></li>
         </ul>
       </nav>
   </section>

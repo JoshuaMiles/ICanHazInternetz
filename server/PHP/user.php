@@ -52,6 +52,12 @@ class User {
       $user = new User($email);
       $user->authed = true;
 
+      $data = $sql->fetch();
+
+      echo $data;
+
+      print_r($db->errorCode());
+
     } catch (PDOException $e) {
       // if there is an error it is caught and returned
       echo ("Error! :" . $e->getMessage() . "</br>");

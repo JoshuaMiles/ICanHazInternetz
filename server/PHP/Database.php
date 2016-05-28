@@ -105,22 +105,44 @@ class Database {
    * @param $comment
    */
 
-  public function insertComment($postEmail, $hotspotName, $firstName, $rating, $comment) {
+  public function insertComment($postEmail, $hotspotName,$firstName,$currentTime, $rating, $comment) {
+
+//    $qry = $this->db->prepare('
+//          INSERT INTO
+//          hotspots.reviews(email, hotspotName, firstName, reviewDate, reviewDate, comment)
+//          VALUES ('.$postEmail.', '.$hotspotName.','.$currentTime.','.$firstName.',  '.$rating.', '.$comment.')');
+
+    $intTime = (int) $currentTime;
+    echo gettype($intTime);
+    $intRating = (int) $rating;
+    echo gettype($intRating);
 
 
-    $qry = $this->db->prepare('
-          INSERT INTO
-          hotspots.reviews(`email`, `hotspotName`, `firstName`, `reviewDate`, `rating`, `comment`)
-          VALUES (:postEmail, :hotspotName, :firstName, :reviewDate, :rating, :comment)');
+    try {
+      $sql = $this->db->prepare('INSERT INTO hotspots.reviews( email, hotspotName, firstName, reviewDate, rating, comment ) VALUES (:postEmail, :hotspotName, :firstName, :currentTime, :rating,:comment)');
+      if (!$sql) {
+        die();
+      }
+//      Inside of the array each individual argument is inserted into the specfic index value before the command is executed
+      $sql->execute(array(
+        ":postEmail" => $postEmail,
+        ":hotspotName" => $hotspotName,
+        ":firstName" => $firstName,
+        ":currentTime" =>  $intTime,
+        ":rating" => $intRating,
+        ":comment" => $comment
+      ));
+      print_r($this->db->errorCode());
 
-    $qry->execute(array(
-      ':postEmail' => $postEmail,
-      ':hotspotName' => $hotspotName,
-      ':firstName' => $firstName,
-      ':reviewDate' => time(),
-      ':rating' => $rating,
-      ':comment' => $comment
-    ));
+//      var_dump(database->errorInfo());
+
+//      $sql->execute();
+
+    } catch (PDOException $e){
+      // if there is an error it is caught and returned
+      echo ("Error! :" . $e->getMessage() . "</br>");
+      return false;
+    }
 
   }
 
