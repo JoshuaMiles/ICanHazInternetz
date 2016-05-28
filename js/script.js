@@ -43,6 +43,28 @@ function processLogin() {
 
   var request = new XMLHttpRequest();
 
+  // Setup an request object to be passed using ajax
+  var req_object = {
+    email : document.querySelector('#username').value,
+    password : document.querySelector('#password').value
+  };
+
+  function emailIsEmpty() {
+
+    return req_object.email.value === "";
+    // if (req_object.email.value === "") {
+    //   // document.getElementById('errors').innerHTML = "Please enter an email address";
+    // }
+  }
+
+  function passordIsEmpty() {
+
+    return req_object.password.value === "";
+      // if (req_object.password.value === "") {
+      //   document.getElementById('errors').innerHTML = "Please enter a password";
+      // }
+  }
+
   request.onreadystatechange = function(){
     switch (request.status){
       case 200:
@@ -50,35 +72,20 @@ function processLogin() {
         window.location.href = 'search.php';
         break;
       default:
-        emailIsEmpty();
-        passordIsEmpty();
-        //document.getElementById('errors').innerHTML = "Incorrect email address or password";
+        if (emailIsEmpty() === true || passwordIsEmpty() === true) {
+          document.getElementById('errors').innerHTML = "Please enter an email address and a password";
+        } else {
+          document.getElementById('errors').innerHTML = "Incorrect email address or password";
+        }
         console.log('Login failed');
     }
   };
 
   // Setup an request object to be passed using ajax
-  var req_object = {
-    email : document.querySelector('#username').value,
-    password : document.querySelector('#password').value
-  };
-
-
-  function emailIsEmpty() {
-    if (req_object.email.value === "") {
-      document.getElementById('errors').innerHTML = "Please enter an email address";
-      return false;
-    }
-    return true;
-  }
-
-  function passordIsEmpty() {
-      if (req_object.password.value === "") {
-        document.getElementById('errors').innerHTML = "Please enter a password";
-        return false;
-      }
-      return true;
-  }
+  // var req_object = {
+  //   email : document.querySelector('#username').value,
+  //   password : document.querySelector('#password').value
+  // };
 
 
   // If data OK - post values and reload index.php
