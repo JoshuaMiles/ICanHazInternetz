@@ -1,0 +1,27 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\select@language {american}
+\contentsline {section}{\numberline {}Summary}{1}{section.1}
+\contentsline {section}{\numberline {}Home Screen}{1}{section.2}
+\contentsline {section}{\numberline {} User}{1}{section.3}
+\contentsline {subsection}{\numberline {.1}Create New User}{1}{subsection.3.1}
+\contentsline {subsection}{\numberline {.2}Logging in Exisiting user}{1}{subsection.3.2}
+\contentsline {subsection}{\numberline {.3}Logging out user}{1}{subsection.3.3}
+\contentsline {subsection}{\numberline {.4}Unregestered User unable to log in}{1}{subsection.3.4}
+\contentsline {subsection}{\numberline {.5}Review from user}{1}{subsection.3.5}
+\contentsline {section}{\numberline {}Database}{1}{section.4}
+\contentsline {subsection}{\numberline {.1}Item within the database}{1}{subsection.4.1}
+\contentsline {subsection}{\numberline {.2}Item not within the database}{1}{subsection.4.2}
+\contentsline {subsection}{\numberline {.3}Attempted SQL Injection}{1}{subsection.4.3}
+\contentsline {section}{\numberline {}Pages}{1}{section.5}
+\contentsline {subsection}{\numberline {.1}Individual Item page}{1}{subsection.5.1}
+\contentsline {section}{\numberline {}Multiple resolutions}{1}{section.6}
+\contentsline {section}{\numberline {A}Brute Force Psudocode}{2}{Appendix.a.A}
+\contentsline {section}{\numberline {B}Median Psudocode}{3}{Appendix.a.B}
+\contentsline {section}{\numberline {C}Select Psudocode}{3}{Appendix.a.C}
+\contentsline {section}{\numberline {D}Partition Psudocode}{4}{Appendix.a.D}
+\contentsline {section}{\numberline {E}Brute Force Implementation - Basic Operations}{5}{Appendix.a.E}
+\contentsline {section}{\numberline {F}Brute Force Implementation - Timed}{6}{Appendix.a.F}
+\contentsline {section}{\numberline {G}Partition Implemenation - Basic Operations}{7}{Appendix.a.G}
+\contentsline {section}{\numberline {H}Select Implementation - Basic Operations}{8}{Appendix.a.H}
+\contentsline {section}{\numberline {I}Median Implementation - Basic Operations}{9}{Appendix.a.I}
+\contentsline {section}{\numberline {J}Brute Force Average Efficiency - Basic Operation}{10}{Appendix.a.J}
