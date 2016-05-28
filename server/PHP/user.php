@@ -27,6 +27,7 @@ class User {
    * @return mixed
    */
   public static function register($firstName, $lastName, $email, $phone, $password) {
+    
     global $db;
 
     try {
