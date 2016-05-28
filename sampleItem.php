@@ -16,11 +16,6 @@ $hotspotName = $_GET['name']?>
   <?php include('server/includes/fixedNav.tpl.php'); ?>
 
   <main>
-    <!-- Login  -->
-              <!-- Change the the nav to include a load the index page and focus into the form
-                  index.php#login-form
-              -->
-    <?php //include('server/includes/login.tpl.php'); ?>
 
     <!-- Content -->
     <section>
@@ -28,19 +23,10 @@ $hotspotName = $_GET['name']?>
         <div class="container">
           <div class="item-container">
 
-        <?php
-        $database->sampleItemQuery($hotspotName);
-        //include('server/includes/item.tpl.php'); ?>
+        <?php $database->sampleItemQuery($hotspotName); ?>
 
-            <!-- <h2 class="article-head hotspot">Grange Public Library Wifi</h2>
-            <hr class="article-title-rule">
-            <div class="img-item">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14165.6641786731!2d153.00885146977544!3d-27.42514189999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9159d688d2a2d7%3A0x83b7b25eb32b49eb!2sBrisbane+City+Council+-+Grange+Library!5e0!3m2!1sen!2sau!4v1462080935000" width="800" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-              <a href="#userComment" class="cta"><i class="material-icons add-review">mode_edit</i></a>
-            </div> -->
             <article class="comments-section">
-              <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews</span> for <?php echo $hotspotName; ?> </h2>
-              <!-- <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews</span> for Grange Public Library Wifi</h2> -->
+              <h2 class="reviewTitle recommendedReviews"><span class="highlight">Recommend Reviews for </span> <?php echo $hotspotName; ?> </h2>
                 <div class="comment-wrapper">
                   <?php include('server/includes/comment.tpl.php'); ?>
                 </div>

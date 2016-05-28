@@ -14,7 +14,7 @@
               </a>
             </li>
             <li id="active">
-              <a href="#" id="user">
+              <a href="index.php" id="user">
                 <i class="material-icons user-icon">person</i>
                 <strong> ' . $user->getFirstName() . ' </strong>
               </a>
