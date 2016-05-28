@@ -2,9 +2,9 @@
   <div class="cmt-box">
     <div class="cmt-body">
 
-      <strong class = "user-name">  <?php echo $user->getFirstName() ?>  </strong>
+      <strong class="user-name">  <?php echo $user->getFirstName() ?>  </strong>
 <!--///TODO show the data which is currently now-->
-      <span class="muted"> <?php echo  date('d-m-y'); ?></span>
+      <span class="muted"> <?php echo date('d-m-y'); ?></span>
 
       <form class="addReviewForm" action="sampleItem.php" method="post">
         <textarea name="userComment" class="muted" id="userComment" rows="5" placeholder="Your rating helps others find better Wifi."></textarea>

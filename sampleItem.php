@@ -35,14 +35,11 @@ $hotspotName = $_GET['name'];
             <h2 class="reviewTitle recommendedReviews"><span
                 class="highlight">Recommend Reviews for </span> <?php echo $hotspotName; ?> </h2>
             <div class="comment-wrapper">
-
               <?php
               $database->showReview($hotspotName);
               ?>
             </div>
             <hr/>
-
-            <h2 id="yourReview" class="reviewTitle yourReview highlight">Your Review</h2>
             <?php include('server/includes/addReview.tpl.php'); ?>
           </article>
         </div>
