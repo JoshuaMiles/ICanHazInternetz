@@ -4,9 +4,10 @@
 
   session_start();
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $email = $_POST['email'];
+    $email = getPost($_POST['email']);
     $user = new User($email);
     $user->login($_POST['password']);
+    //TODO make sure to delete this if we do not need it
   //    if ($user = User::register()){
   //      // successfully registered
   //    } else {
@@ -73,6 +74,7 @@
       <div class="container">
         <div class="review-cards">
           <?php
+          // Showing a sample of the review cards
           $database->distinctRecentReviewQuery();
           ?>
         </div>

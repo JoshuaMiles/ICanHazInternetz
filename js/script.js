@@ -12,7 +12,7 @@ function showNearbyResults() {
   navigator.geolocation.getCurrentPosition(function(pos){
     console.log(pos);
     //set search buffer radius in here
-    return pos; //else return the coords
+    return pos; //else return the co-ords
   });
 }
 

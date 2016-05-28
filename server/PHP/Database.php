@@ -1,10 +1,15 @@
 <?php
 
+/**
+ * Class Database
+ * Used predominantly for reviews but also creates the PDO used in User
+ */
 class Database {
 
   private $db;
-  private $hotspotName;
 
+  
+  // The constructor is the only object with the ability to create a PDO
   function __construct() {
     $db_name = 'hotspots';
     $db_username = 'root';
@@ -16,15 +21,23 @@ class Database {
       echo $e;
       exit();
     }
+    
+    // Attaches the PDO to the object
     $this->db = $pdo;
     return $this->db;
   }
 
+  /**
+   * Used to get return the PDO if another class needs to use it
+   * @return PDO
+   */
   public function getPDO() {
     return $this->db;
   }
 
   /**
+   *
+   * Shows 9 hotspots
    * @param $name
    * @param $suburb
    * @param $rating
@@ -39,15 +52,12 @@ class Database {
     }
   }
 
-  public function getHotspotName(){
-    return $this->hotspotName;
-  }
 
   //Populates the fields within the individual item page
   public function sampleItemQuery($hotspotName) {
 
     $qry = $this->db->prepare('SELECT NAME,ADDRESS,SUBURB, LATITUDE,LONGITUDE FROM hotspots.items WHERE NAME = ?');
-    $qry-> bindParam(1,$hotspotName);
+    $qry->bindParam(1, $hotspotName);
     $qry->execute();
 
     foreach ($qry as $hotspot) {
@@ -58,10 +68,8 @@ class Database {
 
   // Queries the Database for all of the items
   public function showAll() {
-
     $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE FROM hotspots.items;');
     $qry->execute();
-
     foreach ($qry as $hotspot) {
       include('server/includes/recentReview.tpl.php');
     }
@@ -77,21 +85,28 @@ class Database {
       include('server/includes/recentReview.tpl.php');
     }
   }
+
 //The Query used to search the database for a certain element
   public function searchQuery($postName, $postAddress, $postSuburb) {
     $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM hotspots.items,hotspots.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR items.NAME LIKE "' . $postName . '" OR items.Suburb LIKE "' . $postSuburb . '" LIMIT 1');
     $qry->execute();
-
-
     foreach ($qry as $hotspot) {
       include('server/includes/recentReview.tpl.php');
     }
   }
 
 
-  public function insert($postEmail, $hotspotName, $firstName, $rating, $comment) {
+  /**
+   * Used to insert a comment into the database
+   * @param $postEmail
+   * @param $hotspotName
+   * @param $firstName
+   * @param $rating
+   * @param $comment
+   */
 
-    // echo "INSERT INTO hotspots.reviews( email, hotspotName,firstName, reviewDate ,rating, comment ) VALUES $postEmail,$hotspotName,$firstName," . time() . ",$rating,$comment<br>";
+  public function insertComment($postEmail, $hotspotName, $firstName, $rating, $comment) {
+
 
     $qry = $this->db->prepare('
           INSERT INTO
@@ -107,12 +122,14 @@ class Database {
       ':comment' => $comment
     ));
 
-    print_r($this->db->errorInfo());
   }
 
+
+  /**
+   * Gets the an item if there is an item attached to it
+   */
   public function getReviewIfRating() {
-    //
-//Try to get distinct
+    //Try to get distinct
     $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,reviews.rating FROM hotspots.items INNER JOIN reviews ON reviews.hotspotName=items.NAME ');
     $qry->execute();
     foreach ($qry as $hotspot) {
@@ -120,11 +137,14 @@ class Database {
     }
   }
 
+
+  /**
+   * Gets the review given the hotspot name
+   * @param $hotspotName
+   */
   public function showReview($hotspotName) {
-    //
-//Try to get distinct
     $qry = $this->db->prepare('SELECT DISTINCT firstName,reviewDate,rating,comment FROM  reviews WHERE hotspotName = ?');
-    $qry->bindParam(1,$hotspotName);
+    $qry->bindParam(1, $hotspotName);
     $qry->execute();
     foreach ($qry as $review) {
       include('server/includes/comment.tpl.php');
@@ -132,18 +152,9 @@ class Database {
   }
 
 
-  public function getAverageForRating($hotspotName) {
-
-
-    $qry = $this->db->prepare('SELECT AVG(rating) FROM hotspots.reviews WHERE hotspotName=');
-    $qry->execute(array(
-      ':hotspotName' => $hotspotName
-    ));
-    foreach ($qry as $avg) {
-      return $avg;
-    }
-  }
-
+  /**
+   * Gets all of the suburbs from the items database and adds them to a dropdown menu
+   */
   public function populateSuburbDropdown() {
 
     $qry = $this->db->prepare('SELECT DISTINCT SUBURB FROM hotspots.items;');
@@ -153,10 +164,11 @@ class Database {
     <select name="search-suburb" class="suburb-select-box">
       <option disabled selected value="">Suburb...</option>
    ');
-    foreach($qry as $hotspot) {
-      echo '<option value="'.$hotspot['SUBURB'].'">'.$hotspot['SUBURB'].'</option>';
+    foreach ($qry as $hotspot) {
+      echo '<option value="' . $hotspot['SUBURB'] . '">' . $hotspot['SUBURB'] . '</option>';
     }
     echo '</select>';
   }
 }
+
 ?>

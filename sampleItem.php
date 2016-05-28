@@ -3,8 +3,6 @@ require 'server/PHP/requireMaster.php';
 session_start();
 $user = User::fromSession();
 $hotspotName = $_GET['name'];
-//  $user = new User($_SESSION['email']);
-//  echo var_dump($user->isAuthed());
 ?>
 
 <!DOCTYPE html>

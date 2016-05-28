@@ -41,7 +41,9 @@ $user = User::fromSession();
           <?php include('server/includes/searchRating.tpl.php'); ?>
 
 
-          <?php $database->populateSuburbDropdown(); ?>
+          <?php
+          // Used to populate the suburb dropdown
+          $database->populateSuburbDropdown(); ?>
 
           <input type="Submit" value="Search" id="btn-backup-search">
           </form>
@@ -57,7 +59,7 @@ $user = User::fromSession();
         <div class="container">
           <div class="review-cards">
             <?php
-            //            include("server/PHP/Database.php");
+
             //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
             $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
             $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
