@@ -115,11 +115,20 @@ class Database {
 //Try to get distinct
     $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,reviews.rating FROM hotspots.items INNER JOIN reviews ON reviews.hotspotName=items.NAME ');
     $qry->execute();
-
     foreach ($qry as $hotspot) {
       include('server/includes/recentReview.tpl.php');
     }
+  }
 
+  public function showReview($hotspotName) {
+    //
+//Try to get distinct
+    $qry = $this->db->prepare('SELECT DISTINCT firstName,reviewDate,rating,comment FROM  reviews WHERE hotspotName = ?');
+    $qry->bindParam(1,$hotspotName);
+    $qry->execute();
+    foreach ($qry as $review) {
+      include('server/includes/comment.tpl.php');
+    }
   }
 
 

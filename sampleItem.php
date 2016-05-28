@@ -37,7 +37,7 @@ $hotspotName = $_GET['name'];
             <div class="comment-wrapper">
 
               <?php
-                include('server/includes/comment.tpl.php');
+              $database->showReview($hotspotName);
               ?>
             </div>
             <hr/>
