@@ -48,6 +48,9 @@
     </div>
 
     <div class="container pull-down">
+      
+      <?php include('server/includes/initialState.tpl.php'); ?>
+
       <article class="results-container">
         <div class="container">
           <div class="review-cards">
@@ -95,11 +98,6 @@
           </div>
         </div>
       </article>
-
-      <div id="map" style="width: 800px; height: 500px"></div>
-
-
-      <?php include('server/includes/initialState.tpl.php'); ?>
 
       <?php //include('server/includes/noResultsFound.tpl.php'); ?>
 

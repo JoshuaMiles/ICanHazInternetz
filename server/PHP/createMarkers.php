@@ -2,7 +2,7 @@
   // Load database connection
   require('Database.php');
   $db = new Database();
-
+  
   $pdo = $db->getPDO();
 
   // Start XML file, create parent node
