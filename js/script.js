@@ -57,7 +57,7 @@ function processLogin() {
     // }
   }
 
-  function passordIsEmpty() {
+  function passwordIsEmpty() {
 
     return req_object.password.value === "";
       // if (req_object.password.value === "") {
