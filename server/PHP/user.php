@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * This class is used to instantiate a user so that when enever an action of user is needed, this class is called.
  */

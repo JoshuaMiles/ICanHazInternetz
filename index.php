@@ -80,7 +80,8 @@ if (isset($_SESSION['email'])) {
       <div class="container">
         <div class="review-cards">
           <?php
-          $database->sampleItemQuery(); ?>
+          $database->sampleItemQuery();
+          ?>
         </div>
     </article>
   </section>

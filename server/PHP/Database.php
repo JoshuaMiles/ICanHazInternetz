@@ -133,10 +133,6 @@ class Database {
       echo '<option value="'.$hotspot['SUBURB'].'">'.$hotspot['SUBURB'].'</option>';
     }
     echo '</select>';
-
   }
-
-
 }
-
 ?>
