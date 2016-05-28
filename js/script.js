@@ -51,7 +51,7 @@ function processLogin() {
 
   function emailIsEmpty() {
 
-    return req_object.email.value === "";
+    return req_object.email === "";
     // if (req_object.email.value === "") {
     //   // document.getElementById('errors').innerHTML = "Please enter an email address";
     // }
@@ -59,7 +59,7 @@ function processLogin() {
 
   function passwordIsEmpty() {
 
-    return req_object.password.value === "";
+    return req_object.password === "";
       // if (req_object.password.value === "") {
       //   document.getElementById('errors').innerHTML = "Please enter a password";
       // }
