@@ -81,17 +81,12 @@
               }
             } //cmt-text
 
-            .star-rating {
-              padding-bottom: 1.5em;
-              padding-left: 1.5em;
+            .addReviewForm {
+              
+            }
 
-              &:before {
-                content: url('/images/icons/full-star.svg');
-                width: 14px;
-                height: 14px;
-                padding-right: .5em;
-              }
-            } //star-rating
+
+
           } //comment-body
         } //comment-box
       } //comment-wrapper
