@@ -65,7 +65,7 @@ function processLogin(){
     switch (request.status){
       case 200:
         console.log('youre logged in');
-        // closeBtn.click();
+        window.location.href = 'search.php';
         break;
       default:
         console.log('you couldnt log in ');
