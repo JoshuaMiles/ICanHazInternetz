@@ -21,7 +21,7 @@
               </a>
             </li>
           ');
-        } else {
+        } else  {
             echo('
               <li id="active">
                 <a href="index.php" id="user">
