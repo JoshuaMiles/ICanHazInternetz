@@ -552,9 +552,6 @@ main section article.profile-reviews {
 main section article.profile-reviews .arc-svg {
   margin-top: -1px;
 }
-main section article.profile-reviews .arc-svg path {
-  fill: #FFFFFF;
-}
 main section article.profile-reviews .container {
   max-width: 830px;
   margin: 0 auto;
