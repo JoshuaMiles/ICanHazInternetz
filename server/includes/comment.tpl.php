@@ -10,7 +10,7 @@
         <p class="cmt-text">
           <q>'. $review['comment'] .'</q>
         </p>
-        <span class="star-rating muted">'. $review['rating'] .'</span>
+        <span class="star-rating muted">Rating:'. $review['rating'] .'</span>
       </div>
     </div>
   ');
