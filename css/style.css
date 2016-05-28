@@ -896,21 +896,6 @@ main .register .user-container .newUser button#signup {
   height: 14px;
   padding: .5rem;
 }
-.container .item-container .comments-section .comment-wrapper .cmt-box .cmt-body .star-rating {
-  padding-bottom: 1.5em;
-  padding-left: 1.5em;
-}
-.container .item-container .comments-section .comment-wrapper .cmt-box .cmt-body .star-rating:before {
-  content: url("/images/icons/full-star.svg");
-  width: 14px;
-  height: 14px;
-  padding-right: .5em;
-}
-.container .item-container .comments-section .yourReview {
-  margin-left: 20px;
-  margin-bottom: 20px;
-  display: none;
-}
 .container .item-container .comments-section .cmt-wrapper {
   width: 80%;
   margin: 0 auto;
@@ -927,28 +912,15 @@ main .register .user-container .newUser button#signup {
   border-radius: 4px;
   margin: 0 auto;
 }
-.container .item-container .comments-section .cmt-wrapper .select-rating {
-  display: inline;
-  list-style: none;
-  height: 30px;
-  padding: 5px;
+.container .item-container .comments-section .cmt-wrapper .addReviewForm {
+  padding: 15px 0;
 }
-.container .item-container .comments-section .cmt-wrapper .select-rating:before, .container .item-container .comments-section .cmt-wrapper .select-rating:after {
-  content: " ";
-  display: table;
+.container .item-container .comments-section .cmt-wrapper .addReviewForm #rating-title {
+  padding: 1em;
 }
-.container .item-container .comments-section .cmt-wrapper .select-rating:after {
-  clear: both;
-}
-.container .item-container .comments-section .cmt-wrapper .select-rating .star {
-  float: left;
-  width: 18px;
-  height: 18px;
-  background: url("/images/icons/empty-star.svg");
-  background-repeat: no-repeat;
-}
-.container .item-container .comments-section .cmt-wrapper .select-rating .star:hover {
-  background: url("/images/icons/full-star.svg");
+.container .item-container .comments-section .cmt-wrapper .addReviewForm .addRating {
+  padding: 1em;
+  margin-right: 10px;
 }
 .container .item-container .comments-section .cmt-wrapper .login-notify {
   font-size: 85%;
