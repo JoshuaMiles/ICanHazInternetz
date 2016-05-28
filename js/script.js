@@ -3,9 +3,9 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 
 // Login //
-var login = document.getElementById('user');
-var overlay = document.getElementsByClassName('overlay')[0];
-var closeBtn = document.getElementsByClassName('btn-close')[0];
+// var login = document.getElementById('user');
+// var overlay = document.getElementsByClassName('overlay')[0];
+// var closeBtn = document.getElementsByClassName('btn-close')[0];
 
 // Search Page //
 var includeSuburbs = document.querySelector('#incSuburbs');
@@ -25,15 +25,15 @@ function showNearbyResults() {
   });
 }
 
-function openLoginModal() {
-  overlay.offsetLeft = (width - overlay.offsetWidth /2) + document.body.scrollLeft + "px";
-  overlay.offsetTop = (height - overlay.offsetHeight /2) + document.body.scrollTop + "px";
-  overlay.style.display = "flex";
-}
+// function openLoginModal() {
+//   overlay.offsetLeft = (width - overlay.offsetWidth /2) + document.body.scrollLeft + "px";
+//   overlay.offsetTop = (height - overlay.offsetHeight /2) + document.body.scrollTop + "px";
+//   overlay.style.display = "flex";
+// }
 
-function closeLoginModal() {
-  overlay.style.display = "none";
-}
+// function closeLoginModal() {
+//   overlay.style.display = "none";
+// }
 
 function toggleClearBtn() {
   // Show clear btn if input field is not empty
@@ -48,10 +48,8 @@ function clearSearch() {
 
 
 //-- Event Listeners -- //
-if (login)
-  login.addEventListener("click", openLoginModal, false);
-if (closeBtn)
-  closeBtn.addEventListener("click", closeLoginModal, false);
+// if (login)
+//   login.addEventListener("click", openLoginModal, false);
 if (includeSuburbs)
   includeSuburbs.addEventListener("change", showNearbyResults, false);
 if (searchBox)
@@ -67,7 +65,7 @@ function processLogin(){
     switch (request.status){
       case 200:
         console.log('youre logged in');
-        closeBtn.click();
+        // closeBtn.click();
         break;
       default:
         console.log('you couldnt log in ');
@@ -92,4 +90,3 @@ form.addEventListener('submit', function(e){
   e.preventDefault();
   processLogin();
 });
-
