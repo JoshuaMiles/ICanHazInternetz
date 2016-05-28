@@ -916,7 +916,7 @@ main .register .user-container .newUser button#signup {
   padding: 15px 0;
 }
 .container .item-container .comments-section .cmt-wrapper .addReviewForm #rating-title {
-  padding: 1em;
+  padding-top: 1em;
 }
 .container .item-container .comments-section .cmt-wrapper .addReviewForm .addRating {
   padding: 1em;

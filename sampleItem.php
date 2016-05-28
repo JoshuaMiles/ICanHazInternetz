@@ -3,6 +3,8 @@ require 'server/PHP/requireMaster.php';
 session_start();
 $user = User::fromSession();
 $hotspotName = $_GET['name'];
+//  $user = new User($_SESSION['email']);
+//  echo var_dump($user->isAuthed());
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +35,11 @@ $hotspotName = $_GET['name'];
             <h2 class="reviewTitle recommendedReviews"><span
                 class="highlight">Recommend Reviews for </span> <?php echo $hotspotName; ?> </h2>
             <div class="comment-wrapper">
-
               <?php
               $database->showReview($hotspotName);
               ?>
             </div>
             <hr/>
-
             <?php include('server/includes/addReview.tpl.php'); ?>
           </article>
         </div>
