@@ -8,7 +8,6 @@ function load() {
 
   // Change this depending on the name of your PHP file
   downloadUrl("server/PHP/createMarkers.php", function (data) {
-    var html;
     var xml = data.responseXML;
     var markers = xml.documentElement.getElementsByTagName("marker");
     for (var i = 0; i < markers.length; i++) {
@@ -17,7 +16,7 @@ function load() {
       var point = new google.maps.LatLng(
         parseFloat(markers[i].getAttribute("lat")),
         parseFloat(markers[i].getAttribute("long")));
-      html = "<b>" + name + "</b> <br/>" + address + "<a href='sampleItem.php?hotspotName='  name  > More info </a>"
+      var html = "<b>" + name + "</b> <br/>" + address + "<a href='sampleItem.php?name='name> More info </a>"
 
       ;
       var marker = new google.maps.Marker({
