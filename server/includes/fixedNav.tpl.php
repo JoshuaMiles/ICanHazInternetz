@@ -3,8 +3,6 @@
     <div class="brand"><a href="index.php">routr</a></div>
     <ul>
       <?php
-        
-      
         if (isset($_SESSION['logged_in'])) {
           echo('
             <li>
@@ -22,9 +20,7 @@
             </li>
           ');
         } else  {
-            echo(
-            '
-            
+            echo('
               <li id="active">
                 <a href="index.php" id="user">
                   <i class="material-icons user-icon">person</i>

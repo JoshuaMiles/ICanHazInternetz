@@ -28,8 +28,6 @@
     // load user from session
     $user = User::fromSession();
   }
-  //var_dump($_SESSION);
-  //var_dump($_REQUEST);
 ?>
 <!DOCTYPE html>
 <html>
