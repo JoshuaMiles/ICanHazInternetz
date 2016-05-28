@@ -75,8 +75,11 @@ hr {
 
 .logged-in {
   width: 100%;
-  margin: 0 auto;
-  padding: 2%;
+  padding: 5%;
+  text-align: center;
+}
+.logged-in span {
+  color: #FF6347;
 }
 
 html {
