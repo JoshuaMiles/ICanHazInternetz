@@ -126,9 +126,9 @@
     font-family: $fontFamily;
     opacity: .7;
   }
-}
 
-.map {
-  width: 100%;
-  margin: 20px auto;
+  #map {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
