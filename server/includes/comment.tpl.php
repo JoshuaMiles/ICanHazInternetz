@@ -1,6 +1,5 @@
 <?php
   echo('
-
     <div class="cmt-box">
       <div class="user-img">
         <img src="images/usr-icon.png" alt="user-image">
@@ -16,4 +15,3 @@
     </div>
   ');
 ?>
-

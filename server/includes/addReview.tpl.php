@@ -7,22 +7,13 @@
       <span class="muted"> <?php echo  date('d-m-y'); ?></span>
       <textarea name="userComment" class="muted" id="userComment" rows="5" placeholder="Your rating helps others find better Wifi."></textarea>
       <span class="star-rating muted">
-        <?php
-          //add pdo and db stuff here
-          echo '<select class="select-rating">';
-          foreach($qry as $rating) {
-            echo '<option class="star" value="'.$rating['rating'].'">'.$rating['rating'].'</option>';
-          }
-          echo '</select>';
-        ?>
-
-        <ul class="select-rating">
-          <a href="#" class="star"></a>
-          <a href="#" class="star"></a>
-          <a href="#" class="star"></a>
-          <a href="#" class="star"></a>
-          <a href="#" class="star"></a>
-        </ul>
+        <select name="select-rating" id="" class="select-rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
       </span>
 
       <?php
