@@ -82,9 +82,11 @@
             } //cmt-text
 
             .addReviewForm {
-              margin: 15px 0;
               padding: 15px 0;
 
+              #rating-title {
+                padding: 1em;
+              }
               .addRating {
                 padding: 1em;
                 margin-right: 10px;
