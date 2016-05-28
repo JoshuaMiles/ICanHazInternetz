@@ -5,7 +5,6 @@
   session_start();
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['email'];
-    echo "index.php i think";
     $user = new User($email);
     $user->login($_POST['password']);
   //    if ($user = User::register()){
@@ -15,6 +14,8 @@
   //    }
     if ($user->isAuthed()) {
       header("HTTP/1.1 200 OK");
+      $_SESSION['logged_in'] = true;
+      $_SESSION['email'] = $email;
       // header('Content-type', 'application/json');
       // $response = Array('hello' => 'Josh');
       // echo json_encode($response);
@@ -25,7 +26,6 @@
   }
   if (isset($_SESSION['email'])) {
     // load user from session
-    echo "index.php";
     $user = User::fromSession();
   }
   //var_dump($_SESSION);

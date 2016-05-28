@@ -1,6 +1,7 @@
 <?php
-  include("server/PHP/Database.php");
-  $db = new Database();
+  include("server/PHP/requireMaster.php");
+session_start();
+$user = User::fromSession();
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +40,7 @@
           <?php include('server/includes/searchRating.tpl.php'); ?>
 
 
-          <?php $db->populateSuburbDropdown(); ?>
+          <?php $database->populateSuburbDropdown(); ?>
 
           <input type="Submit" value="Search" id="btn-backup-search">
           </form>
@@ -65,9 +66,9 @@
 
 
             if (!isset($_GET["searchBox"])) {
-              $db->showAll();
+              $database->showAll();
             } else {
-              $db->searchQuery($searchBox, $address, $suburb, $rating);
+              $database->searchQuery($searchBox, $address, $suburb, $rating);
               if (isset($_GET['search-rating'])) {
                 $reviewAndRating = $db->getReviewIfRating();
               }
@@ -85,9 +86,9 @@
             $address = "";
 
             if (!isset($_GET["searchBox"])) {
-              $showAll = $db->showAll($db);
+              $database->showAll();
             } else {
-              $test = $db->searchQuery($searchBox, $address, $suburb, $rating);
+              $database->searchQuery($searchBox, $address, $suburb);
             }
 
 

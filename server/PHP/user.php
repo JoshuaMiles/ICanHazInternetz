@@ -48,7 +48,7 @@ class User {
         ":password" => $password_hash
       ));
 //      var_dump($db->errorInfo());
-      
+
       $user = new User($email);
       $user->authed = true;
 

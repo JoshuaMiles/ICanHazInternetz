@@ -3,9 +3,9 @@
     <div class="brand"><a href="index.php">routr</a></div>
     <ul>
       <?php
-        session_start();
-
-        if (isset($user)) {
+        
+      
+        if (isset($_SESSION['logged_in'])) {
           echo('
             <li>
               <a href="server/PHP/logout.php">
@@ -22,7 +22,9 @@
             </li>
           ');
         } else  {
-            echo('
+            echo(
+            '
+            
               <li id="active">
                 <a href="index.php" id="user">
                   <i class="material-icons user-icon">person</i>

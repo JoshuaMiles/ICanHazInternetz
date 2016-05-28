@@ -37,11 +37,6 @@ class Database {
     foreach ($qry as $hotspot) {
       include('server/includes/recentReview.tpl.php');
     }
-
-    $data = $qry->fetch();
-    $hotspotName = '';
-    $this->$hotspotName  = $data['name'];
-
   }
 
   public function getHotspotName(){
