@@ -1,9 +1,6 @@
 <?php
-  require('server/PHP/Database.php');
-  include 'server/PHP/user.php';
-  //TODO build a require file, 2 requires and the db get pdo
-  $database = new Database();
-  $db = $database->getPDO();
+
+  require 'server/PHP/requireMaster.php';
 
   session_start();
   if ($_SERVER['REQUEST_METHOD'] == "POST") {

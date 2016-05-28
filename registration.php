@@ -1,4 +1,5 @@
-<?php include 'server/PHP/signup.php'; ?>
+<?php
+include 'server/PHP/signup.php'; ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,12 +24,12 @@
         <h2 class="article-head">Sign Up</h2>
         <hr class="article-title-rule">
 
-        <form method="POST" action="" onsubmit="return validateSubmitForm();" name="userForm" class="newUser">
+        <form method="POST" action="" onsubmit="return validatePassword();" name="userForm" class="newUser">
           <div class="profile">
             <img src="images/usr-icon.png" width="85" height="85" alt="profile">
           </div>
           <div class="input-group">
-            <input type="text" name="firstName" id="firstName" class="lbl-highlight" pattern="([nN][0-9]{7}" required>
+            <input type="text" name="firstName" id="firstName" class="lbl-highlight">
             <label for="firstName">First Name</label>
           </div>
           <div class="input-group">
@@ -40,15 +41,15 @@
             <label for="email">Email</label>
           </div>
           <div class="input-group">
-            <input type="tel" name="phone" id="phoneNum" class="lbl-highlight">
+            <input type="tel" name="phone" id="phoneNum" class="lbl-highlight" pattern="\b\d{3}?\d{3}?\d{4}\b" required>
             <label for="phoneNum">Phone Number</label>
           </div>
           <div class="input-group">
-            <input type="password" name="password" id="password" class="lbl-highlight" >
+            <input type="password" name="password" id="password" class="lbl-highlight" required >
             <label for="password">Password</label>
           </div>
           <div class="input-group">
-            <input type="password" name="confirmPassword" id="confirmPassword" class="lbl-highlight" >
+            <input type="password" name="confirmPassword" id="confirmPassword" class="lbl-highlight" required >
             <label for="confirmPassword">Confirm Password</label>
           </div>
           <button type="submit" id="signup">Sign Up</button>

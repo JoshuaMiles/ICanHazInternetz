@@ -1,19 +1,19 @@
 <?php
 
-  function getPost($value){
+
+/**
+ *
+ * Strips the incoming post object of any tags or slashes, else it returns null
+ * @param $value
+ * @return null|string
+ */
+function getPost($value){
       if(!empty($_POST)&&!empty($_POST[$value])){
+        // Strips any html tags
           $postValue = strip_tags($_POST[$value]);
+        // Strips the \ (slashes) from any of the post values
           $postValue = stripcslashes($postValue);
           return $postValue;
-      } else {
-          return null;
-      }
-  }
-
-
-  function get($value){
-      if(!empty($_GET)&&!empty($_GET[$value])){
-          return $_GET[$value];
       } else {
           return null;
       }
