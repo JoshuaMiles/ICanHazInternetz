@@ -50,7 +50,7 @@
   <!-- Login -->
   <?php
     if (isset($user)) {
-      echo('<div class="modal"><h2> Welcome ' . $user->getFirstName() . '</h2></div>');
+      echo('<div class="logged-in"><h2> Welcome ' . $user->getFirstName() . '</h2></div>');
     } else {
         include('server/includes/login.tpl.php');
     }
