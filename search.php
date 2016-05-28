@@ -1,7 +1,7 @@
 <?php
-include("server/PHP/requireMaster.php");
-session_start();
-$user = User::fromSession();
+  include("server/PHP/requireMaster.php");
+  session_start();
+  $user = User::fromSession();
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,8 +20,6 @@ $user = User::fromSession();
 <?php include('server/includes/fixedNav.tpl.php'); ?>
 
 <main>
-  <?php //include('server/includes/login.tpl.php'); ?>
-
   <section class="results">
     <div class="searchbar-container">
 
@@ -37,14 +35,10 @@ $user = User::fromSession();
       <hr class="line">
       <div class="options">
         <div class="options-wrapper">
-
+          <!-- Generates the rating dropdown -->
           <?php include('server/includes/searchRating.tpl.php'); ?>
-
-
-          <?php
-          // Used to populate the suburb dropdown
-          $database->populateSuburbDropdown(); ?>
-
+          <!-- Used to populate the suburb dropdown -->
+          <?php $database->populateSuburbDropdown(); ?>
           <input type="Submit" value="Search" id="btn-backup-search">
           </form>
         </div>
@@ -59,29 +53,24 @@ $user = User::fromSession();
         <div class="container">
           <div class="review-cards">
             <?php
+              //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
+              $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
+              $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
+              $rating = isset($_GET["search-rating"]) ? $_GET["search-rating"] : '';
+              $address = "";
 
-            //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
-            $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
-            $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
-            $rating = isset($_GET["search-rating"]) ? $_GET["search-rating"] : '';
-            $address = "";
-            //            $db = new Database();
+              $database->searchQuery($searchBox, $address, $suburb, $rating);
 
-            $database->searchQuery($searchBox, $address, $suburb, $rating);
-
-            // Populates the page with all of the items or all searched
-            if (!isset($_GET["searchBox"])) {
-              $database->showAll();
-            } else if (isset($_GET['search-rating'])) {
-              $reviewAndRating = $db->getReviewIfRating();
-            }
+              // Populates the page with all of the items or all searched
+              if (!isset($_GET["searchBox"])) {
+                $database->showAll();
+              } else if (isset($_GET['search-rating'])) {
+                $reviewAndRating = $db->getReviewIfRating();
+              }
             ?>
           </div>
         </div>
       </article>
-
-      <?php //include('server/includes/noResultsFound.tpl.php'); ?>
-
     </div>
   </section>
 </main>
