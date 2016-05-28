@@ -73,6 +73,12 @@ hr {
   color: #FF6347;
 }
 
+.logged-in {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2%;
+}
+
 html {
   position: relative;
   min-height: 100%;
