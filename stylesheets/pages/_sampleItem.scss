@@ -82,20 +82,17 @@
             } //cmt-text
 
             .addReviewForm {
+              margin: 15px 0;
               padding: 15px 0;
-            }
 
-
-
+              .addRating {
+                padding: 1em;
+                margin-right: 10px;
+              } //radio buttons
+            } //addReviewForm
           } //comment-body
         } //comment-box
       } //comment-wrapper
-
-      .yourReview {
-        margin-left: 20px;
-        margin-bottom: 20px;
-        display: none;
-      }
 
       .cmt-wrapper {
         width: 80%;
@@ -114,24 +111,6 @@
           margin: 0 auto;
         }
 
-        .select-rating {
-          @include clearfix;
-          display: inline;
-          list-style: none;
-          height: 30px;
-          padding: 5px;
-          .star {
-            float: left;
-            width: 18px;
-            height: 18px;
-            background: url('/images/icons/empty-star.svg');
-            background-repeat: no-repeat;
-
-            &:hover {
-              background: url('/images/icons/full-star.svg');
-            }
-          } //star
-        } //select-rating
         .login-notify {
           font-size: 85%;
           color: $accent;
