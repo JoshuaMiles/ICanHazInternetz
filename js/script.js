@@ -37,7 +37,7 @@ if (clearBtn)
   clearBtn.addEventListener("click", clearSearch, false);
 
 
-// Login function 
+// Login function
 
 function processLogin() {
 
@@ -50,7 +50,9 @@ function processLogin() {
         window.location.href = 'search.php';
         break;
       default:
-        document.getElementById('errors').innerHTML = "Incorrect email address or password";
+        emailIsEmpty();
+        passordIsEmpty();
+        //document.getElementById('errors').innerHTML = "Incorrect email address or password";
         console.log('Login failed');
     }
   };
@@ -61,16 +63,23 @@ function processLogin() {
     password : document.querySelector('#password').value
   };
 
-  // If no email address or password entered - show errors
-  if (req_object.email.value == "") {
-    document.getElementById('errors').innerHTML = "Please enter an email address";
-    return false;
+
+  function emailIsEmpty() {
+    if (req_object.email.value === "") {
+      document.getElementById('errors').innerHTML = "Please enter an email address";
+      return false;
+    }
+    return true;
   }
 
-  if (req_object.password.value == "") {
-    document.getElementById('errors').innerHTML = "Please enter a password";
-    return false;
+  function passordIsEmpty() {
+      if (req_object.password.value === "") {
+        document.getElementById('errors').innerHTML = "Please enter a password";
+        return false;
+      }
+      return true;
   }
+
 
   // If data OK - post values and reload index.php
   request.open("POST", '/index.php', true);
