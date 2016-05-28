@@ -1,38 +1,37 @@
 <?php
-require('server/PHP/Database.php');
-include 'server/PHP/user.php';
-//TODO build a require file, 2 requires and the db get pdo
-$database = new Database();
-$db = $database->getPDO();
+  require('server/PHP/Database.php');
+  include 'server/PHP/user.php';
+  //TODO build a require file, 2 requires and the db get pdo
+  $database = new Database();
+  $db = $database->getPDO();
 
-session_start();
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $email = $_POST['email'];
-  $user = new User($email);
-  $user->login($_POST['password']);
-//    if ($user = User::register()){
-//      // successfully registered
-//    } else {
-//      // something went wrong
-//    }
-  if ($user->isAuthed()) {
-    header("HTTP/1.1 200 OK");
-    header('Content-type', 'application/json');
-    $response = Array('hello' => 'Josh');
-    echo json_encode($response);
-  } else {
-    header("HTTP/1.1 401 Unauthorised");
+  session_start();
+  if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $email = $_POST['email'];
+    $user = new User($email);
+    $user->login($_POST['password']);
+  //    if ($user = User::register()){
+  //      // successfully registered
+  //    } else {
+  //      // something went wrong
+  //    }
+    if ($user->isAuthed()) {
+      header("HTTP/1.1 200 OK");
+      // header('Content-type', 'application/json');
+      // $response = Array('hello' => 'Josh');
+      // echo json_encode($response);
+    } else {
+      header("HTTP/1.1 401 Unauthorised");
+    }
+    exit();
   }
-  exit();
-}
-if (isset($_SESSION['email'])) {
-  // load user from session
-  $user = User::fromSession();
-}
-//var_dump($_SESSION);
-//var_dump($_REQUEST);
+  if (isset($_SESSION['email'])) {
+    // load user from session
+    $user = User::fromSession();
+  }
+  //var_dump($_SESSION);
+  //var_dump($_REQUEST);
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +51,13 @@ if (isset($_SESSION['email'])) {
 <!-- Content -->
 <main>
   <!-- Login -->
-  <?php include('server/includes/login.tpl.php'); ?>
+  <?php
+    if (isset($user)) {
+      echo('<h2> Welcome ' . $user->getFirstName() . '</h2>');
+    } else {
+        include('server/includes/login.tpl.php');
+    }
+  ?>
 
   <section>
 

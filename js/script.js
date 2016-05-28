@@ -61,7 +61,8 @@ function processLogin() {
     switch (request.status){
       case 200:
         console.log('Logged in');
-        window.location.href = 'search.php';
+        // window.location.href = 'search.php';
+        window.location.href = 'index.php';
         break;
       default:
         if (emailIsEmpty() === true || passwordIsEmpty() === true) {
@@ -72,13 +73,6 @@ function processLogin() {
         console.log('Login failed');
     }
   };
-
-  // Setup an request object to be passed using ajax
-  // var req_object = {
-  //   email : document.querySelector('#username').value,
-  //   password : document.querySelector('#password').value
-  // };
-
 
   // If data OK - post values and reload index.php
   request.open("POST", '/index.php', true);
