@@ -52,7 +52,7 @@ class User {
       $user->authed = true;
 
       //Redirect upon success
-      header("Location:../../index.php");
+      header("Location:/n8598177/index.php");
 
     } catch (PDOException $e) {
       // if there is an error it is caught and returned
