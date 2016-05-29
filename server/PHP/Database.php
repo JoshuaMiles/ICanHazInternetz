@@ -88,7 +88,7 @@ class Database {
 
 //The Query used to search the database for a certain element
   public function searchQuery($postName, $postAddress, $postSuburb) {
-    $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM n8598177.items,n8598177.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR n8598177.items.NAME LIKE "' . $postName . '" OR n8598177.items.Suburb LIKE "' . $postSuburb . '" LIMIT 1');
+    $qry = $this->db->prepare('SELECT DISTINCT NAME,ADDRESS,SUBURB,LATITUDE,LONGITUDE,rating FROM n8598177.items,n8598177.reviews WHERE ADDRESS LIKE "' . $postAddress . '" OR items.NAME LIKE "' . $postName . '" OR items.Suburb LIKE "' . $postSuburb . '" LIMIT 1');
     $qry->execute();
     foreach ($qry as $hotspot) {
       include('server/includes/recentReview.tpl.php');
@@ -115,7 +115,7 @@ class Database {
       if (!$sql) {
         die();
       }
-//      Inside of the array each individual argument is inserted into the specfic index value before the command is executed
+      // Inside of the array each individual argument is inserted into the specfic index value before the command is executed
       $sql->execute(array(
         ":postEmail" => $postEmail,
         ":hotspotName" => $hotspotName,
@@ -130,7 +130,6 @@ class Database {
       echo ("Error! :" . $e->getMessage() . "</br>");
       return false;
     }
-
   }
 
 
@@ -152,7 +151,7 @@ class Database {
    * @param $hotspotName
    */
   public function showReview($hotspotName) {
-    $qry = $this->db->prepare('SELECT DISTINCT firstName,reviewDate,rating,comment FROM n8598177.reviews WHERE hotspotName = ?');
+    $qry = $this->db->prepare('SELECT DISTINCT firstName,reviewDate,rating,comment FROM  reviews WHERE hotspotName = ?');
     $qry->bindParam(1, $hotspotName);
     $qry->execute();
     foreach ($qry as $review) {

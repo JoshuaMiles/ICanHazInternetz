@@ -61,14 +61,15 @@ function processLogin() {
     switch (request.status){
       case 200:
         console.log('Logged in');
-        // window.location.href = 'search.php';
-        window.location.href = 'index.php';
+        //window.location.href = 'index.php';
+        window.location.reload();
         break;
+      case 401:
+        console.log("Login failed");
       default:
         if (emailIsEmpty() === true || passwordIsEmpty() === true) {
           document.getElementById('errors').innerHTML = "Incorrect email address or password";
         }
-        console.log('Login failed');
     }
   };
 

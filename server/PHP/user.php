@@ -52,7 +52,9 @@ class User {
       $user->authed = true;
 
       //Redirect upon success
-      //header("Location: index.php");
+      header("Location: index.php");
+      //TODO
+      //$data = $sql->fetch();
 
     } catch (PDOException $e) {
       // if there is an error it is caught and returned
@@ -77,7 +79,7 @@ class User {
    public function login($postPassword) {
 
     global $db;
-    $statement = $db->prepare('SELECT email,firstName, password_hash FROM hotspots.members WHERE email = ?');
+    $statement = $db->prepare('SELECT email,firstName, password_hash FROM n8598177.members WHERE email = ?');
     $statement->bindParam(1, $this->email);
     $statement->execute();
 
@@ -91,7 +93,7 @@ class User {
         $_SESSION['email'] = $data['email'];
 
         $this->authed = true;
-
+        header("Refresh:0");
       }
     }
   }
@@ -117,11 +119,11 @@ class User {
     // If you have the ability to session destroy, do it
     if (session_destroy()) {
       // Changes the location of the now logged out user
-      header("Location: index.php");
+      header("Location: /n8598177/index.php");
+      header("Refresh:0;");
       $msg = "Logged Out";
       echo '<span>' . $msg . '</span>';
     }
     unset($this);
   }
 }
-?>

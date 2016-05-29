@@ -12,5 +12,4 @@
       </div>
     </a>
   ');
-  // <div itemprop="rating" class="muted">' . $hotspot['RATING'] . '</div>
 ?>

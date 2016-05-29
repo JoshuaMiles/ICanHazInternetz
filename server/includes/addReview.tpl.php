@@ -16,27 +16,25 @@
         <input type="radio" name="radio" id="" class="addRating" value="5">5
 
         <?php
-        if (!isset($_SESSION['logged_in'])) {
-          echo('<a href="#" id="user" class="login-notify">Login to add a review</a>');
-        } else if (isset($_SESSION['logged_in'])) {
-          echo('<input name="submit" type="submit" id="submitReview">Submit comment</input>');
+          if (!isset($_SESSION['logged_in'])) {
+            echo('<a href="index.php" id="user" class="login-notify">Login to add a review</a>');
+          } else if (isset($_SESSION['logged_in'])) {
+            echo('<button name="submit" type="submit" id="submitReview">Submit comment</button>');
 
-        } ?>
+          }
+        ?>
         <div class="clearfix"></div>
       </form>
       <?php
-      if (isset($_POST['submit'])) {
-        $selectedRating = $_POST['radio'];
-        $currentTime = time();
-
-        $database->insertComment($_SESSION['email'], $hotspotName, $firstName, $currentTime, $selectedRating, $_POST['comment']);
-
-        header("Refresh:0");
-      }
-
-
+        if (isset($_POST['submit'])) {
+          $selectedRating = $_POST['radio'];
+          $currentTime = time();
+          // Inserts review into database
+          $database->insertComment($_SESSION['email'], $hotspotName, $firstName, $currentTime, $selectedRating, $_POST['comment']);
+          // Auto refresh
+          header("Refresh:0");
+        }
       ?>
-
     </div>
   </div>
 </div>

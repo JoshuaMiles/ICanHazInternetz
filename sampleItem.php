@@ -29,9 +29,9 @@ $hotspotName = $_GET['name'];
 
           <?php $database->sampleItemQuery($hotspotName); ?>
 
-          <article class="comments-section">
-            <h2 class="reviewTitle recommendedReviews"><span
-                class="highlight">Recommend Reviews for </span> <?php echo $hotspotName; ?> </h2>
+          <article itemscope itemtype="http://schema.org/Review" class="comments-section">
+            <h2 class="reviewTitle recommendedReviews">
+              <span class="highlight">Recommend Reviews for </span> <?php echo $hotspotName; ?> </h2>
             <div class="comment-wrapper">
               <?php
               $database->showReview($hotspotName);

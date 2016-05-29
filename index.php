@@ -12,8 +12,8 @@
       header("HTTP/1.1 200 OK");
       $_SESSION['logged_in'] = true;
       $_SESSION['email'] = $email;
-    } else {
-      header("HTTP/1.1 401 Unauthorised");
+    } else if (!$user->isAuthed()) {
+        header("HTTP/1.1 401 Unauthorised");
     }
     exit();
   }

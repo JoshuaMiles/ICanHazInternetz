@@ -1,7 +1,7 @@
 <?php
-  // include("server/PHP/requireMaster.php");
-  // session_start();
-  // $user = User::fromSession();
+  include("server/PHP/requireMaster.php");
+  session_start();
+  $user = User::fromSession();
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,7 +68,7 @@
               if (!isset($_GET["searchBox"])) {
                 $database->showAll();
               } else if (isset($_GET['search-rating'])) {
-                $reviewAndRating = $db->getReviewIfRating();
+                // $reviewAndRating = $db->getReviewIfRating();
               }
             ?>
           </div>

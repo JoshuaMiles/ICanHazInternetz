@@ -2,7 +2,7 @@
   // Load database connection
   require('Database.php');
   $db = new Database();
-  
+
   $pdo = $db->getPDO();
 
   // Start XML file, create parent node
@@ -11,7 +11,7 @@
   $parnode = $dom->appendChild($node);
 
   // Select all the rows in the markers table
-  $query = "SELECT * FROM hotspots.items";
+  $query = "SELECT * FROM n8598177.items";
   $result = $pdo->prepare($query);
   $result->execute();
   if (!$result) {
