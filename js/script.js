@@ -61,7 +61,6 @@ function processLogin() {
     switch (request.status){
       case 200:
         console.log('Logged in');
-        //window.location.href = 'index.php';
         window.location.reload();
         break;
       case 401:
