@@ -60,19 +60,20 @@ function processLogin() {
   request.onreadystatechange = function(){
     switch (request.status){
       case 200:
-        console.log('Logged in');
+        console.log('Logged in');  // If data OK - post values and reload index.php
+        location.reload();
         break;
-      case 401:
-        console.log("Login failed");
       default:
-        if (emailIsEmpty() === true || passwordIsEmpty() === true) {
-          document.getElementById('errors').innerHTML = "Incorrect email address or password";
-        }
+        console.log("Login failed");
     }
   };
 
+  if (emailIsEmpty() === true || passwordIsEmpty() === true) {
+    document.getElementById('errors').innerHTML = "Incorrect email address or password";
+  }
+
   // If data OK - post values and reload index.php
-  request.open("POST", '../index.php', true);
+  request.open("POST", '/n8598177/index.php', true);
 
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   // send the request to the server

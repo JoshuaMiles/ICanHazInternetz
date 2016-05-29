@@ -39,7 +39,7 @@ class User {
       if (!$sql) {
         die($db->errorInfo());
       }
-      // Inside of the array each individual argument is inserted into the specfic index value before the command is executed
+//      Inside of the array each individual argument is inserted into the specfic index value before the command is executed
       $sql->execute(array(
         ":firstName" => $firstName,
         ":lastName" => $lastName,
@@ -90,7 +90,7 @@ class User {
         $_SESSION['email'] = $data['email'];
 
         $this->authed = true;
-        header("Location:../../index.php");
+        header("Location:/n8598177/index.php");
       }
     }
   }
@@ -116,7 +116,8 @@ class User {
     // If you have the ability to session destroy, do it
     if (session_destroy()) {
       // Changes the location of the now logged out user
-      header("Location:../../index.php");
+      header("Location: /index.php");
+      header("Refresh:0");
       $msg = "Logged Out";
       echo '<span>' . $msg . '</span>';
     }
