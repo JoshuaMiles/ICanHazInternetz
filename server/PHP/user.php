@@ -39,7 +39,7 @@ class User {
       if (!$sql) {
         die($db->errorInfo());
       }
-//      Inside of the array each individual argument is inserted into the specfic index value before the command is executed
+      // Inside of the array each individual argument is inserted into the specfic index value before the command is executed
       $sql->execute(array(
         ":firstName" => $firstName,
         ":lastName" => $lastName,
@@ -52,9 +52,7 @@ class User {
       $user->authed = true;
 
       //Redirect upon success
-      header("Location: index.php");
-      //TODO
-      //$data = $sql->fetch();
+      header("Location:../../index.php");
 
     } catch (PDOException $e) {
       // if there is an error it is caught and returned
@@ -118,7 +116,7 @@ class User {
     // If you have the ability to session destroy, do it
     if (session_destroy()) {
       // Changes the location of the now logged out user
-      header("Location: ../../index.php");
+      header("Location:../../index.php");
       $msg = "Logged Out";
       echo '<span>' . $msg . '</span>';
     }
