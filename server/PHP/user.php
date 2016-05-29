@@ -88,11 +88,11 @@ class User {
     $toCompare = crypt($postPassword, 'ripemd160');
 
     if (!empty($data)) {
-      //  if (password_verify($postPassword, $db_hashed_pw)) {
       if ($data["password_hash"] == $toCompare) {
         $_SESSION['email'] = $data['email'];
 
         $this->authed = true;
+        header("Location:../../index.php");
       }
     }
   }
@@ -118,7 +118,7 @@ class User {
     // If you have the ability to session destroy, do it
     if (session_destroy()) {
       // Changes the location of the now logged out user
-      header("Location: /n8598177/index.php");
+      header("Location: ../../index.php");
       $msg = "Logged Out";
       echo '<span>' . $msg . '</span>';
     }

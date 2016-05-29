@@ -61,7 +61,6 @@ function processLogin() {
     switch (request.status){
       case 200:
         console.log('Logged in');
-        window.location.reload();
         break;
       case 401:
         console.log("Login failed");
@@ -73,7 +72,7 @@ function processLogin() {
   };
 
   // If data OK - post values and reload index.php
-  request.open("POST", '/index.php', true);
+  request.open("POST", 'index.php', true);
 
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   // send the request to the server
