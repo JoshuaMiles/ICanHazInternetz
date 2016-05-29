@@ -1,26 +1,17 @@
 <?php
-
-  require 'server/PHP/requireMaster.php';
-require 'server/PHP/postMaster.php';
+  require ('server/PHP/requireMaster.php');
+  require ('server/PHP/postMaster.php');
 
   session_start();
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['email'];
     $user = new User($email);
     $user->login($_POST['password']);
-    //TODO make sure to delete this if we do not need it
-  //    if ($user = User::register()){
-  //      // successfully registered
-  //    } else {
-  //      // something went wrong
-  //    }
+
     if ($user->isAuthed()) {
       header("HTTP/1.1 200 OK");
       $_SESSION['logged_in'] = true;
       $_SESSION['email'] = $email;
-      // header('Content-type', 'application/json');
-      // $response = Array('hello' => 'Josh');
-      // echo json_encode($response);
     } else {
       header("HTTP/1.1 401 Unauthorised");
     }
@@ -57,9 +48,7 @@ require 'server/PHP/postMaster.php';
         include('server/includes/login.tpl.php');
     }
   ?>
-
   <section>
-
     <article class="profile-reviews">
       <svg class="arc-svg" viewBox="0 0 1440 69" version="1.1" xmlns="http://www.w3.org/2000/svg"
            xmlns:xlink="http://www.w3.org/1999/xlink">

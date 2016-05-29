@@ -1,7 +1,7 @@
 <?php
-  include("server/PHP/requireMaster.php");
-  session_start();
-  $user = User::fromSession();
+  // include("server/PHP/requireMaster.php");
+  // session_start();
+  // $user = User::fromSession();
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,6 +35,9 @@
       <hr class="line">
       <div class="options">
         <div class="options-wrapper">
+
+          <input type="checkbox" name="incSuburbs" id="incSuburbs">
+          <span class="muted white">Include surrounding suburbs</span>
           <!-- Generates the rating dropdown -->
           <?php include('server/includes/searchRating.tpl.php'); ?>
           <!-- Used to populate the suburb dropdown -->
