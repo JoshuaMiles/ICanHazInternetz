@@ -63,14 +63,15 @@ function processLogin() {
         console.log('Logged in');  // If data OK - post values and reload index.php
         location.reload();
         break;
+      case 401:
+        if (emailIsEmpty() === true || passwordIsEmpty() === true) {
+          document.getElementById('errors').innerHTML = "Incorrect email address or password";
+        }
+        document.getElementById('errors').innerHTML = "Incorrect email address or password";
       default:
         console.log("Login failed");
     }
   };
-
-  if (emailIsEmpty() === true || passwordIsEmpty() === true) {
-    document.getElementById('errors').innerHTML = "Incorrect email address or password";
-  }
 
   // If data OK - post values and reload index.php
   request.open("POST", '/n8598177/index.php', true);
