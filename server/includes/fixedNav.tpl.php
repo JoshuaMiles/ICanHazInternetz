@@ -3,6 +3,7 @@
     <div class="brand"><a href="index.php">routr</a></div>
     <ul>
       <?php
+        // If user session has been created and logged in show logout button and show username
         if (isset($_SESSION['logged_in'])) {
           echo('
             <li>
@@ -19,7 +20,8 @@
               </a>
             </li>
           ');
-        } else  {
+          // Else show Register button
+        } else {
             echo('
               <li id="active">
                 <a href="index.php" id="user">
