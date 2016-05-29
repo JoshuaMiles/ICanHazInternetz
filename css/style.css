@@ -720,7 +720,7 @@ main .register {
     .container .item-container .comments-section .comment-wrapper .cmt-box {
       width: 80%;
       display: inline-block;
-      padding: 1em;
+      padding: 1em 0;
       margin: 0 auto; }
       .container .item-container .comments-section .comment-wrapper .cmt-box .user-img img {
         width: 70px;
@@ -748,7 +748,7 @@ main .register {
     padding: 3em 0; }
     .container .item-container .comments-section .cmt-wrapper #userComment {
       display: block;
-      width: 100%;
+      width: 600px;
       padding: 6px 12px;
       margin-top: 20px !important;
       font-size: 14px;
