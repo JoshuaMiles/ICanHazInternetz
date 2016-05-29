@@ -1,28 +1,25 @@
 <?php
-require('requireMaster.php');
+  require('requireMaster.php');
+  require('postMaster.php');
 
-require('postMaster.php');
+  error_reporting(-1);
+  ini_set('display_errors', 1);
 
+  if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $email = $_POST['email'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
 
-error_reporting(-1);
-ini_set('display_errors', 1);
+    $member = new User($email);
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $email = $_POST['email'];
-  $firstName = $_POST['firstName'];
-  $lastName = $_POST['lastName'];
-  $phone = $_POST['phone'];
-  $password = $_POST['password'];
-
-  echo "signup";
-  $member = new User($email);
-
-  if ($member->register($firstName, $lastName, $email, $phone, $password)) {
-    header("Location: index.php");
-    exit();
-  } else {
-    //refreshes the page if the user couldn't register
-    header("Refresh: 0");
+    if ($member->register($firstName, $lastName, $email, $phone, $password)) {
+      header("Location: /index.php");
+      exit();
+    } else {
+        //refreshes the page if the user couldn't register
+        header("Refresh:0");
+    }
   }
-}
 ?>

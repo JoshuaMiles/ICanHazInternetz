@@ -93,7 +93,6 @@ class User {
         $_SESSION['email'] = $data['email'];
 
         $this->authed = true;
-        header("Refresh:0");
       }
     }
   }
@@ -120,7 +119,6 @@ class User {
     if (session_destroy()) {
       // Changes the location of the now logged out user
       header("Location: /n8598177/index.php");
-      header("Refresh:0;");
       $msg = "Logged Out";
       echo '<span>' . $msg . '</span>';
     }

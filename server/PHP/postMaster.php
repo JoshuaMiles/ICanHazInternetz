@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  *
  * Strips the incoming post object of any tags or slashes, else it returns null
@@ -18,5 +16,4 @@ function getPost($value){
           return null;
       }
   }
-
 ?>

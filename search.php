@@ -1,6 +1,7 @@
 <?php
   include("server/PHP/requireMaster.php");
   session_start();
+  // Loads the user's session variables
   $user = User::fromSession();
 ?>
 <!DOCTYPE html>
