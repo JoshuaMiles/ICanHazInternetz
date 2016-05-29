@@ -28,14 +28,14 @@ class User {
    * @return mixed
    */
   public static function register($firstName, $lastName, $email, $phone, $password) {
-    
+
     global $db;
 
     try {
       //Uses bycrypt to hash the password
-      $password_hash = password_hash($password, PASSWORD_DEFAULT);
+      $password_hash = crypt($password, 'ripemd160');
       // The sql statement being prepared with whichever pdo object is being inserted
-      $sql = $db->prepare("INSERT INTO hotspots.members( firstName, lastName, email, phone, password_hash ) VALUES (:firstName,:lastName, :email,:phone,:password)");
+      $sql = $db->prepare("INSERT INTO n8598177.members( firstName, lastName, email, phone, password_hash ) VALUES (:firstName,:lastName, :email,:phone,:password)");
       if (!$sql) {
         die($db->errorInfo());
       }
@@ -47,16 +47,12 @@ class User {
         ":phone" => $phone,
         ":password" => $password_hash
       ));
-//      var_dump($db->errorInfo());
 
       $user = new User($email);
       $user->authed = true;
 
-      $data = $sql->fetch();
-
-      echo $data;
-
-      print_r($db->errorCode());
+      //Redirect upon success
+      //header("Location: index.php");
 
     } catch (PDOException $e) {
       // if there is an error it is caught and returned
@@ -79,28 +75,31 @@ class User {
    * @param $postPassword
    */
    public function login($postPassword) {
-     global $db;
-     $statement = $db->prepare('SELECT email,firstName, password_hash FROM hotspots.members WHERE email = ?');
-     $statement->bindParam(1, $this->email);
-     $statement->execute();
 
-     $data = $statement->fetch();
+    global $db;
+    $statement = $db->prepare('SELECT email,firstName, password_hash FROM hotspots.members WHERE email = ?');
+    $statement->bindParam(1, $this->email);
+    $statement->execute();
 
-     if (!empty($data)) {
-       $db_hashed_pw = $data["password_hash"];
-       if (password_verify($postPassword, $db_hashed_pw)) {
-         $_SESSION['email'] = $data['email'];
+    $data = $statement->fetch();
 
-         $this->authed = true;
-     
-       }
-     }
-   }
+    $toCompare = crypt($postPassword, 'ripemd160');
+
+    if (!empty($data)) {
+      //  if (password_verify($postPassword, $db_hashed_pw)) {
+      if ($data["password_hash"] == $toCompare) {
+        $_SESSION['email'] = $data['email'];
+
+        $this->authed = true;
+
+      }
+    }
+  }
 
   public static function fromSession(){
     global $db;
     // $_SESSION['email'] implies logged in
-    $statement = $db->prepare('SELECT email,firstName, lastName, password_hash, phone FROM hotspots.members WHERE email = ?');
+    $statement = $db->prepare('SELECT email,firstName, lastName, password_hash, phone FROM n8598177.members WHERE email = ?');
     $statement->bindParam(1, $_SESSION['email']);
     $statement->execute();
 
@@ -125,3 +124,4 @@ class User {
     unset($this);
   }
 }
+?>
