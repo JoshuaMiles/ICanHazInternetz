@@ -1,9 +1,8 @@
 <?php
+
 /**
  * This class is used to instantiate a user so that when enever an action of user is needed, this class is called.
  */
-
-
 class User {
   private $email;
   private $authed = false;
@@ -56,16 +55,16 @@ class User {
 
     } catch (PDOException $e) {
       // if there is an error it is caught and returned
-      echo ("Error! :" . $e->getMessage() . "</br>");
+      echo("Error! :" . $e->getMessage() . "</br>");
       return false;
     }
   }
 
-  public function isAuthed(){
+  public function isAuthed() {
     return $this->authed;
   }
 
-  public function getFirstName(){
+  public function getFirstName() {
     return $this->firstName;
   }
 
@@ -74,7 +73,7 @@ class User {
    * @param $postEmail
    * @param $postPassword
    */
-   public function login($postPassword) {
+  public function login($postPassword) {
 
     global $db;
     $statement = $db->prepare('SELECT email,firstName, password_hash FROM n8598177.members WHERE email = ?');
@@ -95,7 +94,7 @@ class User {
     }
   }
 
-  public static function fromSession(){
+  public static function fromSession() {
     global $db;
     // $_SESSION['email'] implies logged in
     $statement = $db->prepare('SELECT email,firstName, lastName, password_hash, phone FROM n8598177.members WHERE email = ?');

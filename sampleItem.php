@@ -31,7 +31,8 @@ $hotspotName = $_GET['name'];
 
           <article itemscope itemtype="http://schema.org/Review" class="comments-section">
             <h2 class="reviewTitle recommendedReviews">
-              <span class="highlight" itemprop="itemReviewed">Recommend Reviews for </span> <?php echo $hotspotName; ?> </h2>
+              <span class="highlight" itemprop="itemReviewed">Recommend Reviews for </span> <?php echo $hotspotName; ?>
+            </h2>
             <div class="comment-wrapper">
               <?php
               $database->showReview($hotspotName);

@@ -1,5 +1,5 @@
 <?php
-  echo('
+echo('
     <select name="search-rating" class="rating-select-box">
       <option value="">Rating...</option>
       <option value="1">1</option>

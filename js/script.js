@@ -9,7 +9,7 @@ function showNearbyResults() {
   if (!includeSuburbs.checked) {
     return; //if not checked return nothing
   }
-  navigator.geolocation.getCurrentPosition(function(pos){
+  navigator.geolocation.getCurrentPosition(function (pos) {
     console.log(pos);
     //set search buffer radius in here
     return pos; //else return the co-ords
@@ -45,8 +45,8 @@ function processLogin() {
 
   // Setup an request object to be passed using ajax
   var req_object = {
-    email : document.querySelector('#username').value,
-    password : document.querySelector('#password').value
+    email: document.querySelector('#username').value,
+    password: document.querySelector('#password').value
   };
 
   function emailIsEmpty() {
@@ -57,8 +57,8 @@ function processLogin() {
     return req_object.password === "";
   }
 
-  request.onreadystatechange = function(){
-    switch (request.status){
+  request.onreadystatechange = function () {
+    switch (request.status) {
       case 200:
         console.log('Logged in');  // If data OK - post values and reload index.php
         location.reload();
@@ -83,7 +83,7 @@ function processLogin() {
 
 var form = document.querySelector('.login-form');
 
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', function (e) {
   // Prevents the form from automatically submitting - to check for valid input
   e.preventDefault();
   // Callback

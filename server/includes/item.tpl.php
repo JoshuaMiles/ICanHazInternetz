@@ -1,6 +1,6 @@
 <?php
-  echo('
-    <h2 class="article-head hotspot">' .$_GET['name']. '</h2>
+echo('
+    <h2 class="article-head hotspot">' . $_GET['name'] . '</h2>
     <hr class="article-title-rule">
     <div class="img-item">
  <!-- Shows the map of the current item -->

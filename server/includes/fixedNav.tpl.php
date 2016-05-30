@@ -3,9 +3,9 @@
     <div class="brand"><a href="index.php">routr</a></div>
     <ul>
       <?php
-        // If user session has been created and logged in show logout button and show username
-        if (isset($_SESSION['logged_in'])) {
-          echo('
+      // If user session has been created and logged in show logout button and show username
+      if (isset($_SESSION['logged_in'])) {
+        echo('
             <li>
               <a href="server/PHP/logout.php">
                 <svg id="logoutBtn" style="width:1.3em;height:1.3em;vertical-align:text-bottom;" viewBox="0 0 24 24">
@@ -16,13 +16,13 @@
             <li id="active">
               <a href="index.php" id="user">
                 <i class="material-icons user-icon">person</i>
-                <strong> '. $user->getFirstName() .' </strong>
+                <strong> ' . $user->getFirstName() . ' </strong>
               </a>
             </li>
           ');
-          // Else show Register button
-        } else {
-            echo('
+        // Else show Register button
+      } else {
+        echo('
               <li id="active">
                 <a href="index.php" id="user">
                   <i class="material-icons user-icon">person</i>
@@ -31,7 +31,7 @@
               </li>
               <li><a href="registration.php">Register</a></li>
             ');
-        }
+      }
       ?>
       <li><a href="search.php">Find Wifi</a></li>
     </ul>

@@ -1,26 +1,26 @@
 <?php
-  require ('server/PHP/requireMaster.php');
-  require ('server/PHP/postMaster.php');
+require('server/PHP/requireMaster.php');
+require('server/PHP/postMaster.php');
 
-  session_start();
-  if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $email = $_POST['email'];
-    $user = new User($email);
-    $user->login($_POST['password']);
+session_start();
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  $email = $_POST['email'];
+  $user = new User($email);
+  $user->login($_POST['password']);
 
-    if ($user->isAuthed()) {
-      header("HTTP/1.1 200 OK");
-      $_SESSION['logged_in'] = true;
-      $_SESSION['email'] = $email;
-    } else if (!$user->isAuthed()) {
-        header("HTTP/1.1 401 Unauthorised");
-    }
-    exit();
+  if ($user->isAuthed()) {
+    header("HTTP/1.1 200 OK");
+    $_SESSION['logged_in'] = true;
+    $_SESSION['email'] = $email;
+  } else if (!$user->isAuthed()) {
+    header("HTTP/1.1 401 Unauthorised");
   }
-  if (isset($_SESSION['email'])) {
-    // load user from session
-    $user = User::fromSession();
-  }
+  exit();
+}
+if (isset($_SESSION['email'])) {
+  // load user from session
+  $user = User::fromSession();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,16 +42,16 @@
 <main>
   <!-- Login -->
   <?php
-    if (isset($user)) {
-      echo('<div class="logged-in"><h1> Welcome<span> ' . $user->getFirstName() . '</span></h1></div>');
-    } else {
-        include('server/includes/login.tpl.php');
-    }
+  if (isset($user)) {
+    echo('<div class="logged-in"><h1> Welcome<span> ' . $user->getFirstName() . '</span></h1></div>');
+  } else {
+    include('server/includes/login.tpl.php');
+  }
   ?>
   <section>
     <article class="profile-reviews">
       <svg class="arc-svg" viewBox="0 0 1440 69" version="1.1" xmlns="http://www.w3.org/2000/svg"
-           xmlns:xlink="http://www.w3.org/1999/xlink">
+      >
         <g stroke="none" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd">
           <path
             d="M1440,69.0315425 L1440,0 L0,0 L0,69.0315425 C233.264983,25.0227325 473.943868,2 720,2 C966.056132,2 1206.73502,25.0227325 1440,69.0315425 Z"

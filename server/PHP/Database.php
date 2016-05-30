@@ -15,6 +15,8 @@ class Database {
     $db_username = 'n8598177';
     $db_password = 'Em003080#77';
     $db_host = "fastapps04.qut.edu.au";
+
+
     try {
       $pdo = new PDO ("mysql:host=$db_host;dbname=$db_name", $db_username, $db_password);
     } catch (PDOException $e) {
@@ -105,10 +107,10 @@ class Database {
    * @param $comment
    */
 
-  public function insertComment($postEmail, $hotspotName,$firstName,$currentTime, $rating, $comment) {
+  public function insertComment($postEmail, $hotspotName, $firstName, $currentTime, $rating, $comment) {
 
-    $intTime = (int) $currentTime;
-    $intRating = (int) $rating;
+    $intTime = (int)$currentTime;
+    $intRating = (int)$rating;
 
     try {
       $sql = $this->db->prepare('INSERT INTO n8598177.reviews( email, hotspotName, firstName, reviewDate, rating, comment ) VALUES (:postEmail, :hotspotName, :firstName, :currentTime, :rating,:comment)');
@@ -120,14 +122,14 @@ class Database {
         ":postEmail" => $postEmail,
         ":hotspotName" => $hotspotName,
         ":firstName" => $firstName,
-        ":currentTime" =>  $intTime,
+        ":currentTime" => $intTime,
         ":rating" => $intRating,
         ":comment" => $comment
       ));
 
-    } catch (PDOException $e){
+    } catch (PDOException $e) {
       // if there is an error it is caught and returned
-      echo ("Error! :" . $e->getMessage() . "</br>");
+      echo("Error! :" . $e->getMessage() . "</br>");
       return false;
     }
   }

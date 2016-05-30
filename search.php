@@ -1,8 +1,8 @@
 <?php
-  include("server/PHP/requireMaster.php");
-  session_start();
-  // Loads the user's session variables
-  $user = User::fromSession();
+include("server/PHP/requireMaster.php");
+session_start();
+// Loads the user's session variables
+$user = User::fromSession();
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,20 +57,20 @@
         <div class="container">
           <div class="review-cards">
             <?php
-              //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
-              $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
-              $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
-              $rating = isset($_GET["search-rating"]) ? $_GET["search-rating"] : '';
-              $address = "";
+            //Checking if the requests are set, if they are not than the variable is set to empty to prevent an error when inserting the data
+            $searchBox = isset($_GET["searchBox"]) ? $_GET["searchBox"] : '';
+            $suburb = isset($_GET["search-suburb"]) ? $_GET["search-suburb"] : '';
+            $rating = isset($_GET["search-rating"]) ? $_GET["search-rating"] : '';
+            $address = "";
 
-              $database->searchQuery($searchBox, $address, $suburb, $rating);
+            $database->searchQuery($searchBox, $address, $suburb, $rating);
 
-              // Populates the page with all of the items or all searched
-              if (!isset($_GET["searchBox"])) {
-                $database->showAll();
-              } else if (isset($_GET['search-rating'])) {
-                // $reviewAndRating = $db->getReviewIfRating();
-              }
+            // Populates the page with all of the items or all searched
+            if (!isset($_GET["searchBox"])) {
+              $database->showAll();
+            } else if (isset($_GET['search-rating'])) {
+              // $reviewAndRating = $db->getReviewIfRating();
+            }
             ?>
           </div>
         </div>
