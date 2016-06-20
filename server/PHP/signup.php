@@ -6,11 +6,11 @@ error_reporting(-1);
 ini_set('display_errors', 1);
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $email = $_POST['email'];
-  $firstName = $_POST['firstName'];
-  $lastName = $_POST['lastName'];
-  $phone = $_POST['phone'];
-  $password = $_POST['password'];
+  $email = getPost($_POST['email']);
+  $firstName = getPost($_POST['firstName']);
+  $lastName = getPost($_POST['lastName']);
+  $phone = getPost($_POST['phone']);
+  $password = getPost($_POST['password']);
 
   $member = new User($email);
 
