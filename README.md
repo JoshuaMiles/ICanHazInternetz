@@ -1,8 +1,5 @@
 # ICanHazInternetz
-University project for introductory website building using primarily PHP 
-
-
-Look up wifi hot spots in the area.
+University project for introductory website building using primarily PHP and mysql. Purpose of the project was to build a website around a dataset of wifi hotspots.
 
 
 The following desgins where made by Elliot Moore (mooreorless) using nothing but SASS.
