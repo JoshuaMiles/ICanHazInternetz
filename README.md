@@ -19,7 +19,7 @@ The following desgins where made by Elliot Moore (mooreorless) using nothing but
 
 ![Alt text](/finishedProduct/mapView.png "Map with the hotspots from database")
 
-![Alt text](ICanHazInternetz/finishedProduct/postReviewFromUser.png "Able to create reviews on items")
+![Alt text](/finishedProduct/postReviewFromUser.png "Able to create reviews on items")
 
 ![Alt text](/finishedProduct/postSearch.png "Search for single item")
 
